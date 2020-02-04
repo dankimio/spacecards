@@ -5,6 +5,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "tailwindcss": "^1.1.4",
     "vue": "^2.6.11",
     "vue-loader": "^16.0.0-alpha.3",
     "vue-template-compiler": "^2.6.11"
