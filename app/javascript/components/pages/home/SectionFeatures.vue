@@ -24,7 +24,7 @@
   grid-template-columns: repeat(1, 1fr);
   grid-row-gap: 3rem;
 
-  @media (min-width: 768px) {
+  @screen md {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 4rem;

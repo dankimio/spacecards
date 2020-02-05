@@ -72,7 +72,7 @@ export default {
   & h3 {
     @apply font-medium text-lg text-indigo-400 uppercase mb-6;
 
-    @media (min-width: 992px) {
+    @screen lg {
       @apply mb-8;
     }
   }
@@ -81,10 +81,10 @@ export default {
 
      font-size: 2.5rem;
 
-     @media (min-width: 768px) {
+     @screem md {
        font-size: 3rem;
      }
-     @media (min-width: 1200px) {
+     @screen xl {
        font-size: 4rem;
      }
   }
