@@ -43,3 +43,15 @@
     </div>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+#articles {
+  & .article {
+    @apply transition-all duration-200;
+
+    &:hover {
+      @apply transition-all duration-200;
+    }
+  }
+}
+</style>
