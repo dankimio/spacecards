@@ -1,9 +1,9 @@
 <template>
   <div class="container py-12">
-    <h1 class="heading-1 text-center" style="margin-bottom: 2.5rem;">How to use Spacecards</h1>
+    <h1 class="heading-1 text-center mb-10">How to use Spacecards</h1>
 
-    <div class="lg:mb-10 flex flex-col lg:flex-row justify-between">
-      <div class="flex-1 mb-12 lg:mb-0 lg:mr-3">
+    <div class="max-w-xs mx-auto lg:max-w-none lg:mb-10 flex flex-col lg:flex-row justify-between">
+      <div class="lg:flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
           <span class="pill mr-2">1</span>
           Bring your own content
@@ -19,7 +19,7 @@
 
       <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="arrow text-gray-400 lg:mx-8 self-center hidden lg:block">
 
-      <div class="flex-1 mb-12 lg:mb-0 lg:mr-3">
+      <div class="lg:flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
           <span class="pill mr-2">2</span>
           Create cards
@@ -49,7 +49,7 @@
 
       <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="arrow text-gray-400 lg:mx-8 self-center hidden lg:block">
 
-      <div class="flex-1 mb-12 lg:mb-0 lg:mr-3">
+      <div class="lg:flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
           <span class="pill mr-2">3</span>
           Practice daily
@@ -58,6 +58,8 @@
         <img src="@images/step-03.png" alt="Step 3" class="block w-full max-w-xs">
       </div>
     </div>
+
+    <div class="border-b-2 border-gray-100"></div>
   </div>
 </template>
 
