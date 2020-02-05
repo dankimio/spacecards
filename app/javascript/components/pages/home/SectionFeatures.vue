@@ -16,3 +16,18 @@
     </div>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+#features {
+  display: grid;
+
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 3rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+  }
+}
+</style>
