@@ -11,7 +11,7 @@
         Start learning
       </router-link>
 
-      <p class="text-sm text-grey-darkest flex items-center">
+      <p class="text-sm text-gray-800 flex items-center">
         <span class="mx-2">Sign in with</span>
 
         <router-link to="/" class="mx-3">

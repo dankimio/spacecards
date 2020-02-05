@@ -10,7 +10,7 @@
           <img src="@images/article-01.jpg" alt="" class="object-cover">
 
           <div class="flex-grow flex flex-col p-5 bg-white">
-            <span class="text-grey-dark text-sm mb-3">Feb 23, 2018 — Quartz</span>
+            <span class="text-gray-600 text-sm mb-3">Feb 23, 2018 — Quartz</span>
 
             <h3 class="font-medium text-xl mb-3">The scientific, efficient way to learn languages: “spaced repetition”</h3>
 
@@ -21,7 +21,7 @@
           <img src="@images/article-02.jpg" alt="" class="object-cover">
 
           <div class="flex-grow flex flex-col p-5 bg-white">
-            <span class="text-grey-dark text-sm mb-3">Jan 23, 2016 — The Guardian</span>
+            <span class="text-gray-600 text-sm mb-3">Jan 23, 2016 — The Guardian</span>
 
             <h3 class="font-medium text-xl mb-3">Spaced repetition: a hack to make your brain store information </h3>
 
@@ -32,7 +32,7 @@
           <img src="@images/article-03.png" alt="" class="object-cover">
 
           <div class="flex-grow flex flex-col p-5 bg-white">
-            <span class="text-grey-dark text-sm mb-3">Dec 18, 2018 — Farnam Street</span>
+            <span class="text-gray-600 text-sm mb-3">Dec 18, 2018 — Farnam Street</span>
 
             <h3 class="font-medium text-xl mb-3">The Spacing Effect: How to Improve Learning and Maximize Retention</h3>
 

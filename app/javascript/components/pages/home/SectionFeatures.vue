@@ -6,12 +6,12 @@
       <div class="flex flex-col max-w-sm mx-auto text-center">
         <img src="@images/icon-features-01.svg" alt="Markdown support" class="block mb-6">
         <h3 class="font-medium mb-6">Markdown support</h3>
-        <p class="font-light text-grey-darkest leading-normal">Use Markdown to emphasize key elements, create lists and add formatting to your flashcards.</p>
+        <p class="font-light text-gray-800 leading-normal">Use Markdown to emphasize key elements, create lists and add formatting to your flashcards.</p>
       </div>
       <div class="flex flex-col max-w-sm mx-auto text-center">
         <img src="@images/icon-features-04.svg" alt="Multiple card types" class="block mb-6">
         <h3 class="font-medium mb-6">Multiple card types</h3>
-        <p class="font-light text-grey-darkest leading-normal">One-way & reverse cards, cards with context, images, pronunciation via text-to-speech.</p>
+        <p class="font-light text-gray-800 leading-normal">One-way & reverse cards, cards with context, images, pronunciation via text-to-speech.</p>
       </div>
     </div>
   </div>

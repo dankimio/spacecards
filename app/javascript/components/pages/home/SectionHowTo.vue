@@ -26,23 +26,23 @@
         </h3>
 
         <div class="mb-4 lg:mb-5">
-          <div class="mb-3 text-grey-darker font-medium">
+          <div class="mb-3 text-gray-700 font-medium">
             <span class="word">un marché</span>
             <span class="text-sm">→</span>
             <span class="word mr-1">market</span>
-            <span class="text-grey">/maʁ.ʃe/</span>
+            <span class="text-gray-500">/maʁ.ʃe/</span>
           </div>
-          <div class="mb-3 text-grey-darker font-medium">
+          <div class="mb-3 text-gray-700 font-medium">
             <span class="word">une croissance</span>
             <span class="text-sm">→</span>
             <span class="word mr-1">growth</span>
-            <span class="text-grey">/kʁwa.sɑ̃s/</span>
+            <span class="text-gray-500">/kʁwa.sɑ̃s/</span>
           </div>
-          <div class="mb-3 text-grey-darker font-medium">
+          <div class="mb-3 text-gray-700 font-medium">
             <span class="word">une mère</span>
             <span class="text-sm">→</span>
             <span class="word mr-1">mother</span>
-            <span class="text-grey">/mɛʁ/</span>
+            <span class="text-gray-500">/mɛʁ/</span>
           </div>
         </div>
       </div>
