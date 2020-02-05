@@ -31,7 +31,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .faq-item {
   @apply border-t py-6;
 

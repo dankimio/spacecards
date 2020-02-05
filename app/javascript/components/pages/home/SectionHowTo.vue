@@ -61,7 +61,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 h3 {
   @apply font-medium text-lg text-indigo-400 uppercase mb-6;
 }

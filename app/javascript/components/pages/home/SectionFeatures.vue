@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 #features {
   display: grid;
 
