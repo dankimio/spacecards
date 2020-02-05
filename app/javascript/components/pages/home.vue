@@ -1,8 +1,6 @@
 <template>
   <div>
-    <p>Welcome!</p>
-
-    <router-view></router-view>
+    <router-link to="/">keeek</router-link>
   </div>
 </template>
 
@@ -11,5 +9,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+
 </style>
