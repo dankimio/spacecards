@@ -1,5 +1,5 @@
 <template>
-  <div id="how-to" class="container py-12">
+  <div class="container py-12">
     <h1 class="heading-1 text-center" style="margin-bottom: 2.5rem;">How to use Spacecards</h1>
 
     <div class="lg:mb-10 flex flex-col lg:flex-row justify-between">
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="'lg:mx-8 self-center hidden lg:block">
+      <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="arrow text-gray-400 lg:mx-8 self-center hidden lg:block">
 
       <div class="flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="'lg:mx-8 self-center hidden lg:block">
+      <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="arrow text-gray-400 lg:mx-8 self-center hidden lg:block">
 
       <div class="flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
@@ -61,32 +61,14 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="postcss" scoped>
-#how-to {
-  & h3 {
-    @apply font-medium text-lg text-indigo-400 uppercase mb-6;
+h3 {
+  @apply font-medium text-lg text-indigo-400 uppercase mb-6;
+}
 
-    @screen lg {
-      @apply mb-8;
-    }
-  }
-  & .arrow {
-     @apply text-gray-400;
-
-     font-size: 2.5rem;
-
-     @screem md {
-       font-size: 3rem;
-     }
-     @screen xl {
-       font-size: 4rem;
-     }
+@screen lg {
+  h3 {
+    @apply mb-8;
   }
 }
 </style>
