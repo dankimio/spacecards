@@ -21,6 +21,7 @@ export default {
   components: {
     SectionHero,
     SectionSpacedRepetition,
+    SectionHowTo,
     SectionFeatures,
     SectionArticles,
     SectionFaq

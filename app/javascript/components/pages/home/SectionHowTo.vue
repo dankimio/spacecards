@@ -66,3 +66,27 @@ export default {
 
 }
 </script>
+
+<style lang="postcss" scoped>
+#how-to {
+  & h3 {
+    @apply font-medium text-lg text-indigo-400 uppercase mb-6;
+
+    @media (min-width: 992px) {
+      @apply mb-8;
+    }
+  }
+  & .arrow {
+     @apply text-gray-400;
+
+     font-size: 2.5rem;
+
+     @media (min-width: 768px) {
+       font-size: 3rem;
+     }
+     @media (min-width: 1200px) {
+       font-size: 4rem;
+     }
+  }
+}
+</style>
