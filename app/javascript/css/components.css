@@ -1,0 +1,140 @@
+:root {
+  --transition-base: all .15s ease-in-out;
+}
+
+.field {
+  @apply .mb-5;
+
+  & small {
+    @apply .block .mt-2 .text-gray-700;
+  }
+}
+
+form label {
+  @apply .inline-block .text-gray-700 .text-sm .font-medium .mb-2;
+}
+
+.form-control {
+  @apply .block .appearance-none .border .rounded .w-full .p-3 .text-gray-900 .leading-tight;
+
+  &:focus {
+    transition: var(--transition-base);
+
+    @apply .outline-none;
+  }
+
+  &:-moz-ui-invalid {
+    @apply .shadow-none .border-red-400 .text-red-400;
+  }
+}
+
+.field_with_errors label {
+  @apply .text-red-500;
+}
+
+.field_with_errors .form-control {
+  @apply .border-red-500;
+}
+
+/* Alerts */
+
+.alert {
+  @apply .mb-6 .border .px-4 .py-3 .rounded .relative;
+
+  @media(min-width: 768px) {
+    @apply .mb-8;
+  }
+}
+
+.alert-notice {
+  @apply .bg-indigo-100 .border-indigo-300 .text-indigo-700;
+}
+
+.alert-alert {
+  @apply .bg-red-100 .border-red-300 .text-red-700;
+}
+
+/* Buttons */
+
+.btn {
+  @apply .inline-block .py-2 .px-4 .rounded .no-underline .border .shadow .align-middle;
+
+  transition: var(--transition-base);
+
+  &:hover {
+    cursor: pointer;
+    transition: var(--transition-base);
+    transform: translateY(-.15rem);
+
+    @apply .shadow-md;
+  }
+  &:focus {
+    @apply .outline-none .shadow-outline;
+  }
+}
+
+.btn-lg {
+  @apply .py-3 .px-6 .font-medium .tracking-normal .text-center;
+}
+
+.btn-primary {
+  @apply .bg-indigo-500 .border-indigo-500 .text-white;
+
+  &:hover {
+    @apply .bg-indigo-700 .text-gray-300;
+  }
+}
+
+.btn-outline-primary {
+  @apply .bg-white .border-gray-400 .border-2 .text-indigo-500;
+
+  &:hover {
+    @apply .bg-indigo-500 .border-indigo-500 .text-white;
+  }
+}
+
+.btn-danger {
+  @apply .bg-red-400 .border-red-400 .text-white;
+
+  &:hover {
+    @apply .bg-red-500 .text-gray-300;
+  }
+}
+
+.btn-outline-danger {
+  @apply .bg-white .border-red-400 .text-red-400;
+
+  &:hover {
+    @apply .bg-red-400 .text-white;
+  }
+}
+
+/* Tables */
+
+.table {
+  @apply .w-full .text-left;
+
+  & thead th {
+    @apply .border-b .border-b-2 .border-t;
+  }
+
+  & td, & th {
+    @apply .p-3;
+  }
+
+  & td {
+    @apply .border-b;
+  }
+
+  & tr:last-child {
+    & td {
+      @apply .border-b-0;
+    }
+  }
+}
+
+/* Pill */
+
+.pill {
+  @apply .inline-block .py-2 .px-4 .rounded-full .bg-indigo-300 .text-white .text-lg .font-medium;
+}

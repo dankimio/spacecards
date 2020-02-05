@@ -2,5 +2,6 @@
 @import 'tailwindcss/components';
 
 @import 'custom';
+@import 'components';
 
 @import 'tailwindcss/utilities';
