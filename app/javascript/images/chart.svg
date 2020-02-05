@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="599" height="309" viewBox="0 0 599 309">
+  <g fill="none" fill-rule="evenodd" transform="translate(-3)">
+    <path stroke="#EBEBEF" stroke-linecap="round" stroke-width="2" d="M86.8457031 48.2265625C109.78871 108.965215 131.92391 153.765129 153.251302 182.626302 169.711339 204.900755 189.327777 226.784541 211.336817 248.345747M153.085938 49.6692708C207.873106 111.96999 252.312777 155.882533 286.404948 181.406901 319.009543 205.81754 354.501897 228.125463 392.250858 248.107463M285 48C408.007812 142.738281 512.763078 204.508731 599.265797 233.311348"/>
+    <g transform="translate(46 19)">
+      <g transform="translate(0 155.7)">
+        <rect width="15" height="2" x="27" y="6" fill="#9B9FB0" rx="1"/>
+        <rect width="31" height="14" fill="#9B9FB0" rx="7"/>
+        <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+          <tspan x="6.483" y="10">80%</tspan>
+        </text>
+      </g>
+      <path fill="#9B9FB0" d="M41,29.7617188 L41,29.7617188 C41.5522847,29.7617188 42,30.209434 42,30.7617188 L42,231 C42,231.552284 41.5522847,232 41,232 L41,232 C40.4477153,232 40,231.552284 40,231 L40,30.7617188 C40,30.209434 40.4477153,29.7617188 41,29.7617188 Z"/>
+      <rect width="2" height="22" x="40" fill="#FFD56D" rx="1"/>
+      <rect width="15" height="2" x="27" y="29" fill="#9B9FB0" rx="1"/>
+      <rect width="15" height="2" x="27" y="95.25" fill="#9B9FB0" rx="1"/>
+      <rect width="15" height="2" x="27" y="228" fill="#9B9FB0" rx="1"/>
+    </g>
+    <g transform="matrix(1 0 0 -1 86 262)">
+      <g transform="rotate(90 256.5 256.5)">
+        <rect width="2" height="513" x="13" fill="#9B9FB0" rx="1"/>
+        <rect width="15" height="2" y="246" fill="red" rx="1"/>
+        <path fill="#9B9FB0" d="M1,312 L14,312 C14.5522847,312 15,312.447715 15,313 L15,313 C15,313.552285 14.5522847,314 14,314 L1,314 C0.44771525,314 1.13754473e-13,313.552285 1.13686838e-13,313 L1.13686838e-13,313 C1.13619202e-13,312.447715 0.44771525,312 1,312 Z"/>
+        <rect width="15" height="2" y="379" fill="#9B9FB0" rx="1"/>
+        <rect width="15" height="2" y="445" fill="#9B9FB0" rx="1"/>
+        <rect width="15" height="2" y="511" fill="#9B9FB0" rx="1"/>
+      </g>
+      <g fill="#9B9FB0" transform="rotate(90 232.5 232.5)">
+        <path d="M1 0L14 0C14.5522847-1.01453063e-16 15 .44771525 15 1L15 1C15 1.55228475 14.5522847 2 14 2L1 2C.44771525 2 1.13754473e-13 1.55228475 1.13686838e-13 1L1.13686838e-13 1C1.13619202e-13.44771525.44771525 1.01453063e-16 1 0zM1 66L14 66C14.5522847 66 15 66.4477153 15 67L15 67C15 67.5522847 14.5522847 68 14 68L1 68C.44771525 68 1.13754473e-13 67.5522847 1.13686838e-13 67L1.13686838e-13 67C1.13619202e-13 66.4477153.44771525 66 1 66z"/>
+        <rect width="15" height="2" y="132" rx="1"/>
+        <rect width="15" height="2" y="198" rx="1"/>
+      </g>
+    </g>
+    <text fill="#9B9FB0" font-family="Rubik-Medium, Rubik" font-size="15" font-weight="400">
+      <tspan x="325.375" y="306">Days</tspan>
+    </text>
+    <rect width="81" height="20" x="46" fill="#FFD56D" rx="10"/>
+    <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="11" font-weight="400">
+      <tspan x="53.373" y="14">First learned</tspan>
+    </text>
+    <rect width="82" height="20" x="245" fill="#FFD56D" rx="10"/>
+    <path stroke="#FFD56D" stroke-width="2" d="M153,43 L153,18.9189189 C153,13.993136 157.477153,10 163,10 L474.200684,10 C479.723531,10 484.200684,13.993136 484.200684,18.9189189 L484.200684,43"/>
+    <rect width="2" height="24" x="285" y="17" fill="#FFD56D"/>
+    <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="11" font-weight="400">
+      <tspan x="261.09" y="14">Reviewed</tspan>
+    </text>
+    <text fill="#9B9FB0" font-family="Rubik-Medium, Rubik" font-size="15" font-weight="400" transform="rotate(-90 9 147)">
+      <tspan x="-26.813" y="152">Retention</tspan>
+    </text>
+    <path stroke="#67C" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M86.8457031,48.2265625 C106.891414,107.20493 129.022707,151.578194 153.239583,181.346354"/>
+    <path stroke="#C3C5CF" stroke-dasharray="3" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M86.9848128,48.8760692 L598.980225,48.8760692"/>
+    <circle cx="87" cy="49" r="2.8" fill="#FFF" stroke="#67C" stroke-width="2.4"/>
+    <path stroke="#67C" stroke-linecap="round" stroke-width="4" d="M153.096614 48.8760692C201.452344 107.139245 245.875868 151.375434 286.367188 181.584635M484.16276 49.1236979C533.808924 77.5224774 572.104497 97.4473026 599.049479 108.898174"/>
+    <path stroke="#C3C5CF" stroke-dasharray="3" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M86.9492188,181.751302 L598.798828,181.751302"/>
+    <g transform="translate(149 45)">
+      <path stroke="#C3C5CF" stroke-dasharray="3" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M4.25,136.761762 L4.25,201.5"/>
+      <path stroke="#67C" stroke-dasharray="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M4.25,3.98730469 L4.25,135.258789"/>
+      <path fill="#FFF" stroke="#67C" stroke-width="2.4" d="M4 6.8C5.5463973 6.8 6.8 5.5463973 6.8 4 6.8 2.4536027 5.5463973 1.2 4 1.2 2.4536027 1.2 1.2 2.4536027 1.2 4 1.2 5.5463973 2.4536027 6.8 4 6.8zM4 138.8C5.5463973 138.8 6.8 137.546397 6.8 136 6.8 134.453603 5.5463973 133.2 4 133.2 2.4536027 133.2 1.2 134.453603 1.2 136 1.2 137.546397 2.4536027 138.8 4 138.8z"/>
+    </g>
+    <g transform="translate(282 45)">
+      <path stroke="#C3C5CF" stroke-dasharray="3" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M4.25,136.513091 L4.25,201.5"/>
+      <path stroke="#67C" stroke-dasharray="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M4.25,3.98730469 L4.25,135.258789"/>
+      <path stroke="#67C" stroke-linecap="round" stroke-width="4" d="M3,3 C86.6632836,67.891819 153.142016,112.53201 202.436198,136.920573"/>
+      <path fill="#FFF" stroke="#67C" stroke-width="2.4" d="M4 6.8C5.5463973 6.8 6.8 5.5463973 6.8 4 6.8 2.4536027 5.5463973 1.2 4 1.2 2.4536027 1.2 1.2 2.4536027 1.2 4 1.2 5.5463973 2.4536027 6.8 4 6.8zM4 138.8C5.5463973 138.8 6.8 137.546397 6.8 136 6.8 134.453603 5.5463973 133.2 4 133.2 2.4536027 133.2 1.2 134.453603 1.2 136 1.2 137.546397 2.4536027 138.8 4 138.8z"/>
+    </g>
+    <g transform="translate(480 45)">
+      <path stroke="#C3C5CF" stroke-dasharray="3" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M4.25 136.971233L4.25 201.5M119 3.89807129L119 201.5"/>
+      <path stroke="#67C" stroke-dasharray="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M4.25,3.98730469 L4.25,135.258789"/>
+      <path fill="#FFF" stroke="#67C" stroke-width="2.4" d="M4 6.8C5.5463973 6.8 6.8 5.5463973 6.8 4 6.8 2.4536027 5.5463973 1.2 4 1.2 2.4536027 1.2 1.2 2.4536027 1.2 4 1.2 5.5463973 2.4536027 6.8 4 6.8zM4 138.8C5.5463973 138.8 6.8 137.546397 6.8 136 6.8 134.453603 5.5463973 133.2 4 133.2 2.4536027 133.2 1.2 134.453603 1.2 136 1.2 137.546397 2.4536027 138.8 4 138.8z"/>
+    </g>
+    <path fill="#FFD56D" d="M153.894427 38.7888544L156.276393 43.5527864C156.523382 44.0467649 156.323158 44.6474379 155.82918 44.8944272 155.690324 44.9638549 155.537211 45 155.381966 45L150.618034 45C150.065749 45 149.618034 44.5522847 149.618034 44 149.618034 43.8447549 149.654179 43.6916418 149.723607 43.5527864L152.105573 38.7888544C152.352562 38.2948759 152.953235 38.0946515 153.447214 38.3416408 153.640741 38.4384045 153.797663 38.595327 153.894427 38.7888544zM87.8944272 38.7888544L90.2763932 43.5527864C90.5233825 44.0467649 90.3231581 44.6474379 89.8291796 44.8944272 89.6903242 44.9638549 89.5372111 45 89.381966 45L84.618034 45C84.0657492 45 83.618034 44.5522847 83.618034 44 83.618034 43.8447549 83.6541791 43.6916418 83.7236068 43.5527864L86.1055728 38.7888544C86.3525621 38.2948759 86.9532351 38.0946515 87.4472136 38.3416408 87.640741 38.4384045 87.7976635 38.595327 87.8944272 38.7888544zM286.894427 38.7888544L289.276393 43.5527864C289.523382 44.0467649 289.323158 44.6474379 288.82918 44.8944272 288.690324 44.9638549 288.537211 45 288.381966 45L283.618034 45C283.065749 45 282.618034 44.5522847 282.618034 44 282.618034 43.8447549 282.654179 43.6916418 282.723607 43.5527864L285.105573 38.7888544C285.352562 38.2948759 285.953235 38.0946515 286.447214 38.3416408 286.640741 38.4384045 286.797663 38.595327 286.894427 38.7888544zM484.894427 38.7888544L487.276393 43.5527864C487.523382 44.0467649 487.323158 44.6474379 486.82918 44.8944272 486.690324 44.9638549 486.537211 45 486.381966 45L481.618034 45C481.065749 45 480.618034 44.5522847 480.618034 44 480.618034 43.8447549 480.654179 43.6916418 480.723607 43.5527864L483.105573 38.7888544C483.352562 38.2948759 483.953235 38.0946515 484.447214 38.3416408 484.640741 38.4384045 484.797663 38.595327 484.894427 38.7888544z" transform="matrix(1 0 0 -1 0 82)"/>
+    <g transform="translate(46 42)">
+      <rect width="31" height="14" fill="#9B9FB0" rx="7"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="4.488" y="10">100%</tspan>
+      </text>
+    </g>
+    <g transform="translate(46 108)">
+      <rect width="31" height="14" fill="#9B9FB0" rx="7"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="6.651" y="10">90%</tspan>
+      </text>
+    </g>
+    <g transform="translate(46 241)">
+      <rect width="31" height="14" fill="#9B9FB0" rx="7"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="6.969" y="10">70%</tspan>
+      </text>
+    </g>
+    <g transform="translate(79 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.175" y="10">0</tspan>
+      </text>
+    </g>
+    <g transform="translate(145 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="6.009" y="10">1</tspan>
+      </text>
+    </g>
+    <g transform="translate(211 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.338" y="10">2</tspan>
+      </text>
+    </g>
+    <g transform="translate(278 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.291" y="10">3</tspan>
+      </text>
+    </g>
+    <g transform="translate(344 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.196" y="10">4</tspan>
+      </text>
+    </g>
+    <g transform="translate(410.4 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.334" y="10">5</tspan>
+      </text>
+    </g>
+    <g transform="translate(476.2 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.304" y="10">6</tspan>
+      </text>
+    </g>
+    <g transform="translate(542.2 258)">
+      <path fill="#9B9FB0" d="M7,0 L9,0 C12.8659932,-7.10171439e-16 16,3.13400675 16,7 L16,7 C16,10.8659932 12.8659932,14 9,14 L7,14 C3.13400675,14 4.73447626e-16,10.8659932 0,7 L0,7 C-4.73447626e-16,3.13400675 3.13400675,7.10171439e-16 7,0 Z"/>
+      <text fill="#FFF" font-family="Rubik-Medium, Rubik" font-size="8.6" font-weight="400">
+        <tspan x="5.665" y="10">7</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
