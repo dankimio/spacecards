@@ -2,7 +2,7 @@
   <div id="faq" class="container py-12">
     <h2 class="heading-1 text-center" style="margin-bottom: 2rem;">FAQ</h2>
 
-    <div class="sm:max-w-sm lg:max-w-md mx-auto">
+    <div class="sm:max-w-md lg:max-w-lg mx-auto">
       <div class="faq-item">
         <h3 class="faq-item-heading">Is it free?</h3>
         <p class="faq-item-content">Yes, Spacecards is completely free while in beta and will stay free after the official launch.</p>
