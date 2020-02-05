@@ -23,8 +23,10 @@
 
   grid-template-columns: repeat(1, 1fr);
   grid-row-gap: 3rem;
+}
 
-  @screen md {
+@screen md {
+  #features {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 4rem;
