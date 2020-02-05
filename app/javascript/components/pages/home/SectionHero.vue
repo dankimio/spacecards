@@ -19,6 +19,8 @@
         </router-link>
       </p>
     </div>
+
+    <img src="@images/icon-down.svg" alt="Arrow down" class="block mx-auto mb-4">
   </div>
 </template>
 
