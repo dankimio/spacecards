@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <SectionHero />
     <SectionSpacedRepetition />
     <SectionHowTo />
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import Header from '@/components/header'
 import SectionHero from './SectionHero'
 import SectionSpacedRepetition from './SectionSpacedRepetition'
 import SectionHowTo from './SectionHowTo'
@@ -19,6 +21,7 @@ import SectionFaq from './SectionFaq'
 
 export default {
   components: {
+    Header,
     SectionHero,
     SectionSpacedRepetition,
     SectionHowTo,
