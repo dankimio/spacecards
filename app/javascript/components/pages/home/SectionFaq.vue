@@ -31,5 +31,24 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
+.faq-item {
+  @apply border-t py-6;
+
+  &:last-child {
+    @apply border-b;
+  }
+
+  & .faq-item-heading {
+    @apply mb-4 flex justify-between items-center text-gray-900 font-medium text-lg;
+  }
+
+  & .faq-item-content {
+    @apply text-gray-700 leading-normal;
+
+    &.active {
+      @apply block;
+    }
+  }
+}
 </style>
