@@ -1,0 +1,53 @@
+body {
+  @apply .font-sans .flex .flex-col .min-h-screen;
+}
+
+a {
+  @apply .text-indigo-500;
+
+  text-decoration: none;
+
+  &:hover {
+    @apply .text-indigo-700;
+
+    transition: var(--transition-base);
+  }
+}
+
+h1, h2, h3 {
+  @apply .mb-4 .font-semibold .text-gray-900;
+
+  & small {
+    @apply .font-normal;
+  }
+}
+
+h4, h5, h6 {
+  @apply .mb-2 .text-gray-900;
+}
+
+/* Typography */
+
+.heading-1 {
+  @apply .font-bold .text-5xl .mb-3;
+
+  @media (min-width: 768px) {
+    @apply .mb-6;
+  }
+}
+
+.heading-2 {
+  @apply .font-bold .text-4xl .mb-2;
+
+  @media (min-width: 768px) {
+    @apply .mb-4;
+  }
+}
+
+.heading-3 {
+  @apply .font-bold .text-3xl .mb-1;
+
+  @media (min-width: 768px) {
+    @apply .mb-2;
+  }
+}
