@@ -5,6 +5,7 @@
     <SectionHowTo />
     <SectionFeatures />
     <SectionArticles />
+    <SectionFaq />
   </div>
 </template>
 
@@ -14,13 +15,15 @@ import SectionSpacedRepetition from './SectionSpacedRepetition'
 import SectionHowTo from './SectionHowTo'
 import SectionFeatures from './SectionFeatures'
 import SectionArticles from './SectionArticles'
+import SectionFaq from './SectionFaq'
 
 export default {
   components: {
     SectionHero,
     SectionSpacedRepetition,
     SectionFeatures,
-    SectionArticles
+    SectionArticles,
+    SectionFaq
   }
 }
 </script>
