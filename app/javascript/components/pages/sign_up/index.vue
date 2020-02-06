@@ -33,7 +33,7 @@
 
     <p class="text-center text-gray-700">
       Already have an account?
-      <router-link to="/sign-in">Log in</router-link>
+      <router-link to="/log-in">Log in</router-link>
     </p>
   </div>
 </template>
