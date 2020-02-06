@@ -1,7 +1,7 @@
 <template>
   <div class="py-12" style="background-color: #fbfbfc">
     <div class="container">
-      <h2 class="heading-1 text-center" style="margin-bottom: 2rem;">How it works</h2>
+      <h2 class="heading-1 text-center mb-6">How it works</h2>
 
       <div class="flex flex-col lg:flex-row">
         <div class="lg:w-1/2 mb-6 lg:mb-0 lg:pr-10">

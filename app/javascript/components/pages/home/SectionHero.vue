@@ -3,9 +3,13 @@
     <img src="@images/home.png" alt="Hero" class="block mx-auto mb-8 md:mb-10 max-w-lg lg:max-w-xl w-full">
 
     <div class="flex flex-col items-center text-center mb-6">
-      <h1 class="mb-8 md:text-4xl lg:text-5xl max-w-lg">Memorize everything with flashcards</h1>
+      <h1 class="mb-8 md:text-4xl lg:text-5xl max-w-lg leading-tight">
+        Memorize everything with flashcards
+      </h1>
 
-      <p class="mb-8 text-xl font-light leading-normal max-w-lg">Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.</p>
+      <p class="mb-8 text-xl font-light leading-normal max-w-lg">
+        Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.
+      </p>
 
       <router-link to="/" class="btn btn-primary btn-lg tracking-wide mb-8">
         Start learning

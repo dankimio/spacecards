@@ -14,8 +14,12 @@ a {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  @apply .text-gray-800;
+}
+
 h1, h2, h3 {
-  @apply .mb-4 .font-semibold .text-gray-900;
+  @apply .mb-4 .font-semibold;
 
   & small {
     @apply .font-normal;
@@ -23,7 +27,7 @@ h1, h2, h3 {
 }
 
 h4, h5, h6 {
-  @apply .mb-2 .text-gray-900;
+  @apply .mb-2;
 }
 
 /* Typography */

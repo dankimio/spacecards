@@ -1,6 +1,6 @@
 <template>
   <div class="container py-12">
-    <h1 class="heading-1 text-center mb-10">How to use Spacecards</h1>
+    <h1 class="heading-1 text-center mb-8">How to use Spacecards</h1>
 
     <div class="max-w-xs mx-auto lg:max-w-none lg:mb-10 flex flex-col lg:flex-row justify-between">
       <div class="lg:flex-1 mb-12 lg:mb-0 lg:mr-3">
