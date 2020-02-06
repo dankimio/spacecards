@@ -5,7 +5,7 @@
     <p class="text-center text-xl font-light mb-6 md:mb-12 text-gray-800">Create an account to add your own cards and track progress.</p>
 
     <div class="max-w-sm mx-auto">
-      <form action="" method="post">
+      <form action="" method="post" @submit.prevent="submit">
         <div class="field">
           <label for="email">Email</label>
           <input
@@ -13,6 +13,7 @@
             autocomplete="email" placeholder="johndoe@example.com"
             autofocus required
             class="form-control"
+            v-model="email"
           >
         </div>
 
@@ -22,11 +23,15 @@
             type="password" name="password"
             autocomplete="new-password" placeholder="Password" required
             class="form-control"
+            v-model="password"
           >
         </div>
 
         <div class="actions my-8">
-          <input type="submit" value="Start learning" class="btn btn-primary btn-lg w-full">
+          <input
+            type="submit" value="Start learning"
+            class="btn btn-primary btn-lg w-full"
+          >
         </div>
       </form>
     </div>
@@ -39,7 +44,25 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios'
 
+export default {
+  data() {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    submit() {
+      axios.post('/api/users', {
+        user: {
+          email: this.email,
+          password: this.password
+        }
+      })
+      .then(response => console.log(response))
+    }
+  }
 }
 </script>
