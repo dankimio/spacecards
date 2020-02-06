@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img src="@images/home.png" alt="Hero" class="block mx-auto mb-8 md:mb-10 max-w-lg lg:max-w-xl w-full">
+    <img src="@images/home.png" alt="Hero" class="block mx-auto mb-8 md:mb-10 max-w-lg lg:max-w-xl w-full" height="718">
 
     <div class="flex flex-col items-center text-center mb-6">
       <h1 class="mb-8 md:text-4xl lg:text-5xl max-w-lg leading-tight">
