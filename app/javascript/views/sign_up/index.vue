@@ -13,7 +13,7 @@
             autocomplete="email" placeholder="johndoe@example.com"
             autofocus required
             class="form-control"
-            v-model="email"
+            v-model="user.email"
           >
         </div>
 
@@ -23,7 +23,7 @@
             type="password" name="password"
             autocomplete="new-password" placeholder="Password" required
             class="form-control"
-            v-model="password"
+            v-model="user.password"
           >
         </div>
 
@@ -44,24 +44,18 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   data() {
     return {
-      email: '',
-      password: ''
+      user: {
+        email: '',
+        password: ''
+      }
     }
   },
   methods: {
     submit() {
-      axios.post('/api/users', {
-        user: {
-          email: this.email,
-          password: this.password
-        }
-      })
-      .then(response => console.log(response))
+      this.$store.dispatch('logIn', { user: this.user })
     }
   }
 }
