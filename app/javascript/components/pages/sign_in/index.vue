@@ -1,8 +1,6 @@
 <template>
   <div class="my-6 md:my-12">
-    <h1 class="heading-1 text-center">Sign up for Spacecards</h1>
-
-    <p class="text-center text-xl font-light mb-6 md:mb-12 text-gray-800">Create an account to add your own cards and track progress.</p>
+    <h1 class="heading-1 text-center">Log in</h1>
 
     <div class="max-w-sm mx-auto">
       <form action="" method="post">
@@ -20,9 +18,15 @@
           <label for="password">Password</label>
           <input
             type="password" name="password"
-            autocomplete="new-password" placeholder="Password" required
+            autocomplete="current-password" placeholder="Password" required
             class="form-control"
           >
+
+          <p class="mt-4 text-right">
+            <router-link to="/" class="text-gray-700">
+              Forgot your password?
+            </router-link>
+          </p>
         </div>
 
         <div class="actions my-8">
@@ -32,8 +36,8 @@
     </div>
 
     <p class="text-center text-gray-700">
-      Already have an account?
-      <router-link to="/sign-in">Log in</router-link>
+      Don't have an account?
+      <router-link to="/sign-up">Sign up</router-link>
     </p>
   </div>
 </template>
