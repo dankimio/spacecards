@@ -3,7 +3,7 @@
     <h1 class="heading-1 text-center">Log in</h1>
 
     <div class="max-w-sm mx-auto">
-      <form action="" method="post">
+      <form action="" method="post" @submit.prevent="submit">
         <div class="field">
           <label for="email">Email</label>
           <input
@@ -11,6 +11,7 @@
             autocomplete="email" placeholder="johndoe@example.com"
             autofocus required
             class="form-control"
+            v-model="user.email"
           >
         </div>
 
@@ -20,6 +21,7 @@
             type="password" name="password"
             autocomplete="current-password" placeholder="Password" required
             class="form-control"
+            v-model="user.password"
           >
 
           <p class="mt-4 text-right">
@@ -44,6 +46,20 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      user: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    submit() {
+      this.$store
+        .dispatch('logIn', { user: this.user })
+        .then(() => this.$router.push('/'))
+    }
+  }
 }
 </script>

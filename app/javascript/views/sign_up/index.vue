@@ -55,7 +55,9 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.dispatch('logIn', { user: this.user })
+      this.$store
+        .dispatch('signUp', { user: this.user })
+        .then(() => this.$router.push('/'))
     }
   }
 }
