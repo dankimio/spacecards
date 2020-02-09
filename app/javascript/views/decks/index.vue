@@ -1,5 +1,13 @@
 <template>
-  <div class="container">
+  <div class="max-w-xl mx-auto">
+    <h1 class="heading-2 mb-8 text-center">
+      Decks
+
+      <small>
+        <router-link to="#" class="text-base ml-1">New deck</router-link>
+      </small>
+    </h1>
+
     <div
       v-for="deck in decks" v-bind:key="deck.name"
       class="flex justify-between mb-5 py-5 px-5 bg-gray-100 rounded duration-150 transform hover:-translate-y-1 hover:shadow-lg"
