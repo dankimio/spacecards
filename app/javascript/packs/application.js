@@ -24,6 +24,9 @@ import App from '../app.vue'
 import router from '../routes'
 import store from '../store'
 
+import InlineSvg from 'vue-inline-svg'
+Vue.component('inline-svg', InlineSvg)
+
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     router,
