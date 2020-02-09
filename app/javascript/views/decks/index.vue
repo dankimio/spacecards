@@ -2,7 +2,7 @@
   <div class="container">
     <div
       v-for="deck in decks" v-bind:key="deck.name"
-      class="flex justify-between mb-5 py-5 px-5 bg-gray-100 rounded"
+      class="flex justify-between mb-5 py-5 px-5 bg-gray-100 rounded duration-150 transform hover:-translate-y-1 hover:shadow-lg"
     >
       <div class="">
         <div class="text-lg mb-2">
