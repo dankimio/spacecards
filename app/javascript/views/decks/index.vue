@@ -36,6 +36,14 @@
           />
           Browse
         </router-link>
+
+        <router-link to="#" class="inline-flex items-center text-gray-600 hover:text-indigo-600">
+          <inline-svg
+            :src="require('@images/icon-settings.svg')"
+            class="inline-block w-4 h-4 mr-1 fill-current"
+          />
+          Browse
+        </router-link>
       </div>
     </div>
   </div>
