@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col lg:flex-row border-2 border-gray-200 px-4 py-4 mb-3 rounded">
-    <div class="w-1/3">
+    <div class="w-1/3 text-gray-900">
       {{ card.front }}
     </div>
 
     <hr class="border-b-2 border-gray-100 my-3">
 
-    <div class="w-2/3 mb-4 lg:mb-0">
+    <div class="w-2/3 mb-4 lg:mb-0 text-gray-900">
       {{ card.back }}
     </div>
     <div class="flex flex-shrink-0">
