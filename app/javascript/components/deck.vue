@@ -33,7 +33,7 @@
           :src="require('@images/icon-settings.svg')"
           class="inline-block w-4 h-4 mr-1 fill-current"
         />
-        Browse
+        Settings
       </router-link>
     </div>
   </div>
