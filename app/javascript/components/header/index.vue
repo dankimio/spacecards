@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div class="">
-      <router-link to="/log-in">Log in</router-link>
+      <router-link to="/log-in" v-if="!$store.getters.loggedIn">Log in</router-link>
     </div>
   </div>
 </template>
