@@ -10,27 +10,44 @@
       {{ card.back }}
     </div>
     <div class="flex flex-shrink-0">
-      <a href="" class="flex items-center text-gray-500 hover:text-gray-800 mr-5">
+      <button
+        v-on:click="toggleEdit"
+        class="flex items-center text-gray-500 hover:text-gray-800 mr-5"
+      >
         <inline-svg
           :src="require('@images/icon-pencil.svg')"
           class="inline-block w-4 h-4 mr-1 stroke-current"
         />
         <span>Edit</span>
-      </a>
+      </button>
 
-      <a href="" class="flex items-center text-gray-500 hover:text-gray-800">
+      <button
+        v-on:click="destroy"
+        class="flex items-center text-gray-500 hover:text-gray-800"
+      >
         <inline-svg
           :src="require('@images/icon-trash.svg')"
           class="inline-block w-4 h-4 mr-1 fill-current"
         />
         <span>Delete</span>
-      </a>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['card']
+  data() {
+    return {
+      isEditing: false
+    }
+  },
+  props: ['card'],
+  methods: {
+    toggleEdit() {
+    },
+    destroy() {
+    }
+  }
 }
 </script>
