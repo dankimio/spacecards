@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col lg:flex-row lg:items-start border-2 border-gray-200 px-4 py-4 mb-3 rounded">
-    <div class="lg:w-1/3 lg:pr-2">
+    <div class="lg:w-2/5 lg:pr-2">
       <div v-text="front" v-if="!isEditing" class="text-gray-900"></div>
 
       <textarea name="front"
@@ -12,7 +12,7 @@
 
     <hr class="border-b-2 border-gray-100 my-3">
 
-    <div class="lg:w-2/3 mb-4 lg:px-2 lg:mb-0 text-gray-900">
+    <div class="lg:w-3/5 mb-4 lg:px-2 lg:mb-0 text-gray-900">
       <div v-text="back" v-if="!isEditing" class="text-gray-900"></div>
 
       <textarea name="back"
@@ -20,7 +20,8 @@
         v-if="isEditing"
         v-model="back"></textarea>
     </div>
-    <div class="flex flex-shrink-0 lg:pl-2">
+
+    <div class="lg:w-48 flex lg:pl-2" v-if="!isEditing">
       <button
         v-on:click="toggleEdit"
         class="flex items-center text-gray-500 hover:text-gray-800 mr-5"
@@ -41,6 +42,30 @@
           class="inline-block w-4 h-4 mr-1 fill-current"
         />
         <span>Delete</span>
+      </button>
+    </div>
+    <div class="lg:w-48 flex lg:pl-2" v-if="isEditing">
+      <button
+        v-on:click="toggleEdit"
+        v-if="isEditing"
+        class="flex items-center text-gray-500 hover:text-gray-800 mr-3"
+      >
+        <inline-svg
+          :src="require('@images/icon-checkmark.svg')"
+          class="inline-block w-4 h-4 mr-1 stroke-current"
+        />
+        <span>Save</span>
+      </button>
+      <button
+        v-on:click="toggleEdit"
+        v-if="isEditing"
+        class="flex items-center text-gray-500 hover:text-gray-800"
+      >
+        <inline-svg
+          :src="require('@images/icon-close.svg')"
+          class="inline-block w-4 h-4 mr-1 fill-current"
+        />
+        <span>Cancel</span>
       </button>
     </div>
   </div>
