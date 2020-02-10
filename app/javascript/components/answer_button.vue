@@ -20,22 +20,22 @@ const states = {
   'bad': {
     label: 'Bad',
     class: 'answer-button--bad',
-    icon: require('../images/icon-btn-bad.svg'),
+    icon: require('../images/icon-button-bad.svg'),
   },
   'okay': {
     label: 'Okay',
     class: 'answer-button--okay',
-    icon: require('../images/icon-btn-okay.svg'),
+    icon: require('../images/icon-button-okay.svg'),
   },
   'good': {
     label: 'Good',
     class: 'answer-button--good',
-    icon: require('../images/icon-btn-good.svg'),
+    icon: require('../images/icon-button-good.svg'),
   },
   'excellent': {
     label: 'Excellent',
     class: 'answer-button--excellent',
-    icon: require('../images/icon-btn-excellent.svg'),
+    icon: require('../images/icon-button-excellent.svg'),
   },
 }
 
