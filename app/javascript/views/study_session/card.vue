@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-row items-baseline">
       <h1 class="text-3xl font-bold">World Capitals</h1>
-      <span class="text-3xl mx-3">&#8594;</span>
+      <span class="text-3xl mx-3 font-light">→</span>
       <h2 class="text-3xl font-light">Study</h2>
     </div>
 
