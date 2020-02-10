@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex-shrink-0 text-right">
-      <router-link to="#" class="inline-flex items-center mr-5 text-gray-500 hover:text-indigo-600">
+      <router-link to="/study-session" class="inline-flex items-center mr-5 text-gray-500 hover:text-indigo-600">
         <inline-svg
           :src="require('@images/icon-play.svg')"
           class="inline-block w-4 h-4 mr-1 fill-current"
