@@ -6,14 +6,14 @@
       <span class="font-light">Study</span>
     </h1>
 
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row justify-between mb-4">
       <div class="flex flex-row">
-        <span class="antialiased text-gray-600 font-medium">World</span>
+        <span class="text-gray-600 font-medium">World</span>
       </div>
 
       <div class="flex flex-row">
-        <span class="antialiased text-3xl mr-2 leading-none">12</span>
-        <span class="antialiased text-sm font-medium text-gray-600">
+        <span class="text-3xl mr-2 leading-none">12</span>
+        <span class="text-sm font-medium text-gray-600">
           Cards left
         </span>
       </div>
