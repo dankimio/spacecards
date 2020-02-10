@@ -1,7 +1,9 @@
 <template>
-  <div class="md:max-w-sm md:mx-auto">
-    <h1 class="heading-2 text-center">
-      World capitals <span class="font-light mx-2">→</span> Edit
+  <div class="container md:max-w-sm md:mx-auto">
+    <h1 class="text-3xl mb-4">
+      <span class="font-bold">World Capitals</span>
+      <span class="mx-3 font-light">→</span>
+      <span class="font-light">Edit</span>
     </h1>
 
     <form action="#">
