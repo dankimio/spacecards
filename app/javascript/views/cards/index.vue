@@ -4,7 +4,7 @@
       World capitals <span class="font-light mx-2">→</span> Cards
     </h1>
 
-    <router-link to="#" class="btn btn-primary mb-6">
+    <router-link to="#" class="button button-primary mb-6">
       Add cards
     </router-link>
 

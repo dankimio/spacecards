@@ -32,7 +32,7 @@
         </div>
 
         <div class="actions my-8">
-          <input type="submit" value="Start learning" class="btn btn-primary btn-lg w-full">
+          <input type="submit" value="Start learning" class="button button-primary button-lg w-full">
         </div>
       </form>
     </div>
