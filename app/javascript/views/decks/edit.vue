@@ -25,15 +25,16 @@
         <input type="submit" value="Save" class="button button-primary button-lg w-full">
       </div>
 
-      <h2 class="font-medium">Danger zone</h2>
-
-      <button class="button button-danger">
-        <inline-svg
-          :src="require('@images/icon-trash.svg')"
-          class="inline-block w-4 h-4 mr-1 fill-current"
-        />
-        Delete
-      </button>
     </form>
+
+    <h2 class="text-xl mb-2">Danger zone</h2>
+
+    <button class="button button-danger">
+      <inline-svg
+        :src="require('@images/icon-trash.svg')"
+        class="inline-block w-4 h-4 mr-1 fill-current"
+      />
+      Delete
+    </button>
   </div>
 </template>
