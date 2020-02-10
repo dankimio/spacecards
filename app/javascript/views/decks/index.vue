@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-xl mx-auto">
-    <h1 class="heading-2 mb-8 text-center">
+  <div class="container md:max-w-xl lg:mx-auto">
+    <h1 class="heading-2 mb-4 md:mb-8 md:text-center">
       Decks
 
       <small>
