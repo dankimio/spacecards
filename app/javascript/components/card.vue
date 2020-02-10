@@ -34,7 +34,7 @@
 
       <button
         v-on:click="destroy"
-        class="flex items-center text-gray-500 hover:text-gray-800"
+        class="flex items-center text-gray-500 hover:text-red-700"
       >
         <inline-svg
           :src="require('@images/icon-trash.svg')"
