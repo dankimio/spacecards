@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-col max-w-4xl px-6 mb-4 lg:mb-8">
+  <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
     <h1 class="text-3xl mb-4">
       <span class="font-bold">World Capitals</span>
       <span class="mx-3 font-light">→</span>
