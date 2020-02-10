@@ -51,37 +51,29 @@ export default {
 .answer-button--bad {
   &:hover {
     @apply .bg-red-500 .border-red-500;
-    & span { @apply .text-white; }
-    & svg { @apply .text-white }
+    & span, & svg { @apply .text-white; }
   }
-  & span { @apply .text-red-500; }
-  & svg { @apply .text-red-500; }
+  & span, & svg { @apply .text-red-500; }
 }
 .answer-button--okay {
   &:hover {
     @apply .bg-orange-500 .border-orange-500;
-    & span { @apply .text-white; }
-    & svg { @apply .text-white }
+    & span, & svg { @apply .text-white; }
   }
-  & span { @apply .text-orange-500; }
-  & svg { @apply .text-orange-500; }
+  & span, & svg { @apply .text-orange-500; }
 }
 .answer-button--good {
   &:hover {
     @apply .bg-blue-500 .border-blue-500;
-    & span { @apply .text-white; }
-    & svg { @apply .text-white }
+    & span, & svg { @apply .text-white; }
   }
-  & span { @apply .text-blue-500; }
-  & svg { @apply .text-blue-500; }
+  & span, & svg { @apply .text-blue-500; }
 }
 .answer-button--excellent {
   &:hover {
     @apply .bg-green-500 .border-green-500;
-    & span { @apply .text-white; }
-    & svg { @apply .text-white }
+    & span, & svg { @apply .text-white; }
   }
-  & span { @apply .text-green-500; }
-  & svg { @apply .text-green-500; }
+  & span, & svg { @apply .text-green-500; }
 }
 </style>
