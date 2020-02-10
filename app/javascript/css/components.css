@@ -57,7 +57,7 @@ form label {
 /* Buttons */
 
 .btn {
-  @apply .inline-block .py-2 .px-4 .rounded .no-underline .border .shadow .align-middle;
+  @apply .inline-flex .justify-center .items-center .py-2 .px-4 .rounded .no-underline .border .shadow .align-middle;
 
   transition: var(--transition-base);
 
