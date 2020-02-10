@@ -3,12 +3,12 @@ body {
 }
 
 a {
-  @apply .text-indigo-500;
+  @apply .text-indigo-600;
 
   text-decoration: none;
 
   &:hover {
-    @apply .text-indigo-700;
+    @apply .text-indigo-800;
 
     transition: var(--transition-base);
   }
