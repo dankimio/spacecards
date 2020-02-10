@@ -6,6 +6,7 @@ import SignUp from '@/views/sign_up/index'
 import LogIn from '@/views/log_in/index'
 import DecksIndex from '@/views/decks/index'
 import CardsIndex from '@/views/cards/index'
+import StudySession from '@/views/study_session/index'
 
 Vue.use(VueRouter)
 
@@ -16,5 +17,6 @@ export default new VueRouter({
     { path: '/log-in', component: LogIn },
     { path: '/decks', component: DecksIndex },
     { path: '/cards', component: CardsIndex },
+    { path: '/study-session', component: StudySession }
   ]
 })
