@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="flex min-h-screen flex-col">
     <Header />
-    <router-view></router-view>
+    <router-view class="flex-1"></router-view>
     <Footer />
   </div>
 </template>
