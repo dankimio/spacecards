@@ -97,7 +97,7 @@ form label {
   @apply .bg-red-400 .border-red-400 .text-white;
 
   &:hover {
-    @apply .bg-red-500 .text-gray-300;
+    @apply .bg-red-600 .border-red-600 .text-red-200;
   }
 }
 
