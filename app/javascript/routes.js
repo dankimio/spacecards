@@ -5,6 +5,7 @@ import Home from '@/views/home/index'
 import SignUp from '@/views/sign_up/index'
 import LogIn from '@/views/log_in/index'
 import DecksIndex from '@/views/decks/index'
+import DecksEdit from '@/views/decks/edit'
 import CardsIndex from '@/views/cards/index'
 import StudySession from '@/views/study_session/index'
 
@@ -16,6 +17,7 @@ export default new VueRouter({
     { path: '/sign-up', component: SignUp },
     { path: '/log-in', component: LogIn },
     { path: '/decks', component: DecksIndex },
+    { path: '/decks/1/edit', component: DecksEdit },
     { path: '/cards', component: CardsIndex },
     { path: '/study-session', component: StudySession }
   ]
