@@ -19,14 +19,11 @@
     </p>
 
     <div class="flex flex-wrap">
-      <router-link
+      <Tag
         v-for="tag in deck.tags"
         :key="tag"
-        to="#"
-        class="px-2 bg-gray-500 text-xs mr-1 mb-1 rounded-lg text-white hover:bg-indigo-500 hover:text-white"
-      >
-        {{ tag }}
-      </router-link>
+        :name="tag"
+      />
     </div>
 
     <div class="border-b border-gray-100 my-2" />
@@ -53,7 +50,10 @@
 </template>
 
 <script>
+import Tag from '@/components/tag'
+
 export default {
+  components: { Tag },
   props: ['deck']
 }
 </script>
