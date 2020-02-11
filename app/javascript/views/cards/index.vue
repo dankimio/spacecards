@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="heading-2 text-center">
+    <h1 class="heading-2 mb-2 md:mb-4 text-center">
       World capitals <span class="font-light mx-2">→</span> Cards
     </h1>
 
@@ -8,8 +8,7 @@
       Add cards
     </router-link>
 
-    <Card v-for="card in cards"
-      v-bind:key="card.id" v-bind:card="card" />
+    <Card v-for="card in cards" :key="card.id" :card="card" />
   </div>
 </template>
 

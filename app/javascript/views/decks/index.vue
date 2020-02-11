@@ -8,7 +8,7 @@
       </small>
     </h1>
 
-    <Deck v-for="deck in decks" v-bind:key="deck.name" v-bind:deck="deck" />
+    <Deck v-for="deck in decks" :key="deck.name" :deck="deck" />
   </div>
 </template>
 

@@ -1,26 +1,38 @@
 <template>
-  <div class="container md:my-8 lg:my-12 md:max-w-sm mx-auto">
-    <h1 class="heading-1 md:text-center">Log in</h1>
+  <div class="container mb-8 md:my-8 lg:my-12 md:max-w-sm mx-auto">
+    <h1 class="heading-1 mb-3 md:mb-6 md:text-center leading-tight">
+      Log in
+    </h1>
 
-    <form action="" method="post" @submit.prevent="submit">
+    <form
+      action=""
+      method="post"
+      @submit.prevent="submit"
+    >
       <div class="field">
         <label for="email">Email</label>
         <input
-          type="email" name="email"
-          autocomplete="email" placeholder="johndoe@example.com"
-          autofocus required
-          class="form-control"
           v-model="user.email"
+          type="email"
+          name="email"
+          autocomplete="email"
+          placeholder="johndoe@example.com"
+          autofocus
+          required
+          class="form-control"
         >
       </div>
 
       <div class="field">
         <label for="password">Password</label>
         <input
-          type="password" name="password"
-          autocomplete="current-password" placeholder="Password" required
-          class="form-control"
           v-model="user.password"
+          type="password"
+          name="password"
+          autocomplete="current-password"
+          placeholder="Password"
+          required
+          class="form-control"
         >
 
         <p class="mt-4 text-right">
@@ -31,13 +43,19 @@
       </div>
 
       <div class="actions my-8">
-        <input type="submit" value="Start learning" class="button button-primary button-lg w-full">
+        <input
+          type="submit"
+          value="Start learning"
+          class="button button-primary button-lg w-full"
+        >
       </div>
     </form>
 
     <p class="md:text-center text-gray-700">
       Don't have an account?
-      <router-link to="/sign-up">Sign up</router-link>
+      <router-link to="/sign-up">
+        Sign up
+      </router-link>
     </p>
   </div>
 </template>
