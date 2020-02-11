@@ -6,8 +6,12 @@
       </router-link>
     </div>
     <div class="">
-      <router-link to="/log-in" v-if="!$store.getters.loggedIn">Log in</router-link>
-      <router-link to="/decks" v-if="$store.getters.loggedIn">Decks</router-link>
+      <router-link v-if="!$store.getters.loggedIn" to="/log-in">
+        Log in
+      </router-link>
+      <router-link v-if="$store.getters.loggedIn" to="/decks">
+        Decks
+      </router-link>
     </div>
   </div>
 </template>

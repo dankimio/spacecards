@@ -5,13 +5,15 @@
     border-2 border-gray-200
     transition duration-200
     transform hover:-translate-y-1"
-    v-bind:class="states[answer].class"
+    :class="states[answer].class"
   >
     <span class="hover:text-white mr-3">
       {{ states[answer].label }}
     </span>
-    <inline-svg class="fill-current"
-      :src="states[answer].icon" />
+    <inline-svg
+      class="fill-current"
+      :src="states[answer].icon"
+    />
   </button>
 </template>
 

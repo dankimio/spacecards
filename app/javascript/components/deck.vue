@@ -4,7 +4,9 @@
   >
     <div class="mb-2 md:mb-0">
       <div class="text-lg md:mb-2">
-        <router-link to="/study-session">{{ deck.name }}</router-link>
+        <router-link to="/study-session">
+          {{ deck.name }}
+        </router-link>
       </div>
       <router-link to="#" class="text-sm text-gray-500 hover:text-gray-800">
         {{ deck.cards_count }} cards
