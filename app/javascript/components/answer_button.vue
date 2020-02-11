@@ -17,26 +17,26 @@
 
 <script>
 const states = {
-  'bad': {
+  bad: {
     label: 'Bad',
     class: 'answer-button--bad',
-    icon: require('../images/icon-button-bad.svg'),
+    icon: require('../images/icon-button-bad.svg')
   },
-  'okay': {
+  okay: {
     label: 'Okay',
     class: 'answer-button--okay',
-    icon: require('../images/icon-button-okay.svg'),
+    icon: require('../images/icon-button-okay.svg')
   },
-  'good': {
+  good: {
     label: 'Good',
     class: 'answer-button--good',
-    icon: require('../images/icon-button-good.svg'),
+    icon: require('../images/icon-button-good.svg')
   },
-  'excellent': {
+  excellent: {
     label: 'Excellent',
     class: 'answer-button--excellent',
-    icon: require('../images/icon-button-excellent.svg'),
-  },
+    icon: require('../images/icon-button-excellent.svg')
+  }
 }
 
 export default {

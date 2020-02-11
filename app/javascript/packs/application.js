@@ -21,7 +21,7 @@ import InlineSvg from 'vue-inline-svg'
 Vue.component('inline-svg', InlineSvg)
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
+  new Vue({
     router,
     store,
     render: h => h(App)
