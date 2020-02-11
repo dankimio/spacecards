@@ -8,6 +8,7 @@ import DecksIndex from '@/views/decks/index'
 import DecksEdit from '@/views/decks/edit'
 import CardsIndex from '@/views/cards/index'
 import StudySession from '@/views/study_session/index'
+import Explore from '@/views/explore/index'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,7 @@ export default new VueRouter({
     { path: '/decks', component: DecksIndex },
     { path: '/decks/1/edit', component: DecksEdit },
     { path: '/cards', component: CardsIndex },
-    { path: '/study-session', component: StudySession }
+    { path: '/study-session', component: StudySession },
+    { path: '/explore', component: Explore }
   ]
 })
