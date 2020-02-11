@@ -1,6 +1,6 @@
 <template>
   <div class="container flex">
-    <div class="hidden md:block md:w-1/3">
+    <div class="hidden md:block w-auto md:w-1/3">
       <h2 class="text-2xl">
         Tags
       </h2>
@@ -12,11 +12,11 @@
         </div>
       </div>
     </div>
-    <div class="md:w-2/3">
+    <div class="w-full md:w-2/3">
       <h2 class="text-2xl">
         Popular
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <SharedDeck
           v-for="deck in decks"
           :key="deck.id"

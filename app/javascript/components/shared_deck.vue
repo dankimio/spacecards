@@ -2,13 +2,13 @@
   <div
     class="border px-4 py-3 rounded hover:shadow-lg transition transition-shadow duration-100"
   >
-    <div class="flex flex-row items-center text-xs text-gray-500 mb-1">
+    <router-link to="#" class="flex flex-row items-center text-xs text-gray-500 mb-1">
       <inline-svg
         :src="require('@images/icon-film.svg')"
         class="w-4 h-4 mr-1 fill-current"
       />
       <span>{{ deck.category }}</span>
-    </div>
+    </router-link>
 
     <router-link class="text-indigo-500 hover:text-indigo-800 font-medium tracking-wide block mb-1" to="/">
       {{ deck.name }}
