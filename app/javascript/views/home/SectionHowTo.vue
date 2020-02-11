@@ -19,7 +19,10 @@
         </div>
       </div>
 
-      <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="arrow text-gray-400 lg:mx-8 self-center hidden lg:block">
+      <inline-svg
+        :src="require('@images/icon-step-arrow.svg')"
+        class="text-gray-400 fill-current lg:mx-8 self-center hidden lg:block"
+      />
 
       <div class="lg:flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
@@ -49,7 +52,10 @@
         </div>
       </div>
 
-      <img src="@images/icon-step-arrow.svg" alt="Arrow (step)" class="arrow text-gray-400 lg:mx-8 self-center hidden lg:block">
+      <inline-svg
+        :src="require('@images/icon-step-arrow.svg')"
+        class="text-gray-400 fill-current lg:mx-8 self-center hidden lg:block"
+      />
 
       <div class="lg:flex-1 mb-12 lg:mb-0 lg:mr-3">
         <h3>
