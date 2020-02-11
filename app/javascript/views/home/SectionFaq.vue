@@ -1,10 +1,14 @@
 <template>
   <div id="faq" class="container py-12">
-    <h2 class="heading-1 mb-3 text-center">FAQ</h2>
+    <h2 class="heading-1 mb-3 text-center">
+      FAQ
+    </h2>
 
     <div class="sm:max-w-md lg:max-w-lg mx-auto">
       <div class="faq-item">
-        <h3 class="faq-item-heading">Is it free?</h3>
+        <h3 class="faq-item-heading">
+          Is it free?
+        </h3>
         <p class="faq-item-content">
           Yes, Spacecards is completely free while in beta and will stay free
           after the official launch.
@@ -20,7 +24,9 @@
         </p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-item-heading">What can I memorize using Spacecards?</h3>
+        <h3 class="faq-item-heading">
+          What can I memorize using Spacecards?
+        </h3>
         <p class="faq-item-content">
           Languages (words, phrases, grammar rules, alphabets & characters),
           exam questions (facts, dates, formulas), poems, speeches, lines from
@@ -28,7 +34,9 @@
         </p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-item-heading">Does it work?</h3>
+        <h3 class="faq-item-heading">
+          Does it work?
+        </h3>
         <p class="faq-item-content">
           Spaced repetition is a learning technique that has been studied and
           researched.
@@ -37,14 +45,20 @@
         </p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-item-heading">Is there an app?</h3>
+        <h3 class="faq-item-heading">
+          Is there an app?
+        </h3>
         <p class="faq-item-content">
           No. We plan to have iOS and Android apps in the future.
         </p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-item-heading">My question is not mentioned here.</h3>
-        <p class="faq-item-content">Feel free drop us a line!</p>
+        <h3 class="faq-item-heading">
+          My question is not mentioned here.
+        </h3>
+        <p class="faq-item-content">
+          Feel free drop us a line!
+        </p>
       </div>
     </div>
   </div>

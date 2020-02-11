@@ -8,8 +8,7 @@
       Add cards
     </router-link>
 
-    <Card v-for="card in cards"
-      v-bind:key="card.id" v-bind:card="card" />
+    <Card v-for="card in cards" :key="card.id" :card="card" />
   </div>
 </template>
 
