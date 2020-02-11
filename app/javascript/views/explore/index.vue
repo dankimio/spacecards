@@ -38,8 +38,9 @@ const decks = Array.from(Array(10).keys()).map(i => {
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     tags: ['Geography', 'Easy'],
     avatarUrl: 'https://www.fillmurray.com/200/200',
-    userName: 'Bill Murray',
-    usersCount: 440
+    userName: 'Bill M.',
+    usersCount: 440,
+    cardsCount: 270
   }
 })
 

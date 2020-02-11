@@ -38,13 +38,24 @@
 
         <span class="text-sm text-gray-800">{{ deck.userName }}</span>
       </div>
-      <button class="flex items-center text-sm text-gray-600 hover:text-red-400">
-        <inline-svg
-          :src="require('@images/icon-bookmark.svg')"
-          class="w-4 h-4 mr-1 fill-current"
-        />
-        {{ deck.usersCount }}
-      </button>
+
+      <div class="flex">
+        <router-link to="#" class="flex items-center text-sm text-gray-600 hover:text-indigo-600 flex-shrink-0 mr-2">
+          <inline-svg
+            :src="require('@images/icon-albums.svg')"
+            class="w-4 h-4 mr-1 fill-current"
+          />
+          {{ deck.cardsCount }}
+        </router-link>
+
+        <button class="flex items-center text-sm text-gray-600 hover:text-red-400 flex-shrink-0 transition duration-200">
+          <inline-svg
+            :src="require('@images/icon-bookmark.svg')"
+            class="w-4 h-4 mr-1 fill-current"
+          />
+          {{ deck.usersCount }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
