@@ -23,7 +23,7 @@
         v-for="tag in deck.tags"
         :key="tag"
         to="#"
-        class="px-2 bg-gray-500 text-xs mr-1 mb-1 rounded-lg text-white"
+        class="px-2 bg-gray-500 text-xs mr-1 mb-1 rounded-lg text-white hover:bg-indigo-500 hover:text-white"
       >
         {{ tag }}
       </router-link>
