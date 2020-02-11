@@ -4,7 +4,7 @@ module.exports = {
     es6: true
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     'standard'
   ],
   globals: {
@@ -21,5 +21,9 @@ module.exports = {
   rules: {
     'import/first': 0,
     'space-before-function-paren': 0,
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 3,
+      'multiline': 1
+    }]
   }
 }
