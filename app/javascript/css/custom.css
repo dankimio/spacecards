@@ -33,7 +33,7 @@ h4, h5, h6 {
 /* Typography */
 
 .heading-1 {
-  @apply .font-bold .text-5xl .mb-3;
+  @apply .font-bold .text-5xl;
 
   @media (min-width: 768px) {
     @apply .mb-6;

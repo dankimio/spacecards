@@ -1,6 +1,6 @@
 <template>
   <div class="container md:my-8 lg:my-12 md:max-w-sm mx-auto">
-    <h1 class="heading-1 md:text-center">Log in</h1>
+    <h1 class="heading-1 mb-3 md:text-center">Log in</h1>
 
     <form action="" method="post" @submit.prevent="submit">
       <div class="field">

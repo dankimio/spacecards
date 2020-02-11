@@ -1,7 +1,7 @@
 <template>
   <div style="background-color: #fbfbfc">
     <div class="container py-12">
-      <h2 class="heading-1 text-center" style="margin-bottom: 2rem;">Articles</h2>
+      <h2 class="heading-1 mb-8 text-center">Articles</h2>
 
       <p class="md:max-w-lg mx-auto text-center mb-12 text-lg font-light leading-normal">“We are not taught how to learn in school, we are taught how to pass tests. The spacing effect is a far more effective way to learn and retain information that works with our brain instead of against it.”</p>
 

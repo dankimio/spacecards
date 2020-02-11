@@ -1,6 +1,6 @@
 <template>
   <div class="container md:my-8 lg:my-12 md:max-w-sm mx-auto">
-    <h1 class="heading-1 md:text-center">Sign up for Spacecards</h1>
+    <h1 class="heading-1 mb-3 md:text-center">Sign up for Spacecards</h1>
 
     <p class="md:text-center text-xl font-light mb-6 md:mb-12 text-gray-800">Create an account to add your own cards and track progress.</p>
 
