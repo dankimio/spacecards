@@ -1,43 +1,41 @@
 <template>
-  <div class="my-6 md:my-12">
-    <h1 class="heading-1 text-center">Log in</h1>
+  <div class="container md:my-8 lg:my-12 md:max-w-sm mx-auto">
+    <h1 class="heading-1 md:text-center">Log in</h1>
 
-    <div class="max-w-sm mx-auto">
-      <form action="" method="post" @submit.prevent="submit">
-        <div class="field">
-          <label for="email">Email</label>
-          <input
-            type="email" name="email"
-            autocomplete="email" placeholder="johndoe@example.com"
-            autofocus required
-            class="form-control"
-            v-model="user.email"
-          >
-        </div>
+    <form action="" method="post" @submit.prevent="submit">
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          type="email" name="email"
+          autocomplete="email" placeholder="johndoe@example.com"
+          autofocus required
+          class="form-control"
+          v-model="user.email"
+        >
+      </div>
 
-        <div class="field">
-          <label for="password">Password</label>
-          <input
-            type="password" name="password"
-            autocomplete="current-password" placeholder="Password" required
-            class="form-control"
-            v-model="user.password"
-          >
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          type="password" name="password"
+          autocomplete="current-password" placeholder="Password" required
+          class="form-control"
+          v-model="user.password"
+        >
 
-          <p class="mt-4 text-right">
-            <router-link to="/" class="text-gray-700">
-              Forgot your password?
-            </router-link>
-          </p>
-        </div>
+        <p class="mt-4 text-right">
+          <router-link to="/" class="text-gray-700">
+            Forgot your password?
+          </router-link>
+        </p>
+      </div>
 
-        <div class="actions my-8">
-          <input type="submit" value="Start learning" class="button button-primary button-lg w-full">
-        </div>
-      </form>
-    </div>
+      <div class="actions my-8">
+        <input type="submit" value="Start learning" class="button button-primary button-lg w-full">
+      </div>
+    </form>
 
-    <p class="text-center text-gray-700">
+    <p class="md:text-center text-gray-700">
       Don't have an account?
       <router-link to="/sign-up">Sign up</router-link>
     </p>
