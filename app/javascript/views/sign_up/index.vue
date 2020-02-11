@@ -1,6 +1,6 @@
 <template>
   <div class="container md:my-8 lg:my-12 md:max-w-sm mx-auto">
-    <h1 class="heading-1 mb-3 md:text-center">
+    <h1 class="heading-1 mb-3 md:mb-6 md:text-center">
       Sign up for Spacecards
     </h1>
 

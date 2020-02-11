@@ -34,24 +34,12 @@ h4, h5, h6 {
 
 .heading-1 {
   @apply .font-bold .text-5xl;
-
-  @media (min-width: 768px) {
-    @apply .mb-6;
-  }
 }
 
 .heading-2 {
-  @apply .font-bold .text-4xl .mb-2;
-
-  @media (min-width: 768px) {
-    @apply .mb-4;
-  }
+  @apply .font-bold .text-4xl;
 }
 
 .heading-3 {
-  @apply .font-bold .text-3xl .mb-1;
-
-  @media (min-width: 768px) {
-    @apply .mb-2;
-  }
+  @apply .font-bold .text-3xl;
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="faq" class="container py-12">
-    <h2 class="heading-1 mb-3 text-center">
+    <h2 class="heading-1 mb-3 md:mb-6 text-center">
       FAQ
     </h2>
 

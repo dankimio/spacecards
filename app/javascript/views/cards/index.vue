@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="heading-2 text-center">
+    <h1 class="heading-2 mb-2 md:mb-4 text-center">
       World capitals <span class="font-light mx-2">→</span> Cards
     </h1>
 
