@@ -1,20 +1,22 @@
 <template>
   <div class="container flex">
     <div class="hidden md:block w-auto md:w-1/3">
-      <h2 class="text-2xl">
-        Tags
-      </h2>
-      <div class="flex flex-wrap pr-2 mb-2">
-        <Tag
-          v-for="tag in tags"
-          :key="tag"
-          :name="tag"
-          class="mb-2"
-        />
+      <div>
+        <h2 class="text-2xl">
+          Tags
+        </h2>
+        <div class="flex flex-wrap md:pr-4 mb-2">
+          <Tag
+            v-for="tag in tags"
+            :key="tag"
+            :name="tag"
+            class="mb-2"
+          />
+        </div>
+        <router-link to="#" class="mb-8 text-sm text-indigo-500 hover:text-indigo-800">
+          See all tags
+        </router-link>
       </div>
-      <button class="mb-8 text-sm text-indigo-500 hover:text-indigo-800">
-        See all tags
-      </button>
     </div>
     <div class="w-full md:w-2/3">
       <h2 class="text-2xl">
@@ -54,7 +56,7 @@ export default {
   data() {
     return {
       decks: decks,
-      tags: ['Languages', 'Easy', 'Programming', 'French', 'Art', 'History']
+      tags: ['languages', 'easy', '🇬🇧 english', '🇫🇷 french', 'art', 'history', '🇩🇪 german', 'math', 'programming', 'biology', '🇷🇺 russian', 'philosophy', 'sat']
     }
   }
 }
