@@ -5,11 +5,12 @@
         Tags
       </h2>
       <div class="flex flex-wrap pr-2">
-        <div
-          class="px-2 bg-gray-500 text-xs mr-1 mb-1 rounded-lg text-white"
-        >
-          Tag
-        </div>
+        <Tag
+          v-for="tag in tags"
+          :key="tag"
+          :name="tag"
+          class="mb-2"
+        />
       </div>
     </div>
     <div class="w-full md:w-2/3">
@@ -29,6 +30,7 @@
 
 <script>
 import SharedDeck from '@/components/shared_deck'
+import Tag from '@/components/tag'
 
 const decks = Array.from(Array(10).keys()).map(i => {
   return {
@@ -45,10 +47,11 @@ const decks = Array.from(Array(10).keys()).map(i => {
 })
 
 export default {
-  components: { SharedDeck },
+  components: { SharedDeck, Tag },
   data() {
     return {
-      decks: decks
+      decks: decks,
+      tags: ['Languages', 'Easy', 'Programming', 'French', 'Art', 'History']
     }
   }
 }
