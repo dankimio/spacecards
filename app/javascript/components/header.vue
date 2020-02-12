@@ -6,10 +6,24 @@
       </router-link>
     </div>
     <div class="">
-      <router-link v-if="!$store.getters.loggedIn" to="/log-in">
+      <router-link
+        v-if="!$store.getters.loggedIn"
+        to="/log-in"
+        class="ml-5"
+      >
         Log in
       </router-link>
-      <router-link v-if="$store.getters.loggedIn" to="/decks">
+      <router-link
+        to="/explore"
+        class="ml-5"
+      >
+        Explore
+      </router-link>
+      <router-link
+        v-if="$store.getters.loggedIn"
+        to="/decks"
+        class="ml-5"
+      >
         Decks
       </router-link>
     </div>
