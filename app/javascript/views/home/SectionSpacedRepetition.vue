@@ -21,7 +21,7 @@
         </div>
 
         <div class="max-w-lg lg:w-1/2 self-center">
-          <img src="@images/chart.png" alt="Spaced repetition chart" class="block">
+          <img src="@images/home/chart.png" alt="Spaced repetition chart" class="block">
         </div>
       </div>
     </div>

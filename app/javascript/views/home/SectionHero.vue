@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <img
-      src="@images/home.png"
+      src="@images/home/home.png"
       alt="Hero"
       class="block mx-auto mb-8 md:mb-10 max-w-lg lg:max-w-xl w-full"
       width="1600"
@@ -31,7 +31,7 @@
     </div>
 
     <img
-      src="@images/icon-down.svg"
+      src="@images/home/icon-down.svg"
       alt="Arrow down"
       class="block mx-auto mb-4"
     >

@@ -7,7 +7,7 @@
     <div id="features" class="container mb-16">
       <div class="flex flex-col max-w-sm mx-auto text-center">
         <img
-          src="@images/icon-features-01.svg"
+          src="@images/home/icon-features-01.svg"
           alt="Markdown support"
           class="block mb-6"
         >
@@ -21,7 +21,7 @@
 
       <div class="flex flex-col max-w-sm mx-auto text-center">
         <img
-          src="@images/icon-features-04.svg"
+          src="@images/home/icon-features-04.svg"
           alt="Multiple card types"
           class="block mb-6"
         >

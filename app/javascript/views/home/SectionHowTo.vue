@@ -12,15 +12,15 @@
         </h3>
 
         <div class="flex lg:mb-6 lg:justify-between">
-          <img src="@images/camera-film.svg" alt="" class="mr-6 lg:mr-0">
-          <img src="@images/photography.svg" alt="" class="mr-6 lg:mr-0">
-          <img src="@images/console.svg" alt="" class="mr-6 lg:mr-0">
-          <img src="@images/dj-mixer.svg" alt="" class="mr-6 lg:mr-0">
+          <img src="@images/home/camera-film.svg" alt="" class="mr-6 lg:mr-0">
+          <img src="@images/home/photography.svg" alt="" class="mr-6 lg:mr-0">
+          <img src="@images/home/console.svg" alt="" class="mr-6 lg:mr-0">
+          <img src="@images/home/dj-mixer.svg" alt="" class="mr-6 lg:mr-0">
         </div>
       </div>
 
       <inline-svg
-        :src="require('@images/icon-step-arrow.svg')"
+        :src="require('@images/home/icon-step-arrow.svg')"
         class="text-gray-400 fill-current lg:mx-8 self-center hidden lg:block"
       />
 
@@ -53,7 +53,7 @@
       </div>
 
       <inline-svg
-        :src="require('@images/icon-step-arrow.svg')"
+        :src="require('@images/home/icon-step-arrow.svg')"
         class="text-gray-400 fill-current lg:mx-8 self-center hidden lg:block"
       />
 
@@ -63,7 +63,7 @@
           Practice daily
         </h3>
 
-        <img src="@images/step-03.png" alt="Step 3" class="block w-full max-w-xs">
+        <img src="@images/home/step-03.png" alt="Step 3" class="block w-full max-w-xs">
       </div>
     </div>
 

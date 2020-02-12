@@ -16,7 +16,7 @@
           class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
         >
           <img
-            src="@images/article-01.jpg"
+            src="@images/home/article-01.jpg"
             alt=""
             class="object-cover"
           >
@@ -35,7 +35,7 @@
           class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
         >
           <img
-            src="@images/article-02.jpg"
+            src="@images/home/article-02.jpg"
             alt=""
             class="object-cover"
           >
@@ -54,7 +54,7 @@
           class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
         >
           <img
-            src="@images/article-03.png"
+            src="@images/home/article-03.png"
             alt=""
             class="object-cover"
           >
