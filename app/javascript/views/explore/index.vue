@@ -85,7 +85,7 @@ const decks = Array.from(Array(10).keys()).map(i => {
     name: `World capitals ${i + 1}`,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     tags: ['Geography', 'Easy'],
-    avatarUrl: 'https://www.fillmurray.com/200/200',
+    avatarUrl: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
     userName: 'Bill M.',
     usersCount: 440,
     cardsCount: 270
