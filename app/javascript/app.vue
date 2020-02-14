@@ -14,7 +14,13 @@ export default {
   components: { Header, Footer },
   metaInfo: {
     title: 'Spacecards',
-    titleTemplate: '%s – Spacecards'
+    titleTemplate: '%s – Spacecards',
+    meta: [
+      {
+        name: 'description',
+        content: 'Memorize everything with flashcards and spaced repetition. Learn languages, prepare for exams, improve yourself.'
+      }
+    ]
   }
 }
 </script>
