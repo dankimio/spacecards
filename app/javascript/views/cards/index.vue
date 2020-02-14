@@ -17,6 +17,9 @@ import Card from '@/components/card'
 
 export default {
   components: { Card },
+  metaInfo: {
+    title: `Cards – ${'Deck name'}`
+  },
   data() {
     return {
       cards: [
