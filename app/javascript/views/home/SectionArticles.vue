@@ -15,14 +15,11 @@
           target="_blank"
           class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
         >
-          <img
-            src="@images/home/article-01.jpg"
-            alt=""
-            class="object-cover"
-          >
-
           <div class="flex-grow flex flex-col p-5 bg-white">
-            <span class="text-gray-600 text-sm mb-3">Feb 23, 2018 — Quartz</span>
+            <p class="mb-2 text-sm">
+              <span class="text-gray-600 text-sm">Feb 23, 2018 — </span>
+              <span class="text-gray-700 text-sm font-medium">Quartz</span>
+            </p>
 
             <h3 class="font-medium text-xl mb-3">The scientific, efficient way to learn languages: “spaced repetition”</h3>
 
@@ -34,14 +31,11 @@
           target="_blank"
           class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
         >
-          <img
-            src="@images/home/article-02.jpg"
-            alt=""
-            class="object-cover"
-          >
-
           <div class="flex-grow flex flex-col p-5 bg-white">
-            <span class="text-gray-600 text-sm mb-3">Jan 23, 2016 — The Guardian</span>
+            <p class="mb-2 text-sm">
+              <span class="text-gray-600">Jan 23, 2016 — </span>
+              <span class="text-gray-700 font-medium">The Guardian</span>
+            </p>
 
             <h3 class="font-medium text-xl mb-3">Spaced repetition: a hack to make your brain store information </h3>
 
@@ -53,14 +47,11 @@
           target="_blank"
           class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
         >
-          <img
-            src="@images/home/article-03.png"
-            alt=""
-            class="object-cover"
-          >
-
           <div class="flex-grow flex flex-col p-5 bg-white">
-            <span class="text-gray-600 text-sm mb-3">Dec 18, 2018 — Farnam Street</span>
+            <p class="mb-2 text-sm">
+              <span class="text-gray-600 text-sm">Dec 18, 2018 — </span>
+              <span class="text-gray-700 text-sm font-medium">Farnam Street</span>
+            </p>
 
             <h3 class="font-medium text-xl mb-3">The Spacing Effect: How to Improve Learning and Maximize Retention</h3>
 
