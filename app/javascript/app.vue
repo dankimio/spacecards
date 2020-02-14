@@ -1,7 +1,7 @@
 <template>
   <div class="flex min-h-screen flex-col">
     <Header />
-    <router-view class="flex-1"></router-view>
+    <router-view class="flex-1" />
     <Footer />
   </div>
 </template>
@@ -11,7 +11,11 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 export default {
-  components: { Header, Footer }
+  components: { Header, Footer },
+  metaInfo: {
+    title: 'Spacecards',
+    titleTemplate: '%s – Spacecards'
+  }
 }
 </script>
 
