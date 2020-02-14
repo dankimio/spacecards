@@ -57,7 +57,7 @@
           My question is not mentioned here.
         </h3>
         <p class="faq-item-content">
-          Feel free drop us a line!
+          Feel free <a href="mailto:dan@spacecards.app">drop me</a> a line!
         </p>
       </div>
     </div>
