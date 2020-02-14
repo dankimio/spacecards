@@ -33,13 +33,13 @@ h4, h5, h6 {
 /* Typography */
 
 .heading-1 {
-  @apply .font-bold .text-5xl;
+  @apply .font-semibold .text-5xl;
 }
 
 .heading-2 {
-  @apply .font-bold .text-4xl;
+  @apply .font-semibold .text-4xl;
 }
 
 .heading-3 {
-  @apply .font-bold .text-3xl;
+  @apply .font-semibold .text-3xl;
 }
