@@ -13,8 +13,9 @@ import Footer from '@/components/footer'
 export default {
   components: { Header, Footer },
   metaInfo: {
-    title: 'Spacecards',
-    titleTemplate: '%s – Spacecards',
+    titleTemplate: (titleChunk) => {
+      return titleChunk ? `${titleChunk} – Spacecards` : 'Spacecards'
+    },
     meta: [
       {
         name: 'description',

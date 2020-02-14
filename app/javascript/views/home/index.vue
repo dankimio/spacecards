@@ -18,6 +18,9 @@ import SectionArticles from './SectionArticles'
 import SectionFaq from './SectionFaq'
 
 export default {
+  metaInfo: {
+    title: ''
+  },
   components: {
     SectionHero,
     SectionSpacedRepetition,
