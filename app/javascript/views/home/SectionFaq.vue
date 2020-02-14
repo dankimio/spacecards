@@ -1,6 +1,6 @@
 <template>
-  <div id="faq" class="container py-12">
-    <h2 class="heading-1 mb-3 md:mb-6 text-center">
+  <div class="container py-12">
+    <h2 class="heading-1 text-center">
       FAQ
     </h2>
 
@@ -66,10 +66,10 @@
 
 <style scoped>
 .faq-item {
-  @apply border-t py-6;
+  @apply border-b py-6;
 
   &:last-child {
-    @apply border-b;
+    @apply border-none;
   }
 
   & .faq-item-heading {
