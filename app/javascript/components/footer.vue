@@ -1,5 +1,8 @@
 <template>
-  <footer class="container mt-auto flex justify-between py-6 md:py-8 lg:py-10">
+  <footer
+    v-if="false"
+    class="container mt-auto flex justify-between py-6 md:py-8 lg:py-10"
+  >
     <div class="text-gray-800">
       Made by <a href="https://dankim.io" target="_blank">@dankimio</a>
     </div>
