@@ -35,6 +35,9 @@ import Card from './card'
 import AnswerButton from '@/components/answer_button'
 
 export default {
-  components: { Card, AnswerButton }
+  components: { Card, AnswerButton },
+  metaInfo: {
+    title: `Study – ${'Deck name'}`
+  }
 }
 </script>

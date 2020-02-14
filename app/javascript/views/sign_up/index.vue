@@ -59,6 +59,9 @@
 
 <script>
 export default {
+  metaInfo: {
+    title: 'Sign up'
+  },
   data() {
     return {
       user: {

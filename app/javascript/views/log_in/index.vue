@@ -62,6 +62,9 @@
 
 <script>
 export default {
+  metaInfo: {
+    title: 'Log in'
+  },
   data() {
     return {
       user: {

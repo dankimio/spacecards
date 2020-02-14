@@ -17,6 +17,9 @@ import Deck from '@/components/deck'
 
 export default {
   components: { Deck },
+  metaInfo: {
+    title: 'Deck'
+  },
   data() {
     return {
       decks: [

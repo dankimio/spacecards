@@ -94,6 +94,9 @@ const decks = Array.from(Array(10).keys()).map(i => {
 
 export default {
   components: { SharedDeck, Tag },
+  metaInfo: {
+    title: 'Explore decks'
+  },
   data() {
     return {
       decks: decks,
