@@ -1,6 +1,6 @@
 # spacecards
 
-<img src="./app/javascript/images/home.png" alt="spacecards hero" width="640">
+<img src="./app/javascript/images/home/home.png" alt="spacecards hero" width="640">
 
 - Ruby version: see `.ruby-version`
 - System dependencies: `$ brew install postgresql`
