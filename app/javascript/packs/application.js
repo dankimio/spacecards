@@ -20,6 +20,9 @@ import store from '../store'
 import InlineSvg from 'vue-inline-svg'
 Vue.component('inline-svg', InlineSvg)
 
+import VueMeta from 'vue-meta'
+Vue.use(VueMeta)
+
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     router,
