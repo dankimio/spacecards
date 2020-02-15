@@ -21,7 +21,10 @@
 
     <Card class="mb-4" />
 
-    <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
+    <div
+      class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
+    >
+      <button @click='testMethod'>test</button>
       <AnswerButton answer="bad" class="mr-0 md:mr-2 lg:mr-3" />
       <AnswerButton answer="okay" class="mr-0 md:mr-2 lg:mr-3" />
       <AnswerButton answer="good" class="mr-0 md:mr-2 lg:mr-3" />
@@ -31,13 +34,18 @@
 </template>
 
 <script>
-import Card from './card'
-import AnswerButton from '@/components/answer_button'
+import Card from "./card";
+import AnswerButton from "@/components/answer_button";
 
 export default {
   components: { Card, AnswerButton },
   metaInfo: {
-    title: `Study – ${'Deck name'}`
+    title: `Study – ${"Deck name"}`
+  },
+  methods: {
+    testMethod() {
+      this.$store.dispatch('rotateCard');
+    },
   }
-}
+};
 </script>

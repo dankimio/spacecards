@@ -6,6 +6,7 @@
     transition duration-200
     transform hover:-translate-y-1"
     :class="states[answer].class"
+    v-show="$store.getters.rotated"
   >
     <span class="hover:text-white mr-3">
       {{ states[answer].label }}
