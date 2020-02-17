@@ -24,7 +24,6 @@
     <div
       class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
     >
-      <button @click='testMethod'>test</button>
       <AnswerButton answer="bad" class="mr-0 md:mr-2 lg:mr-3" />
       <AnswerButton answer="okay" class="mr-0 md:mr-2 lg:mr-3" />
       <AnswerButton answer="good" class="mr-0 md:mr-2 lg:mr-3" />
@@ -42,10 +41,5 @@ export default {
   metaInfo: {
     title: `Study – ${"Deck name"}`
   },
-  methods: {
-    testMethod() {
-      this.$store.dispatch('rotateCard');
-    },
-  }
 };
 </script>
