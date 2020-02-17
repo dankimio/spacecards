@@ -13,17 +13,13 @@
 
       <div class="flex flex-row">
         <span class="text-3xl mr-2 leading-none">12</span>
-        <span class="text-sm font-medium text-gray-600">
-          Cards left
-        </span>
+        <span class="text-sm font-medium text-gray-600">Cards left</span>
       </div>
     </div>
 
     <Card class="mb-4" />
 
-    <div
-      class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
-    >
+    <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
       <AnswerButton answer="bad" class="mr-0 md:mr-2 lg:mr-3" />
       <AnswerButton answer="okay" class="mr-0 md:mr-2 lg:mr-3" />
       <AnswerButton answer="good" class="mr-0 md:mr-2 lg:mr-3" />
@@ -40,6 +36,6 @@ export default {
   components: { Card, AnswerButton },
   metaInfo: {
     title: `Study – ${"Deck name"}`
-  },
+  }
 };
 </script>
