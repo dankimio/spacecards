@@ -66,6 +66,9 @@ export default new Vuex.Store({
     },
     getDeckById: (state) => (id) => {
       return state.decks.find(deck => deck.id == id)
+    },
+    rotated(state) {
+      return state.turnOver
     }
   }
 })
