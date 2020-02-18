@@ -18,7 +18,7 @@
       }"
     >
       <span class="font-semibold text-3xl">Zimbabwe</span>
-      <hr class="w-11/12 border-b-2 border-gray-200 my-4" />
+      <hr class="w-11/12 border-b-2 border-gray-200 my-4">
       <span class="font-semibold text-3xl">Harare</span>
     </div>
   </div>
@@ -27,10 +27,10 @@
 export default {
   methods: {
     flipCard() {
-      this.$store.dispatch('rotateCard');
+      this.$store.dispatch('rotateCard')
     }
   }
-};
+}
 </script><style scoped>
 .flip {
   & > .front,

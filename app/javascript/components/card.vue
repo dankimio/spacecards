@@ -14,12 +14,17 @@
       />
     </div>
 
-    <hr class="border-b-2 border-gray-100 my-3" />
+    <hr class="border-b-2 border-gray-100 my-3">
 
     <div class="lg:w-3/5 mb-4 lg:px-2 lg:mb-0 text-gray-900">
       <div v-if="!isEditing" class="text-gray-900" v-text="back" />
 
-      <textarea v-if="isEditing" v-model="back" name="back" class="form-control w-full" />
+      <textarea
+        v-if="isEditing"
+        v-model="back"
+        name="back"
+        class="form-control w-full"
+      />
     </div>
 
     <div v-if="!isEditing" class="lg:w-48 flex lg:pl-2">
@@ -74,13 +79,13 @@ export default {
       front: this.card.front,
       back: this.card.back,
       isEditing: false
-    };
+    }
   },
   methods: {
     toggleEdit() {
-      this.isEditing = !this.isEditing;
+      this.isEditing = !this.isEditing
     },
     destroy() {}
   }
-};
+}
 </script>
