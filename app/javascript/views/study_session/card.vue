@@ -13,7 +13,7 @@
     </div>
     <div
       class="back w-full flex flex-col justify-center items-center"
-      vclass="{
+      :class="{
         'back-flip': $store.getters.rotated
       }"
     >
@@ -51,12 +51,12 @@ export default {
     height: 100%;
     transform: rotateY(-180deg);
   }
-  & .front-flip {
+  & > .front-flip {
     transform: rotateY(180deg);
     display: none;
   }
 
-  & .back-flip {
+  & > .back-flip {
     opacity: 1;
     transform: rotateY(0deg);
   }
