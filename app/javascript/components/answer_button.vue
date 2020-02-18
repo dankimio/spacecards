@@ -31,14 +31,14 @@ const states = {
     class: 'answer-button--excellent',
     icon: require('../images/icon-button-excellent.svg')
   }
-};
+}
 
 export default {
   props: ['answer'],
   data() {
-    return { states: states };
+    return { states: states }
   }
-};
+}
 </script>
 <style scoped>
 .answer-button--bad {
