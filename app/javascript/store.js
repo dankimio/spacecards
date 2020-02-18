@@ -29,12 +29,16 @@ export default new Vuex.Store({
           { id: 6, front: 'California', back: 'Sacramento' }
         ]
       }
-    ]
+    ],
+    turnOver: false
   },
   mutations: {
     SET_USER(state, data) {
       state.user = data
       localStorage.setItem('user', JSON.stringify(data))
+    },
+    ROTATE_CARD(state) {
+      state.turnOver = !state.turnOver
     }
   },
   actions: {
@@ -51,6 +55,9 @@ export default new Vuex.Store({
         .then(response => {
           context.commit('SET_USER', response.data)
         })
+    },
+    rotateCard({ commit }) {
+      commit('ROTATE_CARD')
     }
   },
   getters: {
