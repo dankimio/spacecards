@@ -7,7 +7,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: JSON.parse(localStorage.getItem('user')) || null
+    user: JSON.parse(localStorage.getItem('user')) || null,
+    decks: [
+      { name: 'World capitals', cards_count: 169 },
+      { name: 'U.S. state capitals', cards_count: 50 }
+    ]
   },
   mutations: {
     SET_USER(state, data) {

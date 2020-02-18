@@ -17,16 +17,13 @@ import Deck from '@/components/deck'
 
 export default {
   components: { Deck },
+  computed: {
+    decks() {
+      return this.$store.state.decks
+    }
+  },
   metaInfo: {
     title: 'Decks'
-  },
-  data() {
-    return {
-      decks: [
-        { name: 'World capitals', cards_count: 169 },
-        { name: 'U.S. state capitals', cards_count: 50 }
-      ]
-    }
   }
 }
 </script>
