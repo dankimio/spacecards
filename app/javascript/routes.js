@@ -19,7 +19,7 @@ export default new VueRouter({
     { path: '/log-in', component: LogIn },
     { path: '/decks', component: DecksIndex },
     { path: '/decks/1/edit', component: DecksEdit },
-    { path: '/cards', component: CardsIndex },
+    { path: '/decks/:id', component: CardsIndex, props: true },
     { path: '/study-session', component: StudySession },
     { path: '/explore', component: Explore }
   ]

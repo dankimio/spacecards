@@ -9,8 +9,26 @@ export default new Vuex.Store({
   state: {
     user: JSON.parse(localStorage.getItem('user')) || null,
     decks: [
-      { name: 'World capitals', cards_count: 169 },
-      { name: 'U.S. state capitals', cards_count: 50 }
+      {
+        id: 1,
+        name: 'World capitals',
+        cards_count: 169,
+        cards: [
+          { id: 1, front: 'France', back: 'Paris' },
+          { id: 2, front: 'Germany', back: 'Berlin' },
+          { id: 3, front: 'Italy', back: 'Rome' },
+          { id: 4, front: 'Spain', back: 'Madrid' }
+        ]
+      },
+      {
+        id: 2,
+        name: 'U.S. state capitals',
+        cards_count: 50,
+        cards: [
+          { id: 5, front: 'Alamaba', back: 'Montgomery' },
+          { id: 6, front: 'California', back: 'Sacramento' }
+        ]
+      }
     ]
   },
   mutations: {
@@ -38,6 +56,9 @@ export default new Vuex.Store({
   getters: {
     loggedIn(state) {
       return state.user && state.user.id
+    },
+    getDeckById: (state) => (id) => {
+      return state.decks.find(deck => deck.id == id)
     }
   }
 })
