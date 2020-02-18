@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import Card from "./card";
-import AnswerButton from "@/components/answer_button";
+import Card from './card';
+import AnswerButton from '@/components/answer_button';
 
 export default {
   components: { Card, AnswerButton },
   metaInfo: {
-    title: `Study – ${"Deck name"}`
+    title: `Study – ${'Deck name'}`
   }
 };
 </script>

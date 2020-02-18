@@ -5,7 +5,7 @@
   >
     <div
       class="front flex flex-col justify-center items-center"
-      v-bind:class="{
+      :class="{
         'front-flip': $store.getters.rotated
       }"
     >
@@ -13,14 +13,12 @@
     </div>
     <div
       class="back w-full flex flex-col justify-center items-center"
-      v-bind:class="{
+      vclass="{
         'back-flip': $store.getters.rotated
       }"
     >
       <span class="font-semibold text-3xl">Zimbabwe</span>
-
       <hr class="w-11/12 border-b-2 border-gray-200 my-4" />
-
       <span class="font-semibold text-3xl">Harare</span>
     </div>
   </div>
@@ -29,12 +27,11 @@
 export default {
   methods: {
     flipCard() {
-      this.$store.dispatch("rotateCard");
+      this.$store.dispatch('rotateCard');
     }
   }
 };
-</script>
-<style scoped>
+</script><style scoped>
 .flip {
   & > .front,
   & > .back {
