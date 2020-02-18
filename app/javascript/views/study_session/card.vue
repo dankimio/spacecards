@@ -1,26 +1,34 @@
 <template>
-  <div
-    class="flip relative flex flex-col justify-center items-center bg-gray-100 rounded p-4 h-40 cursor-pointer"
-    @click="flipCard"
-  >
+  <div>
     <div
-      class="front flex flex-col justify-center items-center"
-      :class="{
-        'front-flip': $store.getters.rotated
-      }"
+      class="flip relative flex flex-col justify-center items-center bg-gray-100 rounded p-4 h-40 cursor-pointer"
     >
-      <span class="font-semibold text-3xl">Zimbabwe</span>
+      <div
+        class="front flex flex-col justify-center items-center"
+        :class="{
+          'front-flip': $store.getters.rotated
+        }"
+      >
+        <span class="font-semibold text-3xl">Zimbabwe</span>
+      </div>
+      <div
+        class="back w-full flex flex-col justify-center items-center"
+        :class="{
+          'back-flip': $store.getters.rotated
+        }"
+      >
+        <span class="font-semibold text-3xl">Zimbabwe</span>
+        <hr class="w-11/12 border-b-2 border-gray-200 my-4">
+        <span class="font-semibold text-3xl">Harare</span>
+      </div>
     </div>
-    <div
-      class="back w-full flex flex-col justify-center items-center"
-      :class="{
-        'back-flip': $store.getters.rotated
-      }"
+    <button
+      v-show="!$store.getters.rotated"
+      class="button button-primary button-lg w-full mt-8"
+      @click="flipCard"
     >
-      <span class="font-semibold text-3xl">Zimbabwe</span>
-      <hr class="w-11/12 border-b-2 border-gray-200 my-4">
-      <span class="font-semibold text-3xl">Harare</span>
-    </div>
+      Show answer <small class="ml-1 text-grey">↵</small>
+    </button>
   </div>
 </template>
 <script>
