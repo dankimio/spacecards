@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col border mb-4 rounded">
     <div class="flex flex-col">
-      <div class="px-4 py-4">
+      <div class="px-4 py-3">
+        <span class="uppercase tracking-wide text-gray-500 text-xs">Front</span>
         <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="front" />
 
         <textarea
@@ -15,7 +16,8 @@
 
       <hr class="border-gray-200">
 
-      <div class="px-4 py-4">
+      <div class="px-4 py-3">
+        <span class="uppercase tracking-wide text-gray-500 text-xs">Back</span>
         <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="back" />
 
         <textarea
@@ -29,7 +31,7 @@
     <div class="bg-gray-100 text-gray-600 text-sm px-4 py-2">
       <div v-if="!isEditing" class="lg:w-48 flex">
         <button
-          class="flex items-center text-gray-500 hover:text-gray-800 mr-5"
+          class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
           @click="toggleEdit"
         >
           <inline-svg
