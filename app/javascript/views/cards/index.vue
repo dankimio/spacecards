@@ -15,11 +15,11 @@
     </div>
 
     <div class="w-full md:w-2/3">
-      <h1 class="text-3xl mb-2 md:mb-4">
+      <h1 class="text-2xl mb-2 md:mb-4">
         {{ deck.name }}
       </h1>
 
-      <router-link to="#" class="button button-primary mb-6">
+      <router-link v-if="false" to="#" class="button button-primary mb-6">
         Add cards
       </router-link>
 
