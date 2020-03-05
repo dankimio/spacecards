@@ -1,14 +1,30 @@
 <template>
-  <div class="container">
-    <h1 class="heading-2 mb-2 md:mb-4 text-center">
-      {{ deck.name }} <span class="font-light mx-2">→</span> Cards
-    </h1>
+  <div class="container flex">
+    <div class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
+      <h2 class="text-2xl">
+        Search
+      </h2>
 
-    <router-link to="#" class="button button-primary mb-6">
-      Add cards
-    </router-link>
+      <div class="field">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search…"
+        >
+      </div>
+    </div>
 
-    <Card v-for="card in deck.cards" :key="card.id" :card="card" />
+    <div class="w-full md:w-2/3">
+      <h1 class="text-3xl mb-2 md:mb-4">
+        {{ deck.name }}
+      </h1>
+
+      <router-link to="#" class="button button-primary mb-6">
+        Add cards
+      </router-link>
+
+      <Card v-for="card in deck.cards" :key="card.id" :card="card" />
+    </div>
   </div>
 </template>
 

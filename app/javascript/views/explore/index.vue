@@ -1,6 +1,6 @@
 <template>
   <div class="container flex">
-    <div class="hidden md:block w-auto md:w-1/3 md:pr-4">
+    <div class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
       <div class="mb-8">
         <h2 class="text-2xl">
           Tags
