@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row lg:items-start border-2 border-gray-200 px-4 py-4 mb-3 rounded">
+  <div class="flex flex-col lg:flex-row lg:items-start border border-gray-200 px-4 py-4 mb-3 rounded">
     <div class="lg:w-2/5 lg:pr-2">
       <div v-if="!isEditing" class="text-gray-900" v-text="front" />
 
