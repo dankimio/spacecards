@@ -2,7 +2,7 @@
   <div class="flex flex-col border mb-4 rounded">
     <div class="flex flex-col">
       <div class="px-4 py-4">
-        <div v-if="!isEditing" class="text-gray-900 text-lg" v-text="front" />
+        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="front" />
 
         <textarea
           v-if="isEditing"
@@ -16,7 +16,7 @@
       <hr class="border-gray-200">
 
       <div class="px-4 py-4">
-        <div v-if="!isEditing" class="text-gray-900 text-lg" v-text="back" />
+        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="back" />
 
         <textarea
           v-if="isEditing"
