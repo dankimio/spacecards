@@ -55,7 +55,7 @@
       <div v-if="isEditing" class="lg:w-48 flex">
         <button
           v-if="isEditing"
-          class="flex items-center text-gray-500 hover:text-gray-800 mr-3"
+          class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
           @click="toggleEdit"
         >
           <inline-svg
