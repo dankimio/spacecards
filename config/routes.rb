@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     }
   end
 
+  resources :decks, only: %i[index]
+
   namespace :api do
   end
 end

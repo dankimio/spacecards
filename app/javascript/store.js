@@ -35,6 +35,9 @@ export default new Vuex.Store({
     SET_USER(state, data) {
       state.user = data
       localStorage.setItem('user', JSON.stringify(data))
+    },
+    SET_DECKS(state, data) {
+      state.decks = data
     }
   },
   actions: {
@@ -50,6 +53,13 @@ export default new Vuex.Store({
         .post('/api/users', user)
         .then(response => {
           context.commit('SET_USER', response.data)
+        })
+    },
+    getDecks(context) {
+      axios
+        .get('/decks')
+        .then(response => {
+          context.commit('SET_DECKS', response.data)
         })
     }
   },

@@ -78,20 +78,6 @@
 import SharedDeck from '@/components/shared_deck'
 import Tag from '@/components/tag'
 
-const decks = Array.from(Array(10).keys()).map(i => {
-  return {
-    id: i,
-    category: 'Movies',
-    name: `World capitals ${i + 1}`,
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    tags: ['Geography', 'Easy'],
-    avatarUrl: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
-    userName: 'Bill M.',
-    usersCount: 440,
-    cardsCount: 270
-  }
-})
-
 export default {
   components: { SharedDeck, Tag },
   metaInfo: {
@@ -99,9 +85,16 @@ export default {
   },
   data() {
     return {
-      decks: decks,
       tags: ['languages', 'easy', '🇬🇧 english', '🇫🇷 french', 'art', 'history', '🇩🇪 german', 'math', 'programming', 'biology', '🇷🇺 russian', 'philosophy', 'sat']
     }
+  },
+  computed: {
+    decks() {
+      return this.$store.state.decks
+    }
+  },
+  created() {
+    this.$store.dispatch('getDecks')
   }
 }
 
