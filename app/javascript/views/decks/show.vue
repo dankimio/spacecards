@@ -19,9 +19,38 @@
         {{ deck.name }}
       </h1>
 
-      <p class="text-lg text-gray-700 mb-6">
+      <p class="text-lg text-gray-700 mb-4">
         {{ deck.description }}
       </p>
+
+      <div class="flex justify-between text-lg flex mb-4">
+        <div class="flex items-center mr-6">
+          <img
+            :src="'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'"
+            alt="Avatar"
+            class="w-6 h-6 mr-3 rounded-full"
+          >
+
+          <span class="text-gray-800">{{ 'Bill M.' }}</span>
+        </div>
+
+        <div class="flex">
+          <span class="flex items-center text-gray-600 flex-shrink-0 mr-6">
+            <inline-svg
+              :src="require('@images/icon-albums.svg')"
+              class="w-5 h-5 mr-1 fill-current"
+            />
+            12
+          </span>
+          <span class="flex items-center text-gray-600 flex-shrink-0">
+            <inline-svg
+              :src="require('@images/icon-bookmark.svg')"
+              class="w-5 h-5 mr-1 fill-current"
+            />
+            {{ '42' }}
+          </span>
+        </div>
+      </div>
 
       <hr class="mb-8 border-b-2 border-gray-200">
 
