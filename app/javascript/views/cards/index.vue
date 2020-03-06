@@ -40,16 +40,14 @@ export default {
     title: `Cards – ${'Deck name'}`
   },
   computed: {
-    ...mapState(['cards']),
-    deck() {
-      return this.$store.getters.getDeckById(this.id)
-    }
+    ...mapState(['cards', 'deck'])
   },
   created() {
     this.getDeckCards(this.id)
+    this.getDeck(this.id)
   },
   methods: {
-    ...mapActions(['getDeckCards'])
+    ...mapActions(['getDeck', 'getDeckCards'])
   }
 }
 </script>

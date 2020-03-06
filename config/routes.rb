@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     }
   end
 
-  resources :decks, only: %i[index] do
+  resources :decks, only: %i[index show] do
     resources :cards, only: %i[index]
   end
 

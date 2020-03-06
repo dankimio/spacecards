@@ -20,6 +20,7 @@ export default new Vuex.Store({
         cards_count: 50
       }
     ],
+    deck: {},
     cards: []
   },
   mutations: {
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     },
     SET_DECKS(state, data) {
       state.decks = data
+    },
+    SET_DECK(state, data) {
+      state.deck = data
     },
     SET_CARDS(state, data) {
       state.cards = data
@@ -47,6 +51,12 @@ export default new Vuex.Store({
         .post('/api/users', user)
         .then(response => {
           context.commit('SET_USER', response.data)
+        })
+    },
+    getDeck(context, id) {
+      axios.get(`/decks/${id}`)
+        .then(response => {
+          context.commit('SET_DECK', response.data)
         })
     },
     getDecks(context) {
