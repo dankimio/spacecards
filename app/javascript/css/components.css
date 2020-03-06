@@ -97,6 +97,14 @@ form label {
   @apply .border;
 }
 
+.button-outlined-primary {
+  @apply .border-indigo-400 .text-indigo-600;
+
+  &:hover {
+    @apply .bg-indigo-500 .text-white;
+  }
+}
+
 /* Tables */
 
 .table {
