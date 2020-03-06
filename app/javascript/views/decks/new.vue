@@ -23,8 +23,6 @@
             v-model="deck.description"
             class="form-control p-4 text-lg"
             placeholder="Description (optional)"
-            required
-            autofocus
           />
         </div>
 
