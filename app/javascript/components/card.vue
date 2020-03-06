@@ -3,11 +3,11 @@
     <div class="flex flex-col">
       <div class="px-4 py-3">
         <span class="uppercase tracking-wide text-gray-500 text-xs">Front</span>
-        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="front" />
+        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="currentCard.front" />
 
         <textarea
           v-if="isEditing"
-          v-model="front"
+          v-model="currentCard.front"
           name="front"
           class="form-control w-full"
           autofocus
@@ -18,11 +18,11 @@
 
       <div class="px-4 py-3">
         <span class="uppercase tracking-wide text-gray-500 text-xs">Back</span>
-        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="back" />
+        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="currentCard.back" />
 
         <textarea
           v-if="isEditing"
-          v-model="back"
+          v-model="currentCard.back"
           name="back"
           class="form-control w-full"
         />
@@ -56,7 +56,7 @@
         <button
           v-if="isEditing"
           class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
-          @click="toggleEdit"
+          @click="submit"
         >
           <inline-svg
             :src="require('@images/icon-checkmark.svg')"
@@ -81,12 +81,13 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: ['card'],
   data() {
     return {
-      front: this.card.front,
-      back: this.card.back,
+      currentCard: this.card,
       isEditing: false
     }
   },
@@ -94,8 +95,14 @@ export default {
     toggleEdit() {
       this.isEditing = !this.isEditing
     },
-    destroy() {
-    }
+    destroy() {},
+    submit() {
+      this.updateCard(this.currentCard)
+        .then(response => {
+          this.isEditing = false
+        })
+    },
+    ...mapActions(['updateCard'])
   }
 }
 </script>

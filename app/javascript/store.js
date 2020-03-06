@@ -10,7 +10,8 @@ export default new Vuex.Store({
     user: JSON.parse(localStorage.getItem('user')) || null,
     decks: [],
     deck: {},
-    cards: []
+    cards: [],
+    card: {}
   },
   mutations: {
     SET_USER(state, data) {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     SET_CARDS(state, data) {
       state.cards = data
+    },
+    SET_CARD(state, data) {
+      state.card = data
     }
   },
   actions: {
@@ -59,6 +63,12 @@ export default new Vuex.Store({
       axios.get(`/decks/${deckId}/cards`)
         .then(response => {
           context.commit('SET_CARDS', response.data)
+        })
+    },
+    updateCard(context, card) {
+      return axios.patch(`/cards/${card.id}`, { card: card })
+        .then(response => {
+          context.commit('SET_CARD', response.data)
         })
     }
   },
