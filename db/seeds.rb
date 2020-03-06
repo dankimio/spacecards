@@ -11,6 +11,9 @@ user = User.create!(
   )
 
   10.times do |j|
-    deck.cards.create!(front: "Front #{j + 1}", back: "Back #{j + 1}")
+    deck.cards.create!(
+      front: "#{deck.name}. Front #{j + 1}",
+      back: "#{deck.name}. Back #{j + 1}"
+    )
   end
 end
