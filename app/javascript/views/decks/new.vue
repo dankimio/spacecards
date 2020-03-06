@@ -18,6 +18,16 @@
           >
         </div>
 
+        <div class="field">
+          <textarea
+            v-model="deck.description"
+            class="form-control p-4 text-lg"
+            placeholder="Description (optional)"
+            required
+            autofocus
+          />
+        </div>
+
         <div class="field text-lg text-gray-800 mb-8">
           <input
             id="public"
@@ -45,7 +55,8 @@ export default {
   data() {
     return {
       deck: {
-        name: ''
+        name: '',
+        description: ''
       }
     }
   },
