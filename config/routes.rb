@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   }
 
   resources :decks, only: %i[index show] do
-    resources :cards, only: %i[index update], shallow: true
+    resources :cards, only: %i[index update destroy], shallow: true
   end
 end

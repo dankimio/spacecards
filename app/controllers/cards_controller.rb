@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
-  before_action :set_card, only: %i[update]
+  before_action :set_card, only: %i[update destroy]
 
   def index
     @deck = Deck.find(params[:deck_id])
@@ -13,6 +13,11 @@ class CardsController < ApplicationController
     else
       render json: @card.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @card.destroy
+    head :no_content
   end
 
   private

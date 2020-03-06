@@ -95,14 +95,16 @@ export default {
     toggleEdit() {
       this.isEditing = !this.isEditing
     },
-    destroy() {},
+    destroy() {
+      this.destroyCard(this.currentCard)
+    },
     submit() {
       this.updateCard(this.currentCard)
         .then(response => {
           this.isEditing = false
         })
     },
-    ...mapActions(['updateCard'])
+    ...mapActions(['updateCard', 'destroyCard'])
   }
 }
 </script>
