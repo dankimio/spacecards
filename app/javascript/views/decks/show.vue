@@ -23,7 +23,9 @@
         {{ deck.description }}
       </p>
 
-      <button class="button button-lg button-outlined button-outlined-primary mb-8">
+      <button
+        class="button button-lg button-outlined button-outlined-primary mb-8 w-full md:w-auto"
+      >
         + Add to library
       </button>
 
