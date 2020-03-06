@@ -12,24 +12,15 @@ export default new Vuex.Store({
       {
         id: 1,
         name: 'World capitals',
-        cards_count: 169,
-        cards: [
-          { id: 1, front: 'France', back: 'Paris' },
-          { id: 2, front: 'Germany', back: 'Berlin' },
-          { id: 3, front: 'Italy', back: 'Rome' },
-          { id: 4, front: 'Spain', back: 'Madrid' }
-        ]
+        cards_count: 169
       },
       {
         id: 2,
         name: 'U.S. state capitals',
-        cards_count: 50,
-        cards: [
-          { id: 5, front: 'Alamaba', back: 'Montgomery' },
-          { id: 6, front: 'California', back: 'Sacramento' }
-        ]
+        cards_count: 50
       }
-    ]
+    ],
+    cards: []
   },
   mutations: {
     SET_USER(state, data) {
@@ -38,6 +29,9 @@ export default new Vuex.Store({
     },
     SET_DECKS(state, data) {
       state.decks = data
+    },
+    SET_CARDS(state, data) {
+      state.cards = data
     }
   },
   actions: {
@@ -60,6 +54,12 @@ export default new Vuex.Store({
         .get('/decks')
         .then(response => {
           context.commit('SET_DECKS', response.data)
+        })
+    },
+    getCards(context, deckId) {
+      axios.get(`/decks/${deckId}/cards`)
+        .then(response => {
+          context.commit('SET_CARDS', response.data)
         })
     }
   },

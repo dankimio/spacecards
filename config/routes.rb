@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     }
   end
 
-  resources :decks, only: %i[index]
+  resources :decks, only: %i[index] do
+    resources :cards, only: %i[index]
+  end
 
   namespace :api do
   end

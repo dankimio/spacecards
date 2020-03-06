@@ -23,12 +23,14 @@
         Add cards
       </router-link>
 
-      <Card v-for="card in deck.cards" :key="card.id" :card="card" />
+      <Card v-for="card in cards" :key="card.id" :card="card" />
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 import Card from '@/components/card'
 
 export default {
@@ -38,9 +40,16 @@ export default {
     title: `Cards – ${'Deck name'}`
   },
   computed: {
+    ...mapState(['cards']),
     deck() {
       return this.$store.getters.getDeckById(this.id)
     }
+  },
+  created() {
+    this.getCards(this.id)
+  },
+  methods: {
+    ...mapActions(['getCards'])
   }
 }
 </script>
