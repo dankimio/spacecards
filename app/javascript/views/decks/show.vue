@@ -19,6 +19,12 @@
         {{ deck.name }}
       </h1>
 
+      <p class="text-lg text-gray-700 mb-6">
+        {{ deck.description }}
+      </p>
+
+      <hr class="mb-8 border-b-2 border-gray-200">
+
       <router-link v-if="false" to="#" class="button button-primary mb-6">
         Add cards
       </router-link>
