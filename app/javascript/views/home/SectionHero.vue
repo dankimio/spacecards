@@ -17,8 +17,12 @@
         Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.
       </p>
 
-      <div class="mb-8 flex-col md:flex-row">
-        <router-link to="/sign-up" class="button button-primary button-lg w-full md:w-auto tracking-wide mb-4 md:mb-0 md:mr-2">
+      <div class="mb-6 flex-col md:flex-row">
+        <router-link
+          v-if="!loggedIn"
+          to="/sign-up"
+          class="button button-primary button-lg w-full md:w-auto tracking-wide mb-4 md:mb-0 md:mr-2"
+        >
           Start learning
         </router-link>
 
@@ -27,7 +31,7 @@
         </router-link>
       </div>
 
-      <p class="text-sm text-gray-800 flex items-center">
+      <p v-if="false" class="text-sm text-gray-800 flex items-center">
         <span class="mx-2">Sign in with</span>
 
         <router-link to="/" class="mx-3">
@@ -43,3 +47,11 @@
     >
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: { ...mapGetters(['loggedIn']) }
+}
+</script>
