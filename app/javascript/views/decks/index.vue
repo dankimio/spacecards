@@ -4,7 +4,7 @@
       Decks
 
       <small>
-        <router-link to="#" class="text-base ml-1">New deck</router-link>
+        <router-link to="/decks/new" class="text-base ml-1">New deck</router-link>
       </small>
     </h1>
 

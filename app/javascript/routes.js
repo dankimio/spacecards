@@ -4,9 +4,12 @@ import VueRouter from 'vue-router'
 import Home from '@/views/home/index'
 import SignUp from '@/views/sign_up/index'
 import LogIn from '@/views/log_in/index'
+
 import DecksIndex from '@/views/decks/index'
-import DecksEdit from '@/views/decks/edit'
 import DecksShow from '@/views/decks/show'
+import DecksNew from '@/views/decks/new'
+import DecksEdit from '@/views/decks/edit'
+
 import StudySession from '@/views/study_session/index'
 import Explore from '@/views/explore/index'
 
@@ -18,8 +21,9 @@ export default new VueRouter({
     { path: '/sign-up', component: SignUp },
     { path: '/log-in', component: LogIn },
     { path: '/decks', component: DecksIndex },
-    { path: '/decks/1/edit', component: DecksEdit },
+    { path: '/decks/new', component: DecksNew, props: true },
     { path: '/decks/:id', component: DecksShow, props: true },
+    { path: '/decks/1/edit', component: DecksEdit },
     { path: '/study-session', component: StudySession },
     { path: '/explore', component: Explore }
   ]
