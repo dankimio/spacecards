@@ -32,22 +32,22 @@
 
         <div class="mb-4 lg:mb-5">
           <div class="mb-3 text-gray-700 font-medium">
-            <span class="word">un marché</span>
-            <span class="text-sm">→</span>
-            <span class="word mr-1">market</span>
-            <span class="text-gray-500">/maʁ.ʃe/</span>
-          </div>
-          <div class="mb-3 text-gray-700 font-medium">
-            <span class="word">une croissance</span>
-            <span class="text-sm">→</span>
-            <span class="word mr-1">growth</span>
+            <span>une croissance</span>
+            <span class="text-gray-600 text-sm font-normal">→</span>
+            <span>growth</span>
             <span class="text-gray-500">/kʁwa.sɑ̃s/</span>
           </div>
           <div class="mb-3 text-gray-700 font-medium">
-            <span class="word">une mère</span>
-            <span class="text-sm">→</span>
-            <span class="word mr-1">mother</span>
-            <span class="text-gray-500">/mɛʁ/</span>
+            <span>World War I dates</span>
+            <span class="text-gray-600 text-sm font-normal">→</span>
+            <span>November 11,</span>
+            <span class="text-gray-500">1918</span>
+          </div>
+          <div class="mb-3 text-gray-700 font-medium">
+            <span>Standard gravity</span>
+            <span class="text-gray-600 text-sm font-normal">→</span>
+            <span>9.81</span>
+            <span class="text-gray-500">m/s²</span>
           </div>
         </div>
       </div>
