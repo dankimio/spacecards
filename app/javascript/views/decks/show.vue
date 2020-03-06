@@ -19,9 +19,13 @@
         {{ deck.name }}
       </h1>
 
-      <p class="text-lg text-gray-700 mb-6 max-w-xl">
+      <p class="text-lg text-gray-700 mb-5 max-w-xl">
         {{ deck.description }}
       </p>
+
+      <button class="button button-lg button-outlined button-outlined-primary mb-8">
+        + Add to library
+      </button>
 
       <div class="flex justify-between text-lg flex mb-4">
         <div class="flex items-center mr-6">
