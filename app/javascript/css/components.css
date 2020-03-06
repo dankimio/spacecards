@@ -101,7 +101,7 @@ form label {
   @apply .border-indigo-400 .text-indigo-600;
 
   &:hover {
-    @apply .bg-indigo-500 .text-white;
+    @apply .bg-indigo-600 .border-indigo-600 .text-white;
   }
 }
 
