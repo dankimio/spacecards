@@ -15,7 +15,7 @@
     </div>
 
     <div class="w-full md:w-2/3 container">
-      <h1 class="text-2xl mb-2 md:mb-4">
+      <h1 class="text-3xl mb-2 md:mb-4">
         {{ deck.name }}
       </h1>
 
