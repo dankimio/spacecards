@@ -1,6 +1,6 @@
 <template>
   <div class="container flex">
-    <div class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
+    <div v-if="false" class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
       <h2 class="text-2xl">
         Search
       </h2>
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="w-full md:w-2/3">
+    <div class="w-full md:w-2/3 container">
       <h1 class="text-2xl mb-2 md:mb-4">
         {{ deck.name }}
       </h1>
