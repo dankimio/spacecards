@@ -14,12 +14,12 @@
       </div>
     </div>
 
-    <div class="w-full md:w-2/3 container">
+    <div class="w-full md:w-2/3 mx-auto">
       <h1 class="text-3xl mb-2 md:mb-4">
         {{ deck.name }}
       </h1>
 
-      <p class="text-lg text-gray-700 mb-4">
+      <p class="text-lg text-gray-700 mb-5">
         {{ deck.description }}
       </p>
 
