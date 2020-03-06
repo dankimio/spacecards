@@ -1,6 +1,6 @@
 <template>
   <div class="container flex">
-    <div class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
+    <div v-if="false" class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
       <div class="mb-8">
         <h2 class="text-2xl">
           Tags
@@ -59,7 +59,7 @@
         </ul>
       </div>
     </div>
-    <div class="w-full md:w-2/3">
+    <div class="w-full md:w-2/3 mx-auto">
       <h2 class="text-2xl">
         Popular
       </h2>
