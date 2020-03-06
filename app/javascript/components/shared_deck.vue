@@ -6,7 +6,7 @@
       {{ deck.name }}
     </router-link>
 
-    <p class="text-gray-700 leading-tight text-sm block mb-3">
+    <p class="text-gray-700 text-sm block mb-3">
       {{ deck.description.slice(0, 100) }}
     </p>
 
