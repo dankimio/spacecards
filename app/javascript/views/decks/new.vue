@@ -9,6 +9,7 @@
       <form @submit.prevent="submit">
         <div class="field">
           <input
+            v-model="deck.name"
             type="text"
             class="form-control p-4 text-lg"
             placeholder="Deck name, e.g. 'World capitals' or 'Months in French'"
@@ -38,11 +39,26 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
+  data() {
+    return {
+      deck: {
+        name: ''
+      }
+    }
+  },
   methods: {
     submit() {
-      console.log(42)
-    }
+      this.createDeck(this.deck)
+        .then(response => {
+          console.log(response)
+
+          this.$router.push(`/decks/${response.data.id}`)
+        })
+    },
+    ...mapActions(['createDeck'])
   }
 }
 </script>

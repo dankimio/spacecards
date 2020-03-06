@@ -24,6 +24,9 @@ export default new Vuex.Store({
     SET_DECK(state, data) {
       state.deck = data
     },
+    CREATE_DECK(state, data) {
+      state.decks = [data, ...state.decks]
+    },
     SET_CARDS(state, data) {
       state.cards = data
     },
@@ -61,6 +64,13 @@ export default new Vuex.Store({
         .get('/decks')
         .then(response => {
           context.commit('SET_DECKS', response.data)
+        })
+    },
+    createDeck(context, deck) {
+      return axios.post('/decks', { deck: deck })
+        .then(response => {
+          context.commit('CREATE_DECK', response.data)
+          return response
         })
     },
     getDeckCards(context, deckId) {
