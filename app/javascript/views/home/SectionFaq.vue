@@ -10,8 +10,7 @@
           Is it free?
         </h3>
         <p class="faq-item-content">
-          Yes, Spacecards is completely free while in beta and will stay free
-          after the official launch.
+          Yes, Spacecards is free.
         </p>
       </div>
       <div class="faq-item">
@@ -46,10 +45,10 @@
       </div>
       <div class="faq-item">
         <h3 class="faq-item-heading">
-          Is there an app?
+          Is there a mobile app?
         </h3>
         <p class="faq-item-content">
-          No. We plan to have iOS and Android apps in the future.
+          Not at the moment. We'll post an update once the app goes live.
         </p>
       </div>
       <div class="faq-item">
@@ -57,7 +56,7 @@
           My question is not mentioned here.
         </h3>
         <p class="faq-item-content">
-          Feel free <a href="mailto:dan@spacecards.app">drop me</a> a line!
+          Feel free <a href="mailto:dan@spacecards.app">drop us</a> a line!
         </p>
       </div>
     </div>
