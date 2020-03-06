@@ -46,10 +46,10 @@ export default {
     }
   },
   created() {
-    this.getCards(this.id)
+    this.getDeckCards(this.id)
   },
   methods: {
-    ...mapActions(['getCards'])
+    ...mapActions(['getDeckCards'])
   }
 }
 </script>

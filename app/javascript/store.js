@@ -56,7 +56,7 @@ export default new Vuex.Store({
           context.commit('SET_DECKS', response.data)
         })
     },
-    getCards(context, deckId) {
+    getDeckCards(context, deckId) {
       axios.get(`/decks/${deckId}/cards`)
         .then(response => {
           context.commit('SET_CARDS', response.data)
