@@ -7,7 +7,7 @@
     </router-link>
 
     <p class="text-gray-700 leading-tight text-sm block mb-3">
-      {{ deckData.description }}
+      {{ deck.description.slice(0, 100) }}
     </p>
 
     <div class="flex flex-wrap">
