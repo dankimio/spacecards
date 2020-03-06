@@ -2,7 +2,7 @@
   <div
     class="border px-4 py-3 rounded hover:shadow-lg transition transition-shadow duration-100"
   >
-    <router-link class="text-indigo-500 hover:text-indigo-800 font-medium tracking-wide block mb-1" to="/decks/1">
+    <router-link class="text-indigo-500 hover:text-indigo-800 font-medium tracking-wide block mb-1" :to="`/decks/${deck.id}`">
       {{ deck.name }}
     </router-link>
 
