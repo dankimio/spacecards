@@ -36,8 +36,10 @@ import Card from '@/components/card'
 export default {
   components: { Card },
   props: { id: String },
-  metaInfo: {
-    title: `Cards – ${'Deck name'}`
+  metaInfo() {
+    return {
+      title: `Cards – ${this.deck.name}`
+    }
   },
   computed: {
     ...mapState(['cards', 'deck'])
