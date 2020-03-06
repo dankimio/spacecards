@@ -30,14 +30,14 @@ export default new Vuex.Store({
   actions: {
     logIn(context, user) {
       axios
-        .post('/api/users/sign_in', user)
+        .post('/users/sign_in', user)
         .then(response => {
           context.commit('SET_USER', response.data)
         })
     },
     signUp(context, user) {
       axios
-        .post('/api/users', user)
+        .post('/users', user)
         .then(response => {
           context.commit('SET_USER', response.data)
         })
