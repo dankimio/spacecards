@@ -93,6 +93,10 @@ form label {
   }
 }
 
+.button-outlined {
+  @apply .border;
+}
+
 /* Tables */
 
 .table {

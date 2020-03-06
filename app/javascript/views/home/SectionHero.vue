@@ -17,9 +17,15 @@
         Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.
       </p>
 
-      <router-link to="/sign-up" class="button button-primary button-lg tracking-wide mb-8">
-        Start learning
-      </router-link>
+      <div class="mb-8 flex-col md:flex-row">
+        <router-link to="/sign-up" class="button button-primary button-lg w-full md:w-auto tracking-wide mb-4 md:mb-0 md:mr-2">
+          Start learning
+        </router-link>
+
+        <router-link to="/explore" class="button button-outlined button-lg w-full md:w-auto tracking-wide">
+          Explore decks
+        </router-link>
+      </div>
 
       <p class="text-sm text-gray-800 flex items-center">
         <span class="mx-2">Sign in with</span>
