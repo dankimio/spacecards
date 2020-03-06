@@ -19,7 +19,7 @@
         {{ deck.name }}
       </h1>
 
-      <p class="text-lg text-gray-700 mb-5">
+      <p class="text-lg text-gray-700 mb-6 max-w-xl">
         {{ deck.description }}
       </p>
 
