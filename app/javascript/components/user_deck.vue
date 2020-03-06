@@ -9,7 +9,7 @@
         </router-link>
       </div>
       <router-link to="#" class="text-sm text-gray-500 hover:text-gray-800">
-        {{ deck.cards_count }} cards
+        {{ deck.cardsCount }} cards
       </router-link>
     </div>
 

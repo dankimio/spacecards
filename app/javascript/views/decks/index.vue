@@ -8,19 +8,25 @@
       </small>
     </h1>
 
-    <Deck v-for="deck in decks" :key="deck.name" :deck="deck" />
+    <UserDeck v-for="deck in decks" :key="deck.name" :deck="deck" />
   </div>
 </template>
 
 <script>
-import Deck from '@/components/deck'
+import { mapState, mapActions } from 'vuex'
+
+import UserDeck from '@/components/user_deck'
 
 export default {
-  components: { Deck },
+  components: { UserDeck },
   computed: {
-    decks() {
-      return this.$store.state.decks
-    }
+    ...mapState(['decks'])
+  },
+  created() {
+    this.getDecks()
+  },
+  methods: {
+    ...mapActions(['getDecks'])
   },
   metaInfo: {
     title: 'Decks'

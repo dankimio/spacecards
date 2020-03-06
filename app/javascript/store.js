@@ -8,18 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: JSON.parse(localStorage.getItem('user')) || null,
-    decks: [
-      {
-        id: 1,
-        name: 'World capitals',
-        cards_count: 169
-      },
-      {
-        id: 2,
-        name: 'U.S. state capitals',
-        cards_count: 50
-      }
-    ],
+    decks: [],
     deck: {},
     cards: []
   },
