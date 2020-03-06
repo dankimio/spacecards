@@ -38,7 +38,7 @@ export default {
   props: { id: String },
   metaInfo() {
     return {
-      title: `Cards – ${this.deck.name}`
+      title: `${this.deck.name}`
     }
   },
   computed: {
