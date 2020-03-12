@@ -52,6 +52,50 @@
           One-way & reverse cards, cards with context, images, pronunciation via text-to-speech.
         </p>
       </div>
+
+      <div class="flex flex-col items-center max-w-sm mx-auto text-center">
+        <inline-svg
+          :src="require('@images/home/icon-volume-medium.svg')"
+          class="w-24 h-24 text-gray-700 fill-current mb-2"
+        />
+        <div class="mb-4 flex items-start">
+          <h3 class="text-xl font-medium mb-0">
+            Pronunciate
+          </h3>
+
+          <span
+            class="ml-3 border border-orange-400 text-orange-500 rounded px-1 text-xs font-light uppercase tracking-wider"
+            style="font-size: .66rem"
+          >
+            Beta
+          </span>
+        </div>
+        <p class="font-light text-gray-800 leading-normal">
+          Get your pronunciation right with dictionary based speech synthesis.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center max-w-sm mx-auto text-center">
+        <inline-svg
+          :src="require('@images/home/icon-people.svg')"
+          class="w-24 h-24 text-gray-700 fill-current mb-2"
+        />
+        <div class="mb-4 flex items-start">
+          <h3 class="text-xl font-medium mb-0">
+            Community content
+          </h3>
+
+          <span
+            class="ml-3 border border-orange-400 text-orange-500 rounded px-1 text-xs font-light uppercase tracking-wider"
+            style="font-size: .66rem"
+          >
+            Beta
+          </span>
+        </div>
+        <p class="font-light text-gray-800 leading-normal">
+          Explore hundreds of user created decks, build your own cards and share your knowledge with the community.
+        </p>
+      </div>
     </div>
   </div>
 </template>
