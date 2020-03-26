@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 import axios from 'axios'
+
+import decks from './store/modules/decks'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  modules: {
+    decks
+  },
   state: {
     user: JSON.parse(localStorage.getItem('user')) || null,
-    decks: [],
-    deck: {},
     cards: [],
     card: {},
     userDecks: []
@@ -18,15 +20,6 @@ export default new Vuex.Store({
     SET_USER(state, data) {
       state.user = data
       localStorage.setItem('user', JSON.stringify(data))
-    },
-    SET_DECKS(state, data) {
-      state.decks = data
-    },
-    SET_DECK(state, data) {
-      state.deck = data
-    },
-    CREATE_DECK(state, data) {
-      state.decks = [data, ...state.decks]
     },
     SET_CARDS(state, data) {
       state.cards = data
@@ -57,26 +50,6 @@ export default new Vuex.Store({
           context.commit('SET_USER', response.data)
         })
     },
-    getDeck(context, id) {
-      axios.get(`/decks/${id}`)
-        .then(response => {
-          context.commit('SET_DECK', response.data)
-        })
-    },
-    getDecks(context) {
-      axios
-        .get('/decks')
-        .then(response => {
-          context.commit('SET_DECKS', response.data)
-        })
-    },
-    createDeck(context, deck) {
-      return axios.post('/decks', { deck: deck })
-        .then(response => {
-          context.commit('CREATE_DECK', response.data)
-          return response
-        })
-    },
     getDeckCards(context, deckId) {
       axios.get(`/decks/${deckId}/cards`)
         .then(response => {
@@ -105,9 +78,6 @@ export default new Vuex.Store({
   getters: {
     loggedIn(state) {
       return state.user && state.user.id
-    },
-    getDeckById: (state) => (id) => {
-      return state.decks.find(deck => deck.id == id)
     }
   }
 })
