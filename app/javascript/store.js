@@ -37,12 +37,6 @@ export default new Vuex.Store({
         .then(response => {
           context.commit('SET_USER', response.data)
         })
-    },
-    getDeckCards(context, deckId) {
-      axios.get(`/decks/${deckId}/cards`)
-        .then(response => {
-          context.commit('SET_CARDS', response.data)
-        })
     }
   },
   getters: {

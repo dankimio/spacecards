@@ -8,6 +8,12 @@ const state = {
 const getters = {}
 
 const actions = {
+  getDeckCards(context, deckId) {
+    axios.get(`/decks/${deckId}/cards`)
+      .then(response => {
+        context.commit('SET_CARDS', response.data)
+      })
+  },
   updateCard(context, card) {
     return axios.patch(`/cards/${card.id}`, { card: card })
       .then(response => {
