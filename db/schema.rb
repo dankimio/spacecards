@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_03_26_165536) do
   create_table "user_decks", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "deck_id", null: false
+    t.string "name", null: false
+    t.integer "user_cards_count", default: 0
     t.integer "new_cards_per_day", default: 20
     t.integer "reviews_per_day", default: 20
     t.datetime "created_at", precision: 6, null: false
