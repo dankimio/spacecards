@@ -83,14 +83,16 @@ export default {
     }
   },
   computed: {
-    ...mapState(['cards', 'deck'])
+    ...mapState('cards', ['cards']),
+    ...mapState('decks', ['deck'])
   },
   created() {
     this.getDeckCards(this.id)
     this.getDeck(this.id)
   },
   methods: {
-    ...mapActions(['getDeck', 'getDeckCards'])
+    ...mapActions('cards', ['getDeckCards']),
+    ...mapActions('decks', ['getDeck'])
   }
 }
 </script>
