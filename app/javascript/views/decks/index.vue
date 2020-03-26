@@ -19,13 +19,13 @@ import UserDeck from '@/components/user_deck'
 export default {
   components: { UserDeck },
   computed: {
-    ...mapState(['userDecks'])
+    ...mapState('userDecks', ['userDecks'])
   },
   created() {
     this.getUserDecks()
   },
   methods: {
-    ...mapActions(['getUserDecks'])
+    ...mapActions('userDecks', ['getUserDecks'])
   },
   metaInfo: {
     title: 'Decks'

@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import SharedDeck from '@/components/shared_deck'
 import Tag from '@/components/tag'
 
@@ -89,12 +90,13 @@ export default {
     }
   },
   computed: {
-    decks() {
-      return this.$store.state.decks
-    }
+    ...mapState('decks', ['decks'])
   },
   created() {
-    this.$store.dispatch('getDecks')
+    this.getDecks()
+  },
+  methods: {
+    ...mapActions('decks', ['getDecks'])
   }
 }
 
