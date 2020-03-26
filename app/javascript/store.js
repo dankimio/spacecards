@@ -4,25 +4,23 @@ import axios from 'axios'
 
 import cards from './store/modules/cards'
 import decks from './store/modules/decks'
+import userDecks from './store/modules/user_decks'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     cards,
-    decks
+    decks,
+    userDecks
   },
   state: {
-    user: JSON.parse(localStorage.getItem('user')) || null,
-    userDecks: []
+    user: JSON.parse(localStorage.getItem('user')) || null
   },
   mutations: {
     SET_USER(state, data) {
       state.user = data
       localStorage.setItem('user', JSON.stringify(data))
-    },
-    SET_USER_DECKS(state, data) {
-      state.userDecks = data
     }
   },
   actions: {
@@ -44,12 +42,6 @@ export default new Vuex.Store({
       axios.get(`/decks/${deckId}/cards`)
         .then(response => {
           context.commit('SET_CARDS', response.data)
-        })
-    },
-    getUserDecks(context) {
-      axios.get('/user_decks')
-        .then(response => {
-          context.commit('SET_USER_DECKS', response.data)
         })
     }
   },
