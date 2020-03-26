@@ -1,0 +1,7 @@
+user_deck:
+  user: foo
+  deck: deck
+  name: User deck
+  user_cards_count: 0
+  new_cards_per_day: 20
+  reviews_per_day: 20

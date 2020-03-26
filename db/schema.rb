@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_070947) do
+ActiveRecord::Schema.define(version: 2020_03_26_165536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 2020_03_06_070947) do
     t.index ["user_id"], name: "index_decks_on_user_id"
   end
 
+  create_table "user_decks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "deck_id", null: false
+    t.string "name", null: false
+    t.integer "user_cards_count", default: 0
+    t.integer "new_cards_per_day", default: 20
+    t.integer "reviews_per_day", default: 20
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deck_id"], name: "index_user_decks_on_deck_id"
+    t.index ["user_id"], name: "index_user_decks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -49,4 +62,6 @@ ActiveRecord::Schema.define(version: 2020_03_06_070947) do
 
   add_foreign_key "cards", "decks"
   add_foreign_key "decks", "users"
+  add_foreign_key "user_decks", "decks"
+  add_foreign_key "user_decks", "users"
 end

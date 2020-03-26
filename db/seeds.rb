@@ -16,4 +16,9 @@ user = User.create!(
       back: "#{deck.name}. Back #{j + 1}"
     )
   end
+
+  user.user_decks.create!(
+    deck: deck,
+    name: deck.name
+  )
 end

@@ -11,7 +11,8 @@ export default new Vuex.Store({
     decks: [],
     deck: {},
     cards: [],
-    card: {}
+    card: {},
+    userDecks: []
   },
   mutations: {
     SET_USER(state, data) {
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     DESTROY_CARD(state, card) {
       state.card = {}
       state.cards = state.cards.filter(value => value.id !== card.id)
+    },
+    SET_USER_DECKS(state, data) {
+      state.userDecks = data
     }
   },
   actions: {
@@ -89,6 +93,12 @@ export default new Vuex.Store({
       axios.delete(`/cards/${card.id}`)
         .then(response => {
           context.commit('DESTROY_CARD', card)
+        })
+    },
+    getUserDecks(context) {
+      axios.get('/user_decks')
+        .then(response => {
+          context.commit('SET_USER_DECKS', response.data)
         })
     }
   },
