@@ -2,13 +2,12 @@
   <div class="container md:max-w-xl lg:mx-auto">
     <h1 class="heading-2 mb-4 md:mb-8 md:text-center">
       Decks
-
       <small>
         <router-link to="/decks/new" class="text-base ml-1">New deck</router-link>
       </small>
     </h1>
 
-    <UserDeck v-for="deck in decks" :key="deck.name" :deck="deck" />
+    <UserDeck v-for="userDeck in userDecks" :key="userDeck.name" :user-deck="userDeck" />
   </div>
 </template>
 
@@ -20,13 +19,13 @@ import UserDeck from '@/components/user_deck'
 export default {
   components: { UserDeck },
   computed: {
-    ...mapState(['decks'])
+    ...mapState(['userDecks'])
   },
   created() {
-    this.getDecks()
+    this.getUserDecks()
   },
   methods: {
-    ...mapActions(['getDecks'])
+    ...mapActions(['getUserDecks'])
   },
   metaInfo: {
     title: 'Decks'
