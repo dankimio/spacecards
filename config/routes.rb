@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :decks, only: %i[index show create] do
     resources :cards, only: %i[index update destroy], shallow: true
   end
+  resources :user_decks, except: %i[new edit]
 end
