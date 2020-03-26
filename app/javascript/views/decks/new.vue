@@ -62,8 +62,6 @@ export default {
     submit() {
       this.createDeck(this.deck)
         .then(response => {
-          console.log(response)
-
           this.$router.push(`/decks/${response.data.id}`)
         })
     },

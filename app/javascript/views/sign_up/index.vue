@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   metaInfo: {
     title: 'Sign up'
@@ -72,10 +74,10 @@ export default {
   },
   methods: {
     submit() {
-      this.$store
-        .dispatch('signUp', { user: this.user })
+      this.signUp({ user: this.user })
         .then(() => this.$router.push('/'))
-    }
+    },
+    ...mapActions('users', ['signUp'])
   }
 }
 </script>

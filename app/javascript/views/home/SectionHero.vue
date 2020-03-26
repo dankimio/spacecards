@@ -52,6 +52,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: { ...mapGetters(['loggedIn']) }
+  computed: { ...mapGetters('users', ['loggedIn']) }
 }
 </script>
