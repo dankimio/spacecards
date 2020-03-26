@@ -60,7 +60,7 @@
         />
         <div class="mb-4 flex items-start">
           <h3 class="text-xl font-medium mb-0">
-            Pronunciate
+            Pronunciation
           </h3>
 
           <span
