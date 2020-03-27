@@ -10,7 +10,7 @@ class UserDecksController < ApplicationController
     @user_deck = current_user.user_decks.build(user_deck_params)
 
     if @user_deck.save
-      render :show, status: :created
+      render json: @user_deck, status: :created
     else
       render json: @user_deck.errors, status: :unprocessable_entity
     end
@@ -19,6 +19,6 @@ class UserDecksController < ApplicationController
   private
 
   def user_deck_params
-    params.require(:user_deck).permit(:name, :description)
+    params.require(:user_deck).permit(:name)
   end
 end

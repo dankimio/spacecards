@@ -14,7 +14,7 @@ const actions = {
       })
   },
   createUserDeck(context, userDeck) {
-    return axios.post('/user_decks', { userDeck: userDeck })
+    return axios.post('/user_decks', { user_deck: userDeck })
       .then(response => {
         context.commit('CREATE_USER_DECK', response.data)
         return response
