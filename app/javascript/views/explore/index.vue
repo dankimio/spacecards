@@ -76,8 +76,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import SharedDeck from '@/components/shared_deck'
-import Tag from '@/components/tag'
+import SharedDeck from '@/components/SharedDeck'
+import Tag from '@/components/Tag'
 
 export default {
   components: { SharedDeck, Tag },

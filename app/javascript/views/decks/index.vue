@@ -14,7 +14,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 
-import UserDeck from '@/components/user_deck'
+import UserDeck from '@/components/UserDeck'
 
 export default {
   components: { UserDeck },

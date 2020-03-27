@@ -32,7 +32,7 @@
 
 <script>
 import Card from './card'
-import AnswerButton from '@/components/answer_button'
+import AnswerButton from '@/components/AnswerButton'
 
 export default {
   components: { Card, AnswerButton },

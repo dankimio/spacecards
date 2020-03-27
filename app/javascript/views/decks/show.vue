@@ -72,7 +72,7 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 
-import Card from '@/components/card'
+import Card from '@/components/Card'
 
 export default {
   components: { Card },

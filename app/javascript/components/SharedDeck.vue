@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import Tag from '@/components/tag'
+import Tag from '@/components/Tag'
 
 export default {
   components: { Tag },
