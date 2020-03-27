@@ -7,7 +7,7 @@
     </div>
     <div class="">
       <router-link
-        v-if="!loggedIn"
+        v-if="!isLoggedIn"
         to="/log-in"
         class="mr-6 md:mr-0 md:ml-10"
       >
@@ -20,7 +20,7 @@
         Explore
       </router-link>
       <router-link
-        v-if="loggedIn"
+        v-if="isLoggedIn"
         to="/decks"
         class="mr-6 md:mr-0 md:ml-10"
       >
@@ -35,7 +35,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('users', ['loggedIn'])
+    ...mapGetters('users', ['isLoggedIn'])
   }
 }
 </script>

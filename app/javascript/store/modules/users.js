@@ -5,7 +5,7 @@ const state = {
 }
 
 const getters = {
-  loggedIn(state) {
+  isLoggedIn(state) {
     return state.user && state.user.id
   }
 }
