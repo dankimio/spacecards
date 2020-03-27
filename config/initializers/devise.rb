@@ -299,5 +299,6 @@ Devise.setup do |config|
 
   config.jwt do |jwt|
     jwt.secret = Rails.application.secret_key_base
+    jwt.expiration_time = 1.month.to_i
   end
 end
