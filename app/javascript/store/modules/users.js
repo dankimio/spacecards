@@ -17,8 +17,8 @@ const actions = {
       .post('/users/sign_in', user)
       .then(response => {
         const token = response.headers.authorization.split(' ').pop()
-        localStorage.setItem('token', token)
 
+        localStorage.setItem('token', token)
         context.commit('SET_USER', response.data)
         context.commit('SET_TOKEN', token)
       })
@@ -27,7 +27,11 @@ const actions = {
     axios
       .post('/users', user)
       .then(response => {
+        const token = response.headers.authorization.split(' ').pop()
+
+        localStorage.setItem('token', token)
         context.commit('SET_USER', response.data)
+        context.commit('SET_TOKEN', token)
       })
   }
 }
