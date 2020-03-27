@@ -1,12 +1,13 @@
 import axios from 'axios'
 
 const state = {
-  user: JSON.parse(localStorage.getItem('user')) || null
+  token: localStorage.getItem('token') || '',
+  user: {}
 }
 
 const getters = {
   isLoggedIn(state) {
-    return state.user && state.user.id
+    return !!state.token
   }
 }
 
@@ -15,22 +16,35 @@ const actions = {
     axios
       .post('/users/sign_in', user)
       .then(response => {
-        context.commit('SET_USER', response.data)
+        const token = response.headers.authorization.split(' ').pop()
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`
+        localStorage.setItem('token', token)
+        context.commit('LOG_IN', token, response.data)
       })
   },
   signUp(context, user) {
     axios
       .post('/users', user)
       .then(response => {
-        context.commit('SET_USER', response.data)
+        const token = response.headers.authorization.split(' ').pop()
+        delete axios.defaults.headers.common.Authorization
+        localStorage.setItem('token', token)
+        context.commit('LOG_IN', token, response.data)
       })
+  },
+  logOut(context) {
+    context.commit('LOG_OUT')
   }
 }
 
 const mutations = {
-  SET_USER(state, data) {
-    state.user = data
-    localStorage.setItem('user', JSON.stringify(data))
+  LOG_IN(state, token, user) {
+    state.token = token
+    state.user = user
+  },
+  LOG_OUT(state) {
+    state.token = ''
+    state.user = {}
   }
 }
 

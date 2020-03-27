@@ -23,6 +23,13 @@ Vue.component('inline-svg', InlineSvg)
 import VueMeta from 'vue-meta'
 Vue.use(VueMeta)
 
+import axios from 'axios'
+Vue.prototype.$http = axios
+const token = localStorage.getItem('token')
+if (token) {
+  Vue.prototype.$http.defaults.headers.common.Authorization = `Bearer ${token}`
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     router,

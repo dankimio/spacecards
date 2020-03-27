@@ -26,16 +26,27 @@
       >
         Decks
       </router-link>
+      <a
+        v-if="isLoggedIn"
+        class="mr-6 md:mr-0 md:ml-10"
+        href="#"
+        @click="logOut"
+      >
+        Log out
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   computed: {
     ...mapGetters('users', ['isLoggedIn'])
+  },
+  methods: {
+    ...mapActions('users', ['logOut'])
   }
 }
 </script>
