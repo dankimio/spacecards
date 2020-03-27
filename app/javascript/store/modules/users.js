@@ -19,8 +19,7 @@ const actions = {
         const token = response.headers.authorization.split(' ').pop()
 
         localStorage.setItem('token', token)
-        context.commit('SET_USER', response.data)
-        context.commit('SET_TOKEN', token)
+        context.commit('LOG_IN', token, response.data)
       })
   },
   signUp(context, user) {
@@ -30,8 +29,7 @@ const actions = {
         const token = response.headers.authorization.split(' ').pop()
 
         localStorage.setItem('token', token)
-        context.commit('SET_USER', response.data)
-        context.commit('SET_TOKEN', token)
+        context.commit('LOG_IN', token, response.data)
       })
   },
   logOut(context) {
@@ -40,8 +38,9 @@ const actions = {
 }
 
 const mutations = {
-  SET_TOKEN(state, token) {
+  LOG_IN(state, token, user) {
     state.token = token
+    state.user = user
   },
   LOG_OUT(state) {
     state.token = ''
