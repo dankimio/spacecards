@@ -12,12 +12,22 @@ const actions = {
       .then(response => {
         context.commit('SET_USER_DECKS', response.data)
       })
+  },
+  createUserDeck(context, userDeck) {
+    return axios.post('/user_decks', { userDeck: userDeck })
+      .then(response => {
+        context.commit('CREATE_USER_DECK', response.data)
+        return response
+      })
   }
 }
 
 const mutations = {
-  SET_USER_DECKS(state, data) {
-    state.userDecks = data
+  SET_USER_DECKS(state, userDecks) {
+    state.userDecks = userDecks
+  },
+  CREATE_USER_DECK(state, userDeck) {
+    state.userDecks = [userDeck, ...state.userDecks]
   }
 }
 

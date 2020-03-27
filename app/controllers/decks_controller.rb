@@ -9,16 +9,6 @@ class DecksController < ApplicationController
     @deck = Deck.find(params[:id])
   end
 
-  def create
-    @deck = User.first.decks.build(deck_params)
-
-    if @deck.save
-      render :show, status: :created
-    else
-      render json: @deck.errors, status: :unprocessable_entity
-    end
-  end
-
   private
 
   def deck_params

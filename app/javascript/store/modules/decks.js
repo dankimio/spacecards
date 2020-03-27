@@ -24,13 +24,6 @@ const actions = {
       .then(response => {
         context.commit('SET_DECKS', response.data)
       })
-  },
-  createDeck(context, deck) {
-    return axios.post('/decks', { deck: deck })
-      .then(response => {
-        context.commit('CREATE_DECK', response.data)
-        return response
-      })
   }
 }
 
@@ -40,9 +33,6 @@ const mutations = {
   },
   SET_DECK(state, data) {
     state.deck = data
-  },
-  CREATE_DECK(state, data) {
-    state.decks = [data, ...state.decks]
   }
 }
 

@@ -9,7 +9,7 @@
       <form @submit.prevent="submit">
         <div class="field">
           <input
-            v-model="deck.name"
+            v-model="userDeck.name"
             type="text"
             class="form-control p-4 text-lg"
             placeholder="Deck name, e.g. 'World capitals' or 'Months in French'"
@@ -20,7 +20,7 @@
 
         <div class="field">
           <textarea
-            v-model="deck.description"
+            v-model="userDeck.description"
             class="form-control p-4 text-lg"
             placeholder="Description (optional)"
           />
@@ -52,7 +52,7 @@ import { mapActions } from 'vuex'
 export default {
   data() {
     return {
-      deck: {
+      userDeck: {
         name: '',
         description: ''
       }
@@ -60,12 +60,12 @@ export default {
   },
   methods: {
     submit() {
-      this.createDeck(this.deck)
+      this.createUserDeck(this.userDeck)
         .then(response => {
           this.$router.push(`/decks/${response.data.id}`)
         })
     },
-    ...mapActions(['createDeck'])
+    ...mapActions('userDecks', ['createUserDeck'])
   }
 }
 </script>
