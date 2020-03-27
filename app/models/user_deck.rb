@@ -1,4 +1,4 @@
 class UserDeck < ApplicationRecord
+  belongs_to :deck, optional: true
   belongs_to :user
-  belongs_to :deck
 end
