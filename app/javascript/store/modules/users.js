@@ -33,6 +33,9 @@ const actions = {
         context.commit('SET_USER', response.data)
         context.commit('SET_TOKEN', token)
       })
+  },
+  logOut(context) {
+    context.commit('LOG_OUT')
   }
 }
 
@@ -40,8 +43,9 @@ const mutations = {
   SET_TOKEN(state, token) {
     state.token = token
   },
-  SET_USER(state, user) {
-    state.user = user
+  LOG_OUT(state) {
+    state.token = ''
+    state.user = {}
   }
 }
 
