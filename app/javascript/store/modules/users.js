@@ -16,11 +16,11 @@ const actions = {
     axios
       .post('/users/sign_in', user)
       .then(response => {
-        // TODO: get token
-        localStorage.setItem('token', response.token)
+        const token = response.headers.authorization.split(' ').pop()
+        localStorage.setItem('token', token)
 
         context.commit('SET_USER', response.data)
-        context.commit('SET_TOKEN', response.token)
+        context.commit('SET_TOKEN', token)
       })
   },
   signUp(context, user) {
@@ -33,10 +33,6 @@ const actions = {
 }
 
 const mutations = {
-  SET_USER(state, data) {
-    state.user = data
-    localStorage.setItem('user', JSON.stringify(data))
-  },
   SET_TOKEN(state, token) {
     state.token = token
   },
