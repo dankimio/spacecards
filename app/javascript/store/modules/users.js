@@ -17,7 +17,7 @@ const actions = {
       .post('/users/sign_in', user)
       .then(response => {
         const token = response.headers.authorization.split(' ').pop()
-
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`
         localStorage.setItem('token', token)
         context.commit('LOG_IN', token, response.data)
       })
@@ -27,7 +27,7 @@ const actions = {
       .post('/users', user)
       .then(response => {
         const token = response.headers.authorization.split(' ').pop()
-
+        delete axios.defaults.headers.common.Authorization
         localStorage.setItem('token', token)
         context.commit('LOG_IN', token, response.data)
       })
