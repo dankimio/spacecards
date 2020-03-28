@@ -65,9 +65,9 @@
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <SharedDeck
-          v-for="deck in decks"
-          :key="deck.id"
-          :deck="deck"
+          v-for="sharedDeck in sharedDecks"
+          :key="sharedDeck.id"
+          :shared-deck="sharedDeck"
         />
       </div>
     </div>
@@ -82,7 +82,7 @@ import Tag from '@/components/Tag'
 export default {
   components: { SharedDeck, Tag },
   metaInfo: {
-    title: 'Explore decks'
+    title: 'Explore sharedDecks'
   },
   data() {
     return {
@@ -90,13 +90,13 @@ export default {
     }
   },
   computed: {
-    ...mapState('decks', ['decks'])
+    ...mapState('sharedDecks', ['sharedDecks'])
   },
   created() {
-    this.getDecks()
+    this.getSharedDecks()
   },
   methods: {
-    ...mapActions('decks', ['getDecks'])
+    ...mapActions('sharedDecks', ['getSharedDecks'])
   }
 }
 
