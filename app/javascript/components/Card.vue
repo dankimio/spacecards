@@ -3,10 +3,14 @@
     <div class="flex flex-col">
       <div class="px-4 py-3">
         <span class="uppercase tracking-wide text-gray-500 text-xs">Front</span>
-        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="currentCard.front" />
+        <div
+          v-if="!isEditing"
+          class="text-gray-800 text-lg"
+          v-text="currentCard.front"
+        />
 
         <textarea
-          v-if="isEditing"
+          v-if="allowEditing && isEditing"
           v-model="currentCard.front"
           name="front"
           class="form-control w-full"
@@ -18,18 +22,25 @@
 
       <div class="px-4 py-3">
         <span class="uppercase tracking-wide text-gray-500 text-xs">Back</span>
-        <div v-if="!isEditing" class="text-gray-800 text-lg" v-text="currentCard.back" />
+        <div
+          v-if="!isEditing"
+          class="text-gray-800 text-lg"
+          v-text="currentCard.back"
+        />
 
         <textarea
-          v-if="isEditing"
+          v-if="allowEditing && isEditing"
           v-model="currentCard.back"
           name="back"
           class="form-control w-full"
         />
       </div>
     </div>
-    <div class="bg-gray-100 text-gray-600 text-sm px-4 py-2">
-      <div v-if="!isEditing" class="lg:w-48 flex">
+    <div
+      v-if="allowEditing"
+      class="bg-gray-100 text-gray-600 text-sm px-4 py-2"
+    >
+      <div v-if="allowEditing && !isEditing" class="lg:w-48 flex">
         <button
           class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
           @click="toggleEdit"
@@ -52,9 +63,9 @@
           <span>Delete</span>
         </button>
       </div>
-      <div v-if="isEditing" class="lg:w-48 flex">
+      <div v-if="allowEditing && isEditing" class="lg:w-48 flex">
         <button
-          v-if="isEditing"
+          v-if="allowEditing && isEditing"
           class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
           @click="submit"
         >
@@ -65,7 +76,7 @@
           <span>Save</span>
         </button>
         <button
-          v-if="isEditing"
+          v-if="allowEditing && isEditing"
           class="flex items-center text-gray-500 hover:text-gray-800"
           @click="toggleEdit"
         >
@@ -84,7 +95,10 @@
 import { mapActions } from 'vuex'
 
 export default {
-  props: ['card'],
+  props: {
+    allowEditing: Boolean,
+    card: Object
+  },
   data() {
     return {
       currentCard: this.card,
