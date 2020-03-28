@@ -4,11 +4,11 @@
   >
     <div class="py-4 px-5">
       <div class="text-lg md:mb-2">
-        <router-link to="/study-session">
+        <router-link :to="`/user/decks/${userDeck.id}`">
           {{ userDeck.name }}
         </router-link>
       </div>
-      <router-link :to="`/decks/${userDeck.id}`" class="flex items-center text-sm text-gray-500 hover:text-indigo-600 flex-shrink-0 mr-2">
+      <router-link :to="`/user/decks/${userDeck.id}`" class="flex items-center text-sm text-gray-500 hover:text-indigo-600 flex-shrink-0 mr-2">
         <inline-svg
           :src="require('@images/icon-albums.svg')"
           class="w-4 h-4 mr-1 fill-current"

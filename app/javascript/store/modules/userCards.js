@@ -14,8 +14,8 @@ const actions = {
         context.commit('SET_USER_CARDS', response.data)
       })
   },
-  updateCard(context, userCard) {
-    return axios.patch(`/user_cards/${userCard.id}`, { userCard: userCard })
+  updateUserCard(context, userCard) {
+    return axios.patch(`/user_cards/${userCard.id}`, { user_card: userCard })
       .then(response => {
         context.commit('SET_USER_CARD', response.data)
       })
