@@ -61,10 +61,10 @@
       <hr class="mb-8 border-b-2 border-gray-200">
 
       <router-link v-if="false" to="#" class="button button-primary mb-6">
-        Add cards
+        Add sharedCards
       </router-link>
 
-      <Card v-for="card in cards" :key="card.id" :card="card" />
+      <Card v-for="card in sharedCards" :key="card.id" :card="card" />
     </div>
   </div>
 </template>
@@ -83,7 +83,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('cards', ['cards']),
+    ...mapState('sharedCards', ['sharedCards']),
     ...mapState('sharedDecks', ['sharedDeck'])
   },
   created() {
@@ -91,7 +91,7 @@ export default {
     this.getSharedDeck(this.id)
   },
   methods: {
-    ...mapActions('cards', ['getSharedDeckCards']),
+    ...mapActions('sharedCards', ['getSharedDeckCards']),
     ...mapActions('sharedDecks', ['getSharedDeck'])
   }
 }
