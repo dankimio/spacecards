@@ -6,6 +6,10 @@ class UserDecksController < ApplicationController
     @user_decks = current_user.user_decks
   end
 
+  def show
+    @user_deck = current_user.user_decks.find(params[:id])
+  end
+
   def create
     @user_deck = current_user.user_decks.build(user_deck_params)
 
