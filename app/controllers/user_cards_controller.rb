@@ -1,5 +1,6 @@
 class UserCardsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user_deck, only: %i[index]
 
   def index
     @user_cards = @user_deck.user_cards
