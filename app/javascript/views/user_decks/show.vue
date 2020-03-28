@@ -23,7 +23,10 @@
         {{ userDeck.description }}
       </p>
 
-      <router-link v-if="true" to="#" class="button button-lg button-primary w-full uppercase tracking-wide mb-6">
+      <router-link
+        :to="`/user/decks/${userDeck.id}/study`"
+        class="button button-lg button-primary w-full uppercase tracking-wide mb-6"
+      >
         Study
       </router-link>
 
