@@ -1,5 +1,10 @@
 <template>
   <div class="flex min-h-screen flex-col">
+    <VueNotification
+      classes="vue-notification container"
+      position="bottom center"
+      width="100%"
+    />
     <Header />
     <router-view class="flex-1 mb-8" />
     <Footer />
