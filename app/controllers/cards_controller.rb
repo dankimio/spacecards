@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: %i[update destroy]
 
   def index
-    @deck = Deck.find(params[:deck_id])
+    @shared_deck = SharedDeck.find(params[:shared_deck_id])
     @cards = @deck.cards.order(created_at: :desc)
   end
 

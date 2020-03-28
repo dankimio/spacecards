@@ -1,4 +1,4 @@
-class Deck < ApplicationRecord
+class SharedDeck < ApplicationRecord
   belongs_to :user
 
   # TODO: switch dependent to :restrict_with_exception

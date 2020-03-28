@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # TODO: configure `dependent`
-  has_many :decks
+  has_many :shared_decks
   has_many :user_decks, dependent: :destroy
 
   # Include default devise modules. Others available are:

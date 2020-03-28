@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_103156) do
+ActiveRecord::Schema.define(version: 2020_03_28_164252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.bigint "deck_id", null: false
+    t.bigint "shared_deck_id", null: false
     t.text "front", null: false
     t.text "back", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["deck_id"], name: "index_cards_on_deck_id"
+    t.index ["shared_deck_id"], name: "index_cards_on_shared_deck_id"
   end
 
-  create_table "decks", force: :cascade do |t|
+  create_table "shared_decks", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.integer "cards_count", default: 0
@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 2020_03_28_103156) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
-    t.index ["user_id"], name: "index_decks_on_user_id"
+    t.index ["user_id"], name: "index_shared_decks_on_user_id"
   end
 
   create_table "user_decks", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "deck_id"
+    t.bigint "shared_deck_id"
     t.string "name", null: false
     t.integer "user_cards_count", default: 0
     t.integer "new_cards_per_day", default: 20
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_103156) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
-    t.index ["deck_id"], name: "index_user_decks_on_deck_id"
+    t.index ["shared_deck_id"], name: "index_user_decks_on_shared_deck_id"
     t.index ["user_id"], name: "index_user_decks_on_user_id"
   end
 
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 2020_03_28_103156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cards", "decks"
-  add_foreign_key "decks", "users"
-  add_foreign_key "user_decks", "decks"
+  add_foreign_key "cards", "shared_decks"
+  add_foreign_key "shared_decks", "users"
+  add_foreign_key "user_decks", "shared_decks"
   add_foreign_key "user_decks", "users"
 end
