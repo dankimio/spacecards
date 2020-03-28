@@ -1,1 +1,3 @@
-user: {}
+user:
+  email: 'foo@bar.com'
+  encrypted_password: qwerty123
