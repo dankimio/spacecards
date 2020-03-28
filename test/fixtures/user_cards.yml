@@ -1,0 +1,9 @@
+user_card:
+  user_deck: user_deck
+  shared_card: shared_card
+  front: Front
+  back: Back
+  easiness_factor: 2.5
+  repetitions: 0
+  due_at: 2020-03-28 21:13:47
+  recalled_at: 2019-03-28 21:13:47

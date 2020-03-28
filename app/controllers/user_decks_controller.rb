@@ -1,6 +1,6 @@
 class UserDecksController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
-  before_action :authenticate_user!, only: %i[index create]
+  before_action :authenticate_user!, only: %i[index show create]
 
   def index
     @user_decks = current_user.user_decks
