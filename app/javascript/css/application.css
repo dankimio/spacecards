@@ -3,5 +3,6 @@
 
 @import 'custom';
 @import 'components';
+@import 'vue_notification';
 
 @import 'tailwindcss/utilities';
