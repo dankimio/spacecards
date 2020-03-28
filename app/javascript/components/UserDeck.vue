@@ -55,6 +55,11 @@
 
 <script>
 export default {
-  props: ['userDeck']
+  props: {
+    userDeck: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>

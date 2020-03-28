@@ -71,7 +71,12 @@ import Card from '@/components/Card'
 
 export default {
   components: { Card },
-  props: { id: String },
+  props: {
+    id: {
+      type: Number,
+      required: true
+    }
+  },
   metaInfo() {
     return {
       title: `${this.userDeck.name}`

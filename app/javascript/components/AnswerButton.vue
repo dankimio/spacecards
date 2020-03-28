@@ -42,7 +42,12 @@ const states = {
 }
 
 export default {
-  props: ['answer'],
+  props: {
+    answer: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return { states: states }
   }

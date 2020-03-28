@@ -60,7 +60,12 @@ import Tag from '@/components/Tag'
 
 export default {
   components: { Tag },
-  props: ['sharedDeck'],
+  props: {
+    sharedDeck: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       sharedDeckData: {

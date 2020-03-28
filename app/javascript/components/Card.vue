@@ -97,7 +97,10 @@ import { mapActions } from 'vuex'
 export default {
   props: {
     allowEditing: Boolean,
-    card: Object
+    card: {
+      type: Object,
+      required: true
+    }
   },
   data() {
     return {

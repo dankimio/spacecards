@@ -5,11 +5,7 @@ const state = {
   sharedDeck: {}
 }
 
-const getters = {
-  getSharedDeckById: (state) => (id) => {
-    return state.sharedDecks.find(sharedDeck => sharedDeck.id == id)
-  }
-}
+const getters = {}
 
 const actions = {
   getSharedDeck(context, id) {
