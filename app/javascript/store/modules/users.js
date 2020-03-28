@@ -33,7 +33,10 @@ const actions = {
       })
   },
   logOut(context) {
-    context.commit('LOG_OUT')
+    return new Promise((resolve, reject) => {
+      context.commit('LOG_OUT')
+      resolve()
+    })
   }
 }
 

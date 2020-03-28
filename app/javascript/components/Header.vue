@@ -39,14 +39,18 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {
     ...mapGetters('users', ['isLoggedIn'])
   },
   methods: {
-    ...mapActions('users', ['logOut'])
+    logOut() {
+      this.$store.dispatch('users/logOut').then(() => {
+        this.$notify({ title: 'Logged out successfully' })
+      })
+    }
   }
 }
 </script>

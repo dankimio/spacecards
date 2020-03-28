@@ -23,6 +23,9 @@ Vue.component('inline-svg', InlineSvg)
 import VueMeta from 'vue-meta'
 Vue.use(VueMeta)
 
+import VueNotification from 'vue-notification'
+Vue.use(VueNotification, { componentName: 'VueNotification' })
+
 import axios from 'axios'
 Vue.prototype.$http = axios
 const token = localStorage.getItem('token')
