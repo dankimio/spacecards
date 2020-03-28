@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_181347) do
+ActiveRecord::Schema.define(version: 2020_03_28_211534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 2020_03_28_181347) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.index ["user_id"], name: "index_shared_decks_on_user_id"
+  end
+
+  create_table "study_sessions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "user_deck_id", null: false
+    t.integer "new_cards_limit", null: false
+    t.integer "due_cards_limit", null: false
+    t.boolean "completed", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_deck_id"], name: "index_study_sessions_on_user_deck_id"
+    t.index ["user_id"], name: "index_study_sessions_on_user_id"
   end
 
   create_table "user_cards", force: :cascade do |t|
@@ -78,6 +90,8 @@ ActiveRecord::Schema.define(version: 2020_03_28_181347) do
 
   add_foreign_key "shared_cards", "shared_decks"
   add_foreign_key "shared_decks", "users"
+  add_foreign_key "study_sessions", "user_decks"
+  add_foreign_key "study_sessions", "users"
   add_foreign_key "user_cards", "shared_cards"
   add_foreign_key "user_cards", "user_decks"
   add_foreign_key "user_decks", "shared_decks"

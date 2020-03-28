@@ -1,0 +1,6 @@
+study_session:
+  user: user
+  user_deck: user_deck
+  new_cards_limit: 20
+  due_cards_limit: 20
+  completed: false
