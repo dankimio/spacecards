@@ -10,6 +10,7 @@ import DecksNew from '@/views/decks/new'
 import DecksEdit from '@/views/decks/edit'
 
 import SharedDecksShow from '@/views/shared_decks/show'
+import UserDecksShow from '@/views/user_decks/show'
 
 import StudySession from '@/views/study_session/index'
 import Explore from '@/views/explore/index'
@@ -26,6 +27,7 @@ export default new VueRouter({
     { path: '/decks/1/edit', component: DecksEdit },
     { path: '/study-session', component: StudySession },
     { path: '/decks/:id', component: SharedDecksShow, props: true },
+    { path: '/user/decks/:id', component: UserDecksShow, props: true },
     { path: '/explore', component: Explore }
   ]
 })

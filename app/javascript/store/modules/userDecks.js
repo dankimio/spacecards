@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const state = {
+  userDeck: {},
   userDecks: []
 }
 
@@ -13,6 +14,12 @@ const actions = {
         context.commit('SET_USER_DECKS', response.data)
       })
   },
+  getUserDeck(context, userDeckId) {
+    axios.get(`/user_decks/${userDeckId}`)
+      .then(response => {
+        context.commit('SET_USER_DECK', response.data)
+      })
+  },
   createUserDeck(context, userDeck) {
     return axios.post('/user_decks', { user_deck: userDeck })
       .then(response => {
@@ -23,6 +30,9 @@ const actions = {
 }
 
 const mutations = {
+  SET_USER_DECK(state, userDeck) {
+    state.userDeck = userDeck
+  },
   SET_USER_DECKS(state, userDecks) {
     state.userDecks = userDecks
   },
