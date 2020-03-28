@@ -16,11 +16,11 @@
 
     <div class="w-full md:w-2/3 mx-auto">
       <h1 class="text-3xl mb-2 md:mb-4">
-        {{ deck.name }}
+        {{ sharedDeck.name }}
       </h1>
 
       <p class="text-lg text-gray-700 mb-5 max-w-xl">
-        {{ deck.description }}
+        {{ sharedDeck.description }}
       </p>
 
       <button
@@ -79,20 +79,20 @@ export default {
   props: { id: String },
   metaInfo() {
     return {
-      title: `${this.deck.name}`
+      title: `${this.sharedDeck.name}`
     }
   },
   computed: {
     ...mapState('cards', ['cards']),
-    ...mapState('decks', ['deck'])
+    ...mapState('sharedDecks', ['sharedDeck'])
   },
   created() {
-    this.getDeckCards(this.id)
-    this.getDeck(this.id)
+    this.getSharedDeckCards(this.id)
+    this.getSharedDeck(this.id)
   },
   methods: {
-    ...mapActions('cards', ['getDeckCards']),
-    ...mapActions('decks', ['getDeck'])
+    ...mapActions('cards', ['getSharedDeckCards']),
+    ...mapActions('sharedDecks', ['getSharedDeck'])
   }
 }
 </script>
