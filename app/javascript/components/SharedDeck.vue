@@ -4,7 +4,7 @@
   >
     <router-link
       class="text-indigo-500 hover:text-indigo-800 font-medium tracking-wide block mb-1"
-      :to="`/explore/decks/${sharedDeck.id}`"
+      :to="`/decks/${sharedDeck.id}`"
     >
       {{ sharedDeck.name }}
     </router-link>
