@@ -1,0 +1,5 @@
+shared_deck:
+  user: user
+  name: Shared deck
+  shared_cards_count: 1
+  public: false

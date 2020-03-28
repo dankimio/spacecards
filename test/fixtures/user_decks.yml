@@ -1,6 +1,6 @@
 user_deck:
   user: foo
-  deck: deck
+  shared_deck: shared_deck
   name: User deck
   user_cards_count: 0
   new_cards_per_day: 20

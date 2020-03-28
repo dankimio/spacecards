@@ -1,0 +1,4 @@
+shared_card:
+  shared_deck: shared_deck
+  front: Front
+  back: Back
