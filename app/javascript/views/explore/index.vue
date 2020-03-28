@@ -59,7 +59,7 @@
         </ul>
       </div>
     </div>
-    <div class="w-full md:w-2/3 mx-auto">
+    <div class="w-full">
       <h2 class="text-2xl">
         Popular
       </h2>
