@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_164252) do
+ActiveRecord::Schema.define(version: 2020_03_28_164853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cards", force: :cascade do |t|
+  create_table "shared_cards", force: :cascade do |t|
     t.bigint "shared_deck_id", null: false
     t.text "front", null: false
     t.text "back", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["shared_deck_id"], name: "index_cards_on_shared_deck_id"
+    t.index ["shared_deck_id"], name: "index_shared_cards_on_shared_deck_id"
   end
 
   create_table "shared_decks", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
-    t.integer "cards_count", default: 0
+    t.integer "shared_cards_count", default: 0
     t.boolean "public", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_164252) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cards", "shared_decks"
+  add_foreign_key "shared_cards", "shared_decks"
   add_foreign_key "shared_decks", "users"
   add_foreign_key "user_decks", "shared_decks"
   add_foreign_key "user_decks", "users"

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
 
   resources :shared_decks, only: %i[index show] do
-    resources :cards, only: %i[index update destroy], shallow: true
+    resources :shared_cards, only: %i[index update destroy], shallow: true
   end
   resources :user_decks, except: %i[new edit]
 end
