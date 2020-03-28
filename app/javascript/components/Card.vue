@@ -120,6 +120,9 @@ export default {
         .then(response => {
           this.isEditing = false
         })
+        .then(() => {
+          this.$notify({ title: 'Card was updated successfully' })
+        })
     },
     ...mapActions('userCards', ['updateUserCard', 'destroyUserCard'])
   }
