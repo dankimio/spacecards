@@ -23,6 +23,21 @@
         {{ userDeck.description }}
       </p>
 
+      <div class="bg-gray-100 px-5 py-4 rounded mb-6 flex">
+        <div class="w-1/2">
+          <p class="mb-1 text-gray-600 uppercase tracking-wide text-sm">
+            Due cards
+          </p>
+          <span class="text-xl font-semibold text-gray-700">0</span>
+        </div>
+        <div class="w-1/2">
+          <p class="mb-1 text-gray-600 uppercase tracking-wide text-sm">
+            New cards
+          </p>
+          <span class="text-xl font-semibold text-gray-700">0</span>
+        </div>
+      </div>
+
       <router-link
         :to="`/user/decks/${userDeck.id}/study`"
         class="button button-lg button-primary w-full uppercase tracking-wide mb-6"
