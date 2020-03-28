@@ -20,8 +20,8 @@ const actions = {
         context.commit('SET_USER_CARD', response.data)
       })
   },
-  destroyCard(context, userCard) {
-    axios.delete(`/userCards/${userCard.id}`)
+  destroyUserCard(context, userCard) {
+    return axios.delete(`/user_cards/${userCard.id}`)
       .then(response => {
         context.commit('DESTROY_USER_CARD', userCard)
       })
@@ -32,10 +32,10 @@ const mutations = {
   SET_USER_CARDS(state, data) {
     state.userCards = data
   },
-  SET_USERCARD(state, data) {
+  SET_USER_CARD(state, data) {
     state.userCard = data
   },
-  DESTROY_USERCARD(state, userCard) {
+  DESTROY_USER_CARD(state, userCard) {
     state.userCard = {}
     state.userCards = state.userCards.filter(value => value.id !== userCard.id)
   }

@@ -110,15 +110,18 @@ export default {
       this.isEditing = !this.isEditing
     },
     destroy() {
-      this.destroyCard(this.currentCard)
+      this.destroyUserCard(this.currentCard)
+        .then(() => {
+          this.$notify({ title: 'Card was deleted successfully' })
+        })
     },
     submit() {
-      this.updateCard(this.currentCard)
+      this.updateUserCard(this.currentCard)
         .then(response => {
           this.isEditing = false
         })
     },
-    ...mapActions(['updateCard', 'destroyCard'])
+    ...mapActions('userCards', ['updateUserCard', 'destroyUserCard'])
   }
 }
 </script>
