@@ -23,11 +23,18 @@
         {{ userDeck.description }}
       </p>
 
-      <hr class="mb-8 border-b-2 border-gray-200">
-
-      <router-link v-if="false" to="#" class="button button-primary mb-6">
-        Add cards
+      <router-link v-if="true" to="#" class="button button-lg button-primary w-full uppercase tracking-wide mb-6">
+        Study
       </router-link>
+
+      <hr class="mb-6 border-b-2 border-gray-200">
+
+      <div
+        class="button button-outlined button-lg
+          w-full mb-5 uppercase tracking-wide text-gray-600 border-gray-400"
+      >
+        Add cards
+      </div>
 
       <Card
         v-for="userCard in userCards"
