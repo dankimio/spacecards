@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_28_211534) do
+ActiveRecord::Schema.define(version: 2020_03_28_212610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "study_session_id", null: false
+    t.bigint "user_card_id", null: false
+    t.integer "answer", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["study_session_id"], name: "index_reviews_on_study_session_id"
+    t.index ["user_card_id"], name: "index_reviews_on_user_card_id"
+  end
 
   create_table "shared_cards", force: :cascade do |t|
     t.bigint "shared_deck_id", null: false
@@ -88,6 +98,8 @@ ActiveRecord::Schema.define(version: 2020_03_28_211534) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reviews", "study_sessions"
+  add_foreign_key "reviews", "user_cards"
   add_foreign_key "shared_cards", "shared_decks"
   add_foreign_key "shared_decks", "users"
   add_foreign_key "study_sessions", "user_decks"
