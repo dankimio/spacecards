@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_214436) do
+ActiveRecord::Schema.define(version: 2020_03_28_103156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_214436) do
     t.integer "reviews_per_day", default: 20
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.index ["deck_id"], name: "index_user_decks_on_deck_id"
     t.index ["user_id"], name: "index_user_decks_on_user_id"
   end
