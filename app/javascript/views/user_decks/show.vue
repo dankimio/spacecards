@@ -29,7 +29,12 @@
         Add cards
       </router-link>
 
-      <!-- <Card v-for="userCard in userCards" :key="userCard.id" :card="card" /> -->
+      <Card
+        v-for="userCard in userCards"
+        :key="userCard.id"
+        :card="userCard"
+        :allow-editing="true"
+      />
     </div>
   </div>
 </template>
@@ -48,16 +53,16 @@ export default {
     }
   },
   computed: {
-    ...mapState('userDecks', ['userDeck'])
-    // ...mapState('userCards', ['userCards']),
+    ...mapState('userDecks', ['userDeck']),
+    ...mapState('userCards', ['userCards'])
   },
   created() {
     this.getUserDeck(this.id)
-    // this.getUserDeckUserCards(this.id)
+    this.getUserDeckUserCards(this.id)
   },
   methods: {
-    ...mapActions('userDecks', ['getUserDeck'])
-    // ...mapActions('userCards', ['getUserDeckUserCards']),
+    ...mapActions('userDecks', ['getUserDeck']),
+    ...mapActions('userCards', ['getUserDeckUserCards'])
   }
 }
 </script>
