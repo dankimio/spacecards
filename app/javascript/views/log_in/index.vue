@@ -79,6 +79,9 @@ export default {
     submit() {
       this.logIn({ user: this.user })
         .then(() => this.$router.push('/'))
+        .then(() => {
+          this.$notify({ title: 'Logged in successfully' })
+        })
     },
     ...mapActions('users', ['logIn'])
   }
