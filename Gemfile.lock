@@ -167,6 +167,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
+    repetition (2.1.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -232,6 +233,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
+  repetition (~> 2.1)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
