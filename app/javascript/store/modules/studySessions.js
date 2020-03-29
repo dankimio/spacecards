@@ -25,6 +25,16 @@ const actions = {
         context.commit('SET_STUDY_SESSION', studySession)
         context.commit('SET_USER_DECK', userDeck)
       })
+  },
+  updateReview(context, { reviewId, answer }) {
+    const studySessionId = context.state.studySession.id
+    const data = { review: { answer: answer } }
+
+    return axios.patch(`/study_sessions/${studySessionId}/reviews/${reviewId}`, data)
+      .then(response => {
+        console.log(response.data)
+        console.log('success')
+      })
   }
 }
 

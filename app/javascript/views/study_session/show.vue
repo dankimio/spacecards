@@ -84,9 +84,18 @@ export default {
       })
   },
   methods: {
-    ...mapActions('studySessions', ['getStudySession']),
-    answer(value) {
-      console.log(value)
+    ...mapActions(
+      'studySessions',
+      ['getStudySession', 'updateReview']
+    ),
+    answer(answerValue) {
+      const payload = {
+        reviewId: this.currentReview.id,
+        answer: answerValue
+      }
+      this.updateReview(payload)
+        .then(() => {
+        })
     }
   },
   metaInfo: {
