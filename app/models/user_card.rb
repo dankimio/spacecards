@@ -13,6 +13,7 @@
 #  recalled_at     :datetime
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  interval        :integer          default(0), not null
 #
 class UserCard < ApplicationRecord
   belongs_to :user_deck
@@ -20,4 +21,21 @@ class UserCard < ApplicationRecord
 
   scope :due, -> { where('due_at > ?', Time.zone.now) }
   scope :fresh, -> { where(due_at: nil, recalled_at: nil, repetitions: 0) }
+
+  def recall(answer)
+    return if answer.zero?
+
+    repetition = Repetition::Flashcard.new(
+      easiness_factor: easiness_factor,
+      interval: interval,
+      repetitions: repetitions
+    )
+    repetition.recall(answer)
+    update(
+      easiness_factor: repetition.easiness_factor,
+      interval: repetition.interval,
+      recalled_at: Time.zone.now,
+      due_at: Time.zone.now + repetition.interval.days
+    )
+  end
 end
