@@ -19,6 +19,8 @@ class UserCard < ApplicationRecord
   belongs_to :user_deck, counter_cache: true
   belongs_to :shared_card, optional: true
 
+  validates :front, :back, presence: true
+
   scope :due, -> { where('due_at > ?', Time.zone.now) }
   scope :fresh, -> { where(due_at: nil, recalled_at: nil, repetitions: 0) }
 
