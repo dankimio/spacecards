@@ -50,9 +50,19 @@
       <div
         class="button button-outlined button-lg
           w-full mb-5 uppercase tracking-wide text-gray-600 border-gray-400"
+        @click="addingNewCard = !addingNewCard"
       >
         Add cards
       </div>
+
+      <Card
+        v-if="addingNewCard"
+        :user-deck-id="userDeck.id"
+        :card="{ front: '', back: '' }"
+        :allow-editing="true"
+        :is-new="true"
+        @card-created="createCard"
+      />
 
       <Card
         v-for="userCard in userCards"
@@ -77,6 +87,11 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      addingNewCard: false
+    }
+  },
   metaInfo() {
     return {
       title: `${this.userDeck.name}`
@@ -91,6 +106,9 @@ export default {
     this.getUserDeckUserCards(this.id)
   },
   methods: {
+    createCard() {
+      this.addingNewCard = false
+    },
     ...mapActions('userDecks', ['getUserDeck']),
     ...mapActions('userCards', ['getUserDeckUserCards'])
   }
