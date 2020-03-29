@@ -20,7 +20,7 @@
     <hr>
 
     <div class="flex text-sm bg-gray-100 py-2 px-5">
-      <router-link to="/study-session" class="flex items-center mr-5 text-gray-500 hover:text-indigo-600">
+      <router-link :to="`/user/decks/${userDeck.id}/study`" class="flex items-center mr-5 text-gray-500 hover:text-indigo-600">
         <inline-svg
           :src="require('@images/icon-play.svg')"
           class="inline-block w-4 h-4 mr-1 fill-current"
