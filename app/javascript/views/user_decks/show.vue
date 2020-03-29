@@ -50,9 +50,17 @@
       <div
         class="button button-outlined button-lg
           w-full mb-5 uppercase tracking-wide text-gray-600 border-gray-400"
+        @click="addingNewCard = !addingNewCard"
       >
         Add cards
       </div>
+
+      <Card
+        v-if="addingNewCard"
+        :card="{ front: '', back: '' }"
+        :allow-editing="true"
+        :is-new="true"
+      />
 
       <Card
         v-for="userCard in userCards"
@@ -75,6 +83,11 @@ export default {
     id: {
       type: String,
       required: true
+    }
+  },
+  data() {
+    return {
+      addingNewCard: false
     }
   },
   metaInfo() {

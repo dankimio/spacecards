@@ -97,6 +97,7 @@ import { mapActions } from 'vuex'
 export default {
   props: {
     allowEditing: Boolean,
+    isNew: Boolean,
     card: {
       type: Object,
       required: true
@@ -105,7 +106,7 @@ export default {
   data() {
     return {
       currentCard: this.card,
-      isEditing: false
+      isEditing: this.isNew
     }
   },
   methods: {
