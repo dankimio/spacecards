@@ -15,8 +15,10 @@ class Review < ApplicationRecord
 
   validates :user_card, uniqueness: { scope: :study_session }
   # Ignore '0' answers
-  validates :answer, numericality: { greater_than: 0 }
+  validates :answer, numericality: { greater_than: 0 }, on: :update
 
   after_update_commit -> { user_card.recall(answer) },
                       if: -> { answer && answer.positive? }
+
+  scope :unanswered, -> { where(answer: nil) }
 end
