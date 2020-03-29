@@ -1,7 +1,9 @@
 <template>
   <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
     <h1 class="text-3xl mb-4">
-      <span class="font-bold">{{ userDeck.name }}</span>
+      <span class="font-bold">
+        {{ userDeck.name }}
+      </span>
       <span class="mx-3 font-light">→</span>
       <span class="font-light">Study</span>
     </h1>
@@ -12,7 +14,9 @@
       </div>
 
       <div class="flex flex-row">
-        <span class="text-3xl mr-2 leading-none">12</span>
+        <span class="text-3xl mr-2 leading-none">
+          {{ reviewsLeft }}
+        </span>
         <span class="text-sm font-medium text-gray-600">
           Cards left
         </span>
@@ -31,7 +35,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 
 import Card from './card'
 import AnswerButton from '@/components/AnswerButton'
@@ -45,6 +49,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('studySessions', ['reviewsLeft']),
     ...mapState('studySessions', ['reviews', 'userDeck'])
   },
   created() {

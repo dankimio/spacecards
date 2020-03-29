@@ -6,7 +6,11 @@ const state = {
   userDeck: {}
 }
 
-const getters = {}
+const getters = {
+  reviewsLeft(state) {
+    return state.reviews.filter(review => review.answer === null).length
+  }
+}
 
 const actions = {
   getStudySession(context, userDeckId) {
