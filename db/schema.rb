@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_212610) do
     t.integer "answer", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["study_session_id", "user_card_id"], name: "index_reviews_on_study_session_id_and_user_card_id", unique: true
     t.index ["study_session_id"], name: "index_reviews_on_study_session_id"
     t.index ["user_card_id"], name: "index_reviews_on_user_card_id"
   end

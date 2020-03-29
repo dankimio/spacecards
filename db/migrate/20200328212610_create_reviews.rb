@@ -7,5 +7,6 @@ class CreateReviews < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :reviews, %i[study_session_id user_card_id], unique: true
   end
 end
