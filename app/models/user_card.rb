@@ -16,7 +16,7 @@
 #  interval        :integer          default(0), not null
 #
 class UserCard < ApplicationRecord
-  belongs_to :user_deck
+  belongs_to :user_deck, counter_cache: true
   belongs_to :shared_card, optional: true
 
   scope :due, -> { where('due_at > ?', Time.zone.now) }
