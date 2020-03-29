@@ -13,6 +13,7 @@
 #  recalled_at     :datetime
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  interval        :integer          default(0), not null
 #
 user_card:
   user_deck: user_deck
