@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const state = {
-  reviews: [],
   unansweredReviews: [],
   answeredReviews: [],
   failedReviews: [],
