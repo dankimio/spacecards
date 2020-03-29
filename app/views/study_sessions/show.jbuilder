@@ -9,3 +9,7 @@ json.reviews do
     end
   end
 end
+
+json.user_deck do
+  json.partial! 'user_decks/user_deck', user_deck: @study_session.user_deck
+end

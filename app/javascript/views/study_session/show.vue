@@ -1,7 +1,7 @@
 <template>
   <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
     <h1 class="text-3xl mb-4">
-      <span class="font-bold">World Capitals</span>
+      <span class="font-bold">{{ userDeck.name }}</span>
       <span class="mx-3 font-light">→</span>
       <span class="font-light">Study</span>
     </h1>
@@ -45,7 +45,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('studySessions', ['reviews'])
+    ...mapState('studySessions', ['reviews', 'userDeck'])
   },
   created() {
     this.getStudySession(this.id)
