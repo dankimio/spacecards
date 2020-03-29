@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col border mb-4 rounded">
+  <form class="flex flex-col border mb-4 rounded" @submit.prevent="submit">
     <div class="flex flex-col">
       <div class="px-4 py-3">
         <span class="uppercase tracking-wide text-gray-500 text-xs">Front</span>
@@ -14,6 +14,7 @@
           v-model="currentCard.front"
           name="front"
           class="form-control w-full"
+          required
           autofocus
         />
       </div>
@@ -33,6 +34,7 @@
           v-model="currentCard.back"
           name="back"
           class="form-control w-full"
+          required
         />
       </div>
     </div>
@@ -66,8 +68,8 @@
       <div v-if="allowEditing && isEditing" class="lg:w-48 flex">
         <button
           v-if="allowEditing && isEditing"
+          type="submit"
           class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
-          @click="submit"
         >
           <inline-svg
             :src="require('@images/icon-checkmark.svg')"
@@ -88,7 +90,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
