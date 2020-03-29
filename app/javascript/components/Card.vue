@@ -98,6 +98,10 @@ export default {
   props: {
     allowEditing: Boolean,
     isNew: Boolean,
+    userDeckId: {
+      type: Number,
+      default: null
+    },
     card: {
       type: Object,
       required: true
@@ -120,15 +124,19 @@ export default {
         })
     },
     submit() {
-      this.updateUserCard(this.currentCard)
-        .then(response => {
-          this.isEditing = false
-        })
-        .then(() => {
-          this.$notify({ title: 'Card was updated successfully' })
-        })
+      if (this.isNew) {
+        this.createUserCard({ userDeckId: this.userDeckId, userCard: this.currentCard })
+          .then(() => { this.isEditing = false })
+      } else {
+        this.updateUserCard(this.currentCard)
+          .then(() => { this.isEditing = false })
+          .then(() => { this.$notify({ title: 'Card was updated successfully' }) })
+      }
     },
-    ...mapActions('userCards', ['updateUserCard', 'destroyUserCard'])
+    ...mapActions(
+      'userCards',
+      ['createUserCard', 'updateUserCard', 'destroyUserCard']
+    )
   }
 }
 </script>

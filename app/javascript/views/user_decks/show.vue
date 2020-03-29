@@ -57,6 +57,7 @@
 
       <Card
         v-if="addingNewCard"
+        :user-deck-id="userDeck.id"
         :card="{ front: '', back: '' }"
         :allow-editing="true"
         :is-new="true"

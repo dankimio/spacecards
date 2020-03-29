@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
   resources :user_decks, except: %i[new edit] do
     resource :study_session, only: %i[show]
-    resources :user_cards, only: %i[index update destroy], shallow: true
+    resources :user_cards, only: %i[index create update destroy], shallow: true
   end
 end

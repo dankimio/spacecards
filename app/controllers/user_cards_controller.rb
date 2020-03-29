@@ -1,9 +1,19 @@
 class UserCardsController < ApplicationController
-  before_action :set_user_deck, only: %i[index]
+  before_action :set_user_deck, only: %i[index create]
   before_action :set_user_card, only: %i[update destroy]
 
   def index
-    @user_cards = @user_deck.user_cards.order(created_at: :asc)
+    @user_cards = @user_deck.user_cards.order(created_at: :desc)
+  end
+
+  def create
+    @user_card = @user_deck.user_cards.build(user_card_params)
+
+    if @user_card.save
+      render :show, status: :created
+    else
+      render json: @user_card.errors, status: :unprocessable_entity
+    end
   end
 
   def update
