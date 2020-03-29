@@ -2,23 +2,25 @@ import axios from 'axios'
 
 const state = {
   reviews: [],
+  unansweredReviews: [],
+  answeredReviews: [],
+  failedReviews: [],
   studySession: {},
   userDeck: {}
 }
 
 const getters = {
-  reviewsLeft(_, getters) {
-    return getters.unansweredReviews.length
+  reviewsLeft(state) {
+    return state.unansweredReviews.length + state.failedReviews.length
   },
-  nextReview(_, getters) {
-    return getters.unansweredReviews.length > 0 ? getters.unansweredReviews[0] : null
-  },
-  unansweredReviews(state) {
-    return state.reviews
-      .filter(review => review.answer === null || review.answer === 0)
-  },
-  getReviewById: (state) => (id) => {
-    return state.reviews.filter(review => review.id === id)
+  nextReview(state) {
+    if (state.unansweredReviews.length > 0) {
+      return state.unansweredReviews[0]
+    }
+    if (state.failedReviews.length > 0) {
+      return state.failedReviews[0]
+    }
+    return null
   }
 }
 
@@ -31,14 +33,14 @@ const actions = {
           userDeck,
           ...studySession
         } = response.data
-        context.commit('SET_REVIEWS', reviews)
+        context.commit('SET_UNANSWERED_REVIEWS', reviews)
         context.commit('SET_STUDY_SESSION', studySession)
         context.commit('SET_USER_DECK', userDeck)
       })
   },
   updateReview(context, { reviewId, answer }) {
     if (answer === 0) {
-      context.commit('UPDATE_REVIEW_ANSWER', { reviewId, answer })
+      context.commit('FAIL_REVIEW', reviewId)
       return new Promise((resolve, reject) => {
         resolve()
       })
@@ -51,7 +53,7 @@ const actions = {
     return axios.patch(`/study_sessions/${studySessionId}/reviews/${reviewId}`, data)
       .then(response => {
         context.commit(
-          'UPDATE_REVIEW_ANSWER',
+          'ANSWER_REVIEW',
           { reviewId, answer: response.data.answer }
         )
       })
@@ -59,8 +61,8 @@ const actions = {
 }
 
 const mutations = {
-  SET_REVIEWS(state, reviews) {
-    state.reviews = reviews
+  SET_UNANSWERED_REVIEWS(state, reviews) {
+    state.unansweredReviews = reviews
   },
   SET_STUDY_SESSION(state, studySession) {
     state.studySession = studySession
@@ -68,16 +70,28 @@ const mutations = {
   SET_USER_DECK(state, userDeck) {
     state.userDeck = userDeck
   },
-  UPDATE_REVIEW_ANSWER(state, { reviewId, answer }) {
-    if (answer === 0) {
-      state.reviews.push(
-        state.reviews.splice(
-          state.reviews.findIndex(review => review.id === reviewId), 1
-        )[0]
-      )
-    } else {
-      const index = state.reviews.findIndex(review => review.id === reviewId)
-      state.reviews[index].answer = answer
+  ANSWER_REVIEW(state, { reviewId, answer }) {
+    const indexInFailed = state.failedReviews.findIndex(review => review.id === reviewId)
+    if (indexInFailed !== -1) {
+      state.failedReviews[indexInFailed].answer = answer
+      state.answeredReviews.push(state.failedReviews.splice(indexInFailed, 1)[0])
+    }
+
+    const indexInUnanswered = state.unansweredReviews.findIndex(review => review.id === reviewId)
+    if (indexInUnanswered !== -1) {
+      state.unansweredReviews[indexInUnanswered].answer = answer
+      state.answeredReviews.push(state.unansweredReviews.splice(indexInUnanswered, 1)[0])
+    }
+  },
+  // Move review to failedReviews
+  FAIL_REVIEW(state, reviewId) {
+    const indexInFailed = state.failedReviews.findIndex(review => review.id === reviewId)
+    if (indexInFailed !== -1) {
+      state.failedReviews.push(state.failedReviews.splice(indexInFailed, 1)[0])
+    }
+    const index = state.unansweredReviews.findIndex(review => review.id === reviewId)
+    if (index !== -1) {
+      state.failedReviews.push(state.unansweredReviews.splice(index, 1)[0])
     }
   }
 }
