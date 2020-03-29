@@ -74,13 +74,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('studySessions', ['reviewsLeft']),
+    ...mapGetters('studySessions', ['reviewsLeft', 'nextReview']),
     ...mapState('studySessions', ['reviews', 'userDeck', 'studySession'])
   },
   created() {
     this.getStudySession(this.id)
       .then(() => {
-        this.currentReview = this.reviews[0]
+        if (this.nextReview) {
+          this.currentReview = this.nextReview
+        } else {
+          // TODO: end session
+        }
       })
   },
   methods: {
@@ -95,6 +99,11 @@ export default {
       }
       this.updateReview(payload)
         .then(() => {
+          if (this.nextReview) {
+            this.currentReview = this.nextReview
+          } else {
+          // TODO: end session
+          }
         })
     }
   },

@@ -7,8 +7,18 @@ const state = {
 }
 
 const getters = {
-  reviewsLeft(state) {
-    return state.reviews.filter(review => review.answer === null).length
+  reviewsLeft(_, getters) {
+    return getters.unansweredReviews.length
+  },
+  nextReview(_, getters) {
+    return getters.unansweredReviews.length > 0 ? getters.unansweredReviews[0] : null
+  },
+  unansweredReviews(state) {
+    return state.reviews
+      .filter(review => review.answer === null || review.answer === 0)
+  },
+  getReviewById: (state) => (id) => {
+    return state.reviews.filter(review => review.id === id)
   }
 }
 
@@ -32,8 +42,7 @@ const actions = {
 
     return axios.patch(`/study_sessions/${studySessionId}/reviews/${reviewId}`, data)
       .then(response => {
-        console.log(response.data)
-        console.log('success')
+        context.commit('UPDATE_REVIEW', response.data)
       })
   }
 }
@@ -47,6 +56,16 @@ const mutations = {
   },
   SET_USER_DECK(state, userDeck) {
     state.userDeck = userDeck
+  },
+  UPDATE_REVIEW(state, data) {
+    if (data.answer === 0) {
+      state.reviews.push(
+        state.reviews.splice(state.reviews.findIndex(review => review.id === data.id), 1)[0]
+      )
+    } else {
+      const index = state.reviews.findIndex(review => review.id === data.id)
+      state.reviews[index].answer = data.answer
+    }
   }
 }
 
