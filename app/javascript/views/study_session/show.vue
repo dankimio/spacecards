@@ -23,7 +23,11 @@
       </div>
     </div>
 
-    <Card class="mb-4" />
+    <Card
+      v-if="currentReview && currentReview.userCard"
+      class="mb-4"
+      :card="currentReview.userCard"
+    />
 
     <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
       <AnswerButton answer="bad" class="mr-0 md:mr-2 lg:mr-3" />
@@ -48,12 +52,20 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      currentReview: {}
+    }
+  },
   computed: {
     ...mapGetters('studySessions', ['reviewsLeft']),
-    ...mapState('studySessions', ['reviews', 'userDeck'])
+    ...mapState('studySessions', ['reviews', 'userDeck', 'studySession'])
   },
   created() {
     this.getStudySession(this.id)
+      .then(() => {
+        this.currentReview = this.reviews[0]
+      })
   },
   methods: {
     ...mapActions('studySessions', ['getStudySession'])
