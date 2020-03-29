@@ -30,10 +30,26 @@
     />
 
     <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
-      <AnswerButton :answer-value="0" class="mr-0 md:mr-2 lg:mr-3" />
-      <AnswerButton :answer-value="1" class="mr-0 md:mr-2 lg:mr-3" />
-      <AnswerButton :answer-value="2" class="mr-0 md:mr-2 lg:mr-3" />
-      <AnswerButton :answer-value="3" class="mr-0" />
+      <AnswerButton
+        :answer-value="0"
+        class="mr-0 md:mr-2 lg:mr-3"
+        @answer="answer($event)"
+      />
+      <AnswerButton
+        :answer-value="1"
+        class="mr-0 md:mr-2 lg:mr-3"
+        @answer="answer($event)"
+      />
+      <AnswerButton
+        :answer-value="2"
+        class="mr-0 md:mr-2 lg:mr-3"
+        @answer="answer($event)"
+      />
+      <AnswerButton
+        :answer-value="3"
+        class="mr-0"
+        @answer="answer($event)"
+      />
     </div>
   </div>
 </template>
@@ -68,7 +84,10 @@ export default {
       })
   },
   methods: {
-    ...mapActions('studySessions', ['getStudySession'])
+    ...mapActions('studySessions', ['getStudySession']),
+    answer(value) {
+      console.log(value)
+    }
   },
   metaInfo: {
     title: `Study – ${'Deck name'}`

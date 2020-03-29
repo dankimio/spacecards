@@ -1,10 +1,10 @@
 <template>
   <button
     class="flex md:flex-1 items-center justify-center
-    mb-3 md:mb-0 w-full py-2 rounded-md
-    border-2 border-gray-200
-    transition duration-200
-    transform hover:-translate-y-1"
+      mb-3 md:mb-0 w-full py-2 rounded-md
+      border-2 border-gray-200
+      transition duration-200
+      transform hover:-translate-y-1"
     :class="states[answerValue].class"
     @click.prevent="answer"
   >
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     answer() {
-      console.log(this.answerValue)
+      this.$emit('answer', this.answerValue)
     }
   }
 }
