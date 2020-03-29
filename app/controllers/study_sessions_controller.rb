@@ -3,8 +3,15 @@ class StudySessionsController < ApplicationController
   before_action :set_user_deck, only: %i[show]
 
   def show
-    @study_session = @user_deck.study_sessions.recent.first ||
-                     @user_deck.study_sessions.create!
+    @study_session = @user_deck.study_sessions
+      .includes(reviews: :user_card)
+      .recent.incomplete
+      .first
+    return if @study_session
+
+    @study_session = @user_deck.study_sessions
+      .includes(reviews: :user_card)
+      .create!
   end
 
   private
