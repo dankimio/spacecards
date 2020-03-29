@@ -1,5 +1,4 @@
 class StudySessionsController < ApplicationController
-  before_action :authenticate_user!, only: %i[show]
   before_action :set_user_deck, only: %i[show]
 
   def show

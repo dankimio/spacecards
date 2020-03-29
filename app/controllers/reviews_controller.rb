@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: %i[update]
   before_action :set_study_session, only: %i[update]
   before_action :set_review, only: %i[update]
 

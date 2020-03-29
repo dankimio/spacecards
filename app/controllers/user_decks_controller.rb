@@ -1,6 +1,4 @@
 class UserDecksController < ApplicationController
-  before_action :authenticate_user!, only: %i[index show create]
-
   def index
     @user_decks = current_user.user_decks
   end

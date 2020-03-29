@@ -1,4 +1,5 @@
 class SharedCardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_shared_card, only: %i[update destroy]
 
   def index
