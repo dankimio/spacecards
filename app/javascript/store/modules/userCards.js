@@ -42,7 +42,7 @@ const mutations = {
     state.userCard = data
   },
   CREATE_USER_CARD(state, data) {
-    state.userCards.push(data)
+    state.userCards.unshift(data)
   },
   DESTROY_USER_CARD(state, userCard) {
     state.userCard = {}

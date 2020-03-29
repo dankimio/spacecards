@@ -61,6 +61,7 @@
         :card="{ front: '', back: '' }"
         :allow-editing="true"
         :is-new="true"
+        @card-created="createCard"
       />
 
       <Card
@@ -105,6 +106,9 @@ export default {
     this.getUserDeckUserCards(this.id)
   },
   methods: {
+    createCard() {
+      this.addingNewCard = false
+    },
     ...mapActions('userDecks', ['getUserDeck']),
     ...mapActions('userCards', ['getUserDeckUserCards'])
   }
