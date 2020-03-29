@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_212610) do
   create_table "reviews", force: :cascade do |t|
     t.bigint "study_session_id", null: false
     t.bigint "user_card_id", null: false
-    t.integer "answer", null: false
+    t.integer "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["study_session_id", "user_card_id"], name: "index_reviews_on_study_session_id_and_user_card_id", unique: true

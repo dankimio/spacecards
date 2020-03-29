@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
     create_table :reviews do |t|
       t.belongs_to :study_session, null: false, foreign_key: true
       t.belongs_to :user_card, null: false, foreign_key: true
-      t.integer :answer, null: false
+      t.integer :answer
 
       t.timestamps
     end
