@@ -33,7 +33,7 @@ const actions = {
         context.commit('SET_USER_DECK', userDeck)
       })
   },
-  updateReview(context, { reviewId, answer }) {
+  answerReview(context, { reviewId, answer }) {
     if (answer === 0) {
       context.commit('FAIL_REVIEW', reviewId)
       return new Promise((resolve, reject) => {

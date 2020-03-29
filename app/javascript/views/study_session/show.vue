@@ -90,14 +90,14 @@ export default {
   methods: {
     ...mapActions(
       'studySessions',
-      ['getStudySession', 'updateReview']
+      ['getStudySession', 'answerReview']
     ),
     answer(answerValue) {
       const payload = {
         reviewId: this.currentReview.id,
         answer: answerValue
       }
-      this.updateReview(payload)
+      this.answerReview(payload)
         .then(() => {
           if (this.nextReview) {
             this.currentReview = this.nextReview
