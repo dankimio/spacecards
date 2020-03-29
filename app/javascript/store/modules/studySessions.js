@@ -37,12 +37,23 @@ const actions = {
       })
   },
   updateReview(context, { reviewId, answer }) {
+    if (answer === 0) {
+      context.commit('UPDATE_REVIEW_ANSWER', { reviewId, answer })
+      return new Promise((resolve, reject) => {
+        resolve()
+      })
+    }
+
+    // TODO: remove study_sessions from URL and authorize on the server
     const studySessionId = context.state.studySession.id
     const data = { review: { answer: answer } }
 
     return axios.patch(`/study_sessions/${studySessionId}/reviews/${reviewId}`, data)
       .then(response => {
-        context.commit('UPDATE_REVIEW', response.data)
+        context.commit(
+          'UPDATE_REVIEW_ANSWER',
+          { reviewId, answer: response.data.answer }
+        )
       })
   }
 }
@@ -57,14 +68,16 @@ const mutations = {
   SET_USER_DECK(state, userDeck) {
     state.userDeck = userDeck
   },
-  UPDATE_REVIEW(state, data) {
-    if (data.answer === 0) {
+  UPDATE_REVIEW_ANSWER(state, { reviewId, answer }) {
+    if (answer === 0) {
       state.reviews.push(
-        state.reviews.splice(state.reviews.findIndex(review => review.id === data.id), 1)[0]
+        state.reviews.splice(
+          state.reviews.findIndex(review => review.id === reviewId), 1
+        )[0]
       )
     } else {
-      const index = state.reviews.findIndex(review => review.id === data.id)
-      state.reviews[index].answer = data.answer
+      const index = state.reviews.findIndex(review => review.id === reviewId)
+      state.reviews[index].answer = answer
     }
   }
 }

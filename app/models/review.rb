@@ -14,6 +14,8 @@ class Review < ApplicationRecord
   belongs_to :user_card
 
   validates :user_card, uniqueness: { scope: :study_session }
+  # Ignore '0' answers
+  validates :answer, numericality: { greater_than: 0 }
 
   after_update_commit -> { user_card.recall(answer) },
                       if: -> { answer && answer.positive? }
