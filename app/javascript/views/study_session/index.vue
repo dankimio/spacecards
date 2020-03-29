@@ -31,11 +31,28 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 import Card from './card'
 import AnswerButton from '@/components/AnswerButton'
 
 export default {
   components: { Card, AnswerButton },
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    ...mapState('studySessions', ['reviews'])
+  },
+  created() {
+    this.getStudySession(this.id)
+  },
+  methods: {
+    ...mapActions('studySessions', ['getStudySession'])
+  },
   metaInfo: {
     title: `Study – ${'Deck name'}`
   }
