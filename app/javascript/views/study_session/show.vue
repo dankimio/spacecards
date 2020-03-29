@@ -30,10 +30,10 @@
     />
 
     <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
-      <AnswerButton answer="bad" class="mr-0 md:mr-2 lg:mr-3" />
-      <AnswerButton answer="okay" class="mr-0 md:mr-2 lg:mr-3" />
-      <AnswerButton answer="good" class="mr-0 md:mr-2 lg:mr-3" />
-      <AnswerButton answer="excellent" class="mr-0" />
+      <AnswerButton :answer-value="0" class="mr-0 md:mr-2 lg:mr-3" />
+      <AnswerButton :answer-value="1" class="mr-0 md:mr-2 lg:mr-3" />
+      <AnswerButton :answer-value="2" class="mr-0 md:mr-2 lg:mr-3" />
+      <AnswerButton :answer-value="3" class="mr-0" />
     </div>
   </div>
 </template>
