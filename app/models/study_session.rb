@@ -16,7 +16,6 @@ class StudySession < ApplicationRecord
   private
 
   def set_attributes
-    self.user = user_deck.user
     self.new_cards_limit = user_deck.new_cards_per_day
     self.due_cards_limit = user_deck.reviews_per_day
   end
