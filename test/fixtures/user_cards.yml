@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: user_cards
+#
+#  id              :bigint           not null, primary key
+#  user_deck_id    :bigint           not null
+#  shared_card_id  :bigint
+#  front           :text             not null
+#  back            :text             not null
+#  easiness_factor :float            default(2.5), not null
+#  repetitions     :integer          default(0), not null
+#  due_at          :datetime
+#  recalled_at     :datetime
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 user_card:
   user_deck: user_deck
   shared_card: shared_card

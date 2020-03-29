@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id               :bigint           not null, primary key
+#  study_session_id :bigint           not null
+#  user_card_id     :bigint           not null
+#  answer           :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
 review:
   study_session: study_session
   user_card: user_card

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: study_sessions
+#
+#  id              :bigint           not null, primary key
+#  user_deck_id    :bigint           not null
+#  new_cards_limit :integer          not null
+#  due_cards_limit :integer          not null
+#  completed       :boolean          default(FALSE), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class StudySession < ApplicationRecord
   belongs_to :user_deck
 

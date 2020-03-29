@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: shared_cards
+#
+#  id             :bigint           not null, primary key
+#  shared_deck_id :bigint           not null
+#  front          :text             not null
+#  back           :text             not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
 shared_card:
   shared_deck: shared_deck
   front: Front
