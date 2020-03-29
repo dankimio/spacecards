@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :shared_decks
   has_many :user_decks, dependent: :destroy
   has_many :user_cards, through: :user_decks
+  has_many :study_sessions, through: :user_decks
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

@@ -1,40 +1,41 @@
 <template>
   <button
     class="flex md:flex-1 items-center justify-center
-    mb-3 md:mb-0 w-full py-2 rounded-md
-    border-2 border-gray-200
-    transition duration-200
-    transform hover:-translate-y-1"
-    :class="states[answer].class"
+      mb-3 md:mb-0 w-full py-2 rounded-md
+      border-2 border-gray-200
+      transition duration-200
+      transform hover:-translate-y-1"
+    :class="states[answerValue].class"
+    @click.prevent="answer"
   >
     <span class="hover:text-white mr-3">
-      {{ states[answer].label }}
+      {{ states[answerValue].label }}
     </span>
     <inline-svg
       class="fill-current"
-      :src="states[answer].icon"
+      :src="states[answerValue].icon"
     />
   </button>
 </template>
 
 <script>
 const states = {
-  bad: {
+  0: {
     label: 'Bad',
     class: 'answer-button--bad',
     icon: require('../images/icon-button-bad.svg')
   },
-  okay: {
+  1: {
     label: 'Okay',
     class: 'answer-button--okay',
     icon: require('../images/icon-button-okay.svg')
   },
-  good: {
+  2: {
     label: 'Good',
     class: 'answer-button--good',
     icon: require('../images/icon-button-good.svg')
   },
-  excellent: {
+  3: {
     label: 'Excellent',
     class: 'answer-button--excellent',
     icon: require('../images/icon-button-excellent.svg')
@@ -43,13 +44,18 @@ const states = {
 
 export default {
   props: {
-    answer: {
-      type: String,
+    answerValue: {
+      type: Number,
       required: true
     }
   },
   data() {
     return { states: states }
+  },
+  methods: {
+    answer() {
+      this.$emit('answer', this.answerValue)
+    }
   }
 }
 </script>

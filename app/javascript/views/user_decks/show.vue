@@ -73,7 +73,7 @@ export default {
   components: { Card },
   props: {
     id: {
-      type: Number,
+      type: String,
       required: true
     }
   },

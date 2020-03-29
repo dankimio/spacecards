@@ -3,7 +3,7 @@ user = User.create!(
   password: 'qwerty123'
 )
 
-10.times do |i|
+5.times do |i|
   shared_deck = SharedDeck.create!(
     name: "Shared deck #{i + 1}",
     user: user,
@@ -12,13 +12,13 @@ user = User.create!(
 
   user_deck = user.user_decks.create!(
     shared_deck: shared_deck,
-    name: shared_deck.name
+    name: "User deck #{i + 1}"
   )
 
-  10.times do |j|
+  20.times do |j|
     shared_card = shared_deck.shared_cards.create!(
-      front: "#{shared_deck.name}. Front #{j + 1}",
-      back: "#{shared_deck.name}. Back #{j + 1}"
+      front: "#{user_deck.name}. Front #{j + 1}",
+      back: "#{user_deck.name}. Back #{j + 1}"
     )
 
     user_deck.user_cards.create!(
