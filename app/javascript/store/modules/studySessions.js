@@ -3,21 +3,17 @@ import axios from 'axios'
 const state = {
   unansweredReviews: [],
   answeredReviews: [],
-  failedReviews: [],
   studySession: {},
   userDeck: {}
 }
 
 const getters = {
   reviewsLeft(state) {
-    return state.unansweredReviews.length + state.failedReviews.length
+    return state.unansweredReviews.length
   },
   nextReview(state) {
     if (state.unansweredReviews.length > 0) {
       return state.unansweredReviews[0]
-    }
-    if (state.failedReviews.length > 0) {
-      return state.failedReviews[0]
     }
     return null
   }
@@ -62,8 +58,7 @@ const actions = {
 const mutations = {
   SET_REVIEWS(state, reviews) {
     state.unansweredReviews = reviews.filter(review => review.answer === null)
-    state.failedReviews = reviews.filter(review => review.answer === 0)
-    state.answeredReviews = reviews.filter(review => review.answer !== null && review.answer !== 0)
+    state.answeredReviews = reviews.filter(review => review.answer !== null)
   },
   SET_STUDY_SESSION(state, studySession) {
     state.studySession = studySession
@@ -72,27 +67,16 @@ const mutations = {
     state.userDeck = userDeck
   },
   ANSWER_REVIEW(state, { reviewId, answer }) {
-    const indexInFailed = state.failedReviews.findIndex(review => review.id === reviewId)
-    if (indexInFailed !== -1) {
-      state.failedReviews[indexInFailed].answer = answer
-      state.answeredReviews.push(state.failedReviews.splice(indexInFailed, 1)[0])
-    }
-
     const indexInUnanswered = state.unansweredReviews.findIndex(review => review.id === reviewId)
     if (indexInUnanswered !== -1) {
       state.unansweredReviews[indexInUnanswered].answer = answer
       state.answeredReviews.push(state.unansweredReviews.splice(indexInUnanswered, 1)[0])
     }
   },
-  // Move review to failedReviews
   FAIL_REVIEW(state, reviewId) {
-    const indexInFailed = state.failedReviews.findIndex(review => review.id === reviewId)
-    if (indexInFailed !== -1) {
-      state.failedReviews.push(state.failedReviews.splice(indexInFailed, 1)[0])
-    }
     const index = state.unansweredReviews.findIndex(review => review.id === reviewId)
     if (index !== -1) {
-      state.failedReviews.push(state.unansweredReviews.splice(index, 1)[0])
+      state.unansweredReviews.push(state.unansweredReviews.splice(index, 1)[0])
     }
   }
 }
