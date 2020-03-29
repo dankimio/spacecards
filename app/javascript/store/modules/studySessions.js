@@ -33,7 +33,7 @@ const actions = {
           userDeck,
           ...studySession
         } = response.data
-        context.commit('SET_UNANSWERED_REVIEWS', reviews)
+        context.commit('SET_REVIEWS', reviews)
         context.commit('SET_STUDY_SESSION', studySession)
         context.commit('SET_USER_DECK', userDeck)
       })
@@ -61,8 +61,10 @@ const actions = {
 }
 
 const mutations = {
-  SET_UNANSWERED_REVIEWS(state, reviews) {
-    state.unansweredReviews = reviews
+  SET_REVIEWS(state, reviews) {
+    state.unansweredReviews = reviews.filter(review => review.answer === null)
+    state.failedReviews = reviews.filter(review => review.answer === 0)
+    state.answeredReviews = reviews.filter(review => review.answer !== null && review.answer !== 0)
   },
   SET_STUDY_SESSION(state, studySession) {
     state.studySession = studySession
