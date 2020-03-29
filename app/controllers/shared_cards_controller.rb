@@ -1,5 +1,4 @@
 class SharedCardsController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
   before_action :set_shared_card, only: %i[update destroy]
 
   def index

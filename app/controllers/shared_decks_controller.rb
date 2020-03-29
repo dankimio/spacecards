@@ -1,6 +1,4 @@
 class SharedDecksController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
-
   def index
     @shared_decks = SharedDeck.all
   end

@@ -1,6 +1,4 @@
 class UserCardsController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
-
   before_action :authenticate_user!
   before_action :set_user_deck, only: %i[index]
   before_action :set_user_card, only: %i[update destroy]

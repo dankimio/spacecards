@@ -1,5 +1,4 @@
 class UserDecksController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
   before_action :authenticate_user!, only: %i[index show create]
 
   def index
