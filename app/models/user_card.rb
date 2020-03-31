@@ -22,7 +22,7 @@ class UserCard < ApplicationRecord
   validates :front, :back, presence: true
 
   scope :due, -> { where('due_at > ?', Time.zone.now) }
-  scope :fresh, -> { where(due_at: nil, recalled_at: nil, repetitions: 0) }
+  scope :new_cards, -> { where(due_at: nil, recalled_at: nil, repetitions: 0) }
 
   def recall(answer)
     return if answer.zero?

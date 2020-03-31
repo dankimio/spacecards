@@ -28,13 +28,17 @@
           <p class="mb-1 text-gray-600 uppercase tracking-wide text-sm">
             Due cards
           </p>
-          <span class="text-xl font-semibold text-gray-700">0</span>
+          <span class="text-xl font-semibold text-gray-700">
+            {{ userDeck.dueCardsCount }}
+          </span>
         </div>
         <div class="w-1/2">
           <p class="mb-1 text-gray-600 uppercase tracking-wide text-sm">
             New cards
           </p>
-          <span class="text-xl font-semibold text-gray-700">0</span>
+          <span class="text-xl font-semibold text-gray-700">
+            {{ userDeck.newCardsCount }}
+          </span>
         </div>
       </div>
 

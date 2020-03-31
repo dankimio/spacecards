@@ -32,20 +32,20 @@ class StudySession < ApplicationRecord
   end
 
   def create_due_card_reviews
-    due_user_cards = user_deck.user_cards
+    due_cards = user_deck.user_cards
       .due
       .limit(due_cards_limit)
       .pluck(:id)
       .map { |user_card_id| { user_card_id: user_card_id } }
-    reviews.create!(due_user_cards)
+    reviews.create!(due_cards)
   end
 
   def create_new_card_reviews
-    fresh_user_cards = user_deck.user_cards
-      .fresh
+    new_cards = user_deck.user_cards
+      .new_cards
       .limit(new_cards_limit)
       .pluck(:id)
       .map { |user_card_id| { user_card_id: user_card_id } }
-    reviews.create!(fresh_user_cards)
+    reviews.create!(new_cards)
   end
 end
