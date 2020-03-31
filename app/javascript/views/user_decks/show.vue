@@ -1,22 +1,12 @@
 <template>
   <div class="container flex">
-    <div v-if="false" class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
-      <h2 class="text-2xl">
-        Search
-      </h2>
-
-      <div class="field">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search…"
-        >
-      </div>
-    </div>
-
     <div class="w-full md:w-2/3 mx-auto">
       <h1 class="text-3xl mb-2 md:mb-4">
         {{ userDeck.name }}
+
+        <small>
+          <router-link :to="`/user/decks/${userDeck.id}/edit`" class="text-base ml-1">Settings</router-link>
+        </small>
       </h1>
 
       <p class="text-lg text-gray-700 mb-5 max-w-xl">
