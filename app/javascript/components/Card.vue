@@ -149,7 +149,7 @@ export default {
       if (this.isNew) {
         this.createUserCard({ userDeckId: this.userDeckId, userCard: this.currentCard })
           .then(() => { this.isEditing = false })
-          .then(() => this.$emit('card-created'))
+          .then(() => this.$emit('create'))
           .then(() => { this.$notify({ title: 'Card was created successfully' }) })
       } else {
         this.updateUserCard(this.currentCard)
