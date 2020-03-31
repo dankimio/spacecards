@@ -1,6 +1,6 @@
 class UserDecksController < ApplicationController
   def index
-    @user_decks = current_user.user_decks
+    @user_decks = current_user.user_decks.order(name: :asc)
   end
 
   def show
