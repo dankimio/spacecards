@@ -3,7 +3,7 @@
     <h1 class="heading-2 mb-4 md:mb-8 md:text-center">
       Decks
       <small>
-        <router-link to="/decks/new" class="text-base ml-1">New deck</router-link>
+        <router-link to="/user/decks/new" class="text-base ml-1">New deck</router-link>
       </small>
     </h1>
 

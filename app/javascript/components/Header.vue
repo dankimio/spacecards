@@ -21,10 +21,10 @@
       </router-link>
       <router-link
         v-if="isLoggedIn"
-        to="/decks"
+        to="/user/decks"
         class="mr-6 md:mr-0 md:ml-10"
       >
-        Decks
+        My decks
       </router-link>
       <a
         v-if="isLoggedIn"

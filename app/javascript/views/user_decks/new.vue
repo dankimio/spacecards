@@ -62,7 +62,7 @@ export default {
     submit() {
       this.createUserDeck(this.userDeck)
         .then(response => {
-          this.$router.push(`/decks/${response.data.id}`)
+          this.$router.push(`/user/decks/${response.data.id}`)
         })
     },
     ...mapActions('userDecks', ['createUserDeck'])
