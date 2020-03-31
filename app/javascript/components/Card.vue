@@ -2,7 +2,9 @@
   <form class="flex flex-col border mb-4 rounded" @submit.prevent="submit">
     <div class="flex flex-col">
       <div class="px-4 py-3">
-        <span class="uppercase tracking-wide text-gray-500 text-xs">Front</span>
+        <span class="uppercase tracking-wide text-gray-500 text-xs">
+          Front
+        </span>
         <div
           v-if="!isEditing"
           class="text-gray-800 text-lg"
@@ -10,7 +12,8 @@
         />
 
         <textarea
-          v-if="allowEditing && isEditing"
+          v-if="allowEditing"
+          v-show="isEditing"
           v-model="currentCard.front"
           name="front"
           class="form-control w-full"
@@ -22,15 +25,18 @@
       <hr class="border-gray-200">
 
       <div class="px-4 py-3">
-        <span class="uppercase tracking-wide text-gray-500 text-xs">Back</span>
+        <span class="uppercase tracking-wide text-gray-500 text-xs">
+          Back
+        </span>
         <div
-          v-if="!isEditing"
+          v-show="!isEditing"
           class="text-gray-800 text-lg"
           v-text="currentCard.back"
         />
 
         <textarea
-          v-if="allowEditing && isEditing"
+          v-if="allowEditing"
+          v-show="isEditing"
           v-model="currentCard.back"
           name="back"
           class="form-control w-full"
@@ -42,10 +48,14 @@
       v-if="allowEditing"
       class="bg-gray-100 text-gray-600 text-sm px-4 py-2"
     >
-      <div v-if="allowEditing && !isEditing" class="lg:w-48 flex">
+      <div
+        v-if="allowEditing"
+        v-show="!isEditing"
+        class="lg:w-48 flex"
+      >
         <button
           class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
-          @click="toggleEdit"
+          @click.prevent="isEditing = true"
         >
           <inline-svg
             :src="require('@images/icon-pencil.svg')"
@@ -56,7 +66,7 @@
 
         <button
           class="flex items-center text-gray-500 hover:text-red-700"
-          @click="destroy"
+          @click.prevent="destroy"
         >
           <inline-svg
             :src="require('@images/icon-trash.svg')"
@@ -65,9 +75,15 @@
           <span>Delete</span>
         </button>
       </div>
-      <div v-if="allowEditing && isEditing" class="lg:w-48 flex">
+      <div
+        v-if="allowEditing"
+        v-show="isEditing"
+        class="lg:w-48 flex"
+      >
         <button
-          v-if="allowEditing && isEditing"
+          v-if="allowEditing"
+          v-show="isEditing"
+          href="#"
           type="submit"
           class="flex items-center text-gray-500 hover:text-gray-800 mr-6"
         >
@@ -78,9 +94,10 @@
           <span>Save</span>
         </button>
         <button
-          v-if="allowEditing && isEditing"
+          v-if="allowEditing"
+          v-show="isEditing"
           class="flex items-center text-gray-500 hover:text-gray-800"
-          @click="toggleEdit"
+          @click.prevent="isEditing = false"
         >
           <inline-svg
             :src="require('@images/icon-close.svg')"
@@ -116,9 +133,6 @@ export default {
     }
   },
   methods: {
-    toggleEdit() {
-      this.isEditing = !this.isEditing
-    },
     destroy() {
       this.destroyUserCard(this.currentCard)
         .then(() => {
