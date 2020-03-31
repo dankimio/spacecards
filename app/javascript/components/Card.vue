@@ -97,7 +97,7 @@
           v-if="allowEditing"
           v-show="isEditing"
           class="flex items-center text-gray-500 hover:text-gray-800"
-          @click.prevent="isEditing = false"
+          @click.prevent="cancel"
         >
           <inline-svg
             :src="require('@images/icon-close.svg')"
@@ -133,6 +133,12 @@ export default {
     }
   },
   methods: {
+    cancel() {
+      this.isEditing = false
+      if (this.isNew) {
+        this.$emit('cancel')
+      }
+    },
     destroy() {
       this.destroyUserCard(this.currentCard)
         .then(() => {

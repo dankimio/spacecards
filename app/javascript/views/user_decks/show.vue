@@ -62,6 +62,7 @@
         :allow-editing="true"
         :is-new="true"
         @card-created="createCard"
+        @cancel="addingNewCard = false"
       />
 
       <Card
