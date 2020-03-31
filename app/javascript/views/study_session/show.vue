@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <Card
+    <StudyCard
       v-if="currentReview && currentReview.userCard"
       class="mb-4"
       :card="currentReview.userCard"
@@ -57,11 +57,11 @@
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
 
-import Card from './card'
+import StudyCard from '@/components/StudyCard'
 import AnswerButton from '@/components/AnswerButton'
 
 export default {
-  components: { Card, AnswerButton },
+  components: { StudyCard, AnswerButton },
   props: {
     id: {
       type: String,
