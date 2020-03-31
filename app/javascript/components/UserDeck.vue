@@ -40,7 +40,7 @@
       </router-link>
 
       <router-link
-        to="/decks/1/edit"
+        :to="`/user/decks/${userDeck.id}/edit`"
         class="flex items-center text-gray-500 hover:text-indigo-600"
       >
         <inline-svg

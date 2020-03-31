@@ -1,9 +1,9 @@
 <template>
   <div class="container md:max-w-sm md:mx-auto">
     <h1 class="text-3xl mb-4">
-      <span class="font-bold">World Capitals</span>
+      <span class="font-bold">{{ userDeck.name }}</span>
       <span class="mx-3 font-light">→</span>
-      <span class="font-light">Edit</span>
+      <span class="font-light">Settings</span>
     </h1>
 
     <form action="#">
@@ -53,3 +53,25 @@
     </button>
   </div>
 </template>
+
+<script>
+import { mapActions, mapState } from 'vuex'
+
+export default {
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    ...mapState('userDecks', ['userDeck'])
+  },
+  created() {
+    this.getUserDeck(this.id)
+  },
+  methods: {
+    ...mapActions('userDecks', ['getUserDeck'])
+  }
+}
+</script>
