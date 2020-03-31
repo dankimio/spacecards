@@ -20,6 +20,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Auth
 gem 'devise', '~> 4.7'
 gem 'devise-jwt', '~> 0.6'
+gem 'pundit', '~> 2.1'
 
 # Core
 gem 'repetition', '~> 2.1'
