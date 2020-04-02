@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_211057) do
+ActiveRecord::Schema.define(version: 2020_04_02_211347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_211057) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "interval", default: 0, null: false
+    t.index ["shared_card_id", "user_deck_id"], name: "index_user_cards_on_shared_card_id_and_user_deck_id", unique: true
     t.index ["shared_card_id"], name: "index_user_cards_on_shared_card_id"
     t.index ["user_deck_id"], name: "index_user_cards_on_user_deck_id"
   end
