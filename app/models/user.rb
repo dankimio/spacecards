@@ -12,6 +12,8 @@
 #  updated_at             :datetime         not null
 #
 class User < ApplicationRecord
+  include Devise::JWT::RevocationStrategies::Whitelist
+
   # TODO: configure `dependent`
   has_many :shared_decks
   has_many :user_decks, dependent: :destroy
@@ -20,8 +22,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  # TODO: use Blacklist revocation strategy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :jwt_authenticatable, jwt_revocation_strategy: Devise::JWT::RevocationStrategies::Null
+         :jwt_authenticatable, jwt_revocation_strategy: self
 end

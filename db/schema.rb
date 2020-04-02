@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_144522) do
+ActiveRecord::Schema.define(version: 2020_04_02_154607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,17 @@ ActiveRecord::Schema.define(version: 2020_03_29_144522) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "whitelisted_jwts", force: :cascade do |t|
+    t.string "jti", null: false
+    t.string "aud"
+    t.datetime "exp", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jti"], name: "index_whitelisted_jwts_on_jti", unique: true
+    t.index ["user_id"], name: "index_whitelisted_jwts_on_user_id"
+  end
+
   add_foreign_key "reviews", "study_sessions"
   add_foreign_key "reviews", "user_cards"
   add_foreign_key "shared_cards", "shared_decks"
@@ -107,4 +118,5 @@ ActiveRecord::Schema.define(version: 2020_03_29_144522) do
   add_foreign_key "user_cards", "user_decks"
   add_foreign_key "user_decks", "shared_decks"
   add_foreign_key "user_decks", "users"
+  add_foreign_key "whitelisted_jwts", "users", on_delete: :cascade
 end
