@@ -20,6 +20,8 @@ class UserDeck < ApplicationRecord
   has_many :user_cards, dependent: :destroy
   has_many :study_sessions, dependent: :destroy
 
+  validates :shared_deck, uniqueness: { scope: :user }
+
   before_create :set_name_from_shared_deck, if: :shared_deck_id?
 
   after_create_commit :add_cards_from_shared_deck, if: :shared_deck_id?
