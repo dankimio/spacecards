@@ -13,14 +13,21 @@ const getters = {
 
 const actions = {
   logIn(context, user) {
-    axios
-      .post('/users/sign_in', user)
-      .then(response => {
-        const token = response.headers.authorization.split(' ').pop()
-        axios.defaults.headers.common.Authorization = `Bearer ${token}`
-        localStorage.setItem('token', token)
-        context.commit('LOG_IN', token, response.data)
-      })
+    return new Promise((resolve, reject) => {
+      axios
+        .post('/users/sign_in', user)
+        .then(response => {
+          const token = response.headers.authorization.split(' ').pop()
+          axios.defaults.headers.common.Authorization = `Bearer ${token}`
+          localStorage.setItem('token', token)
+          context.commit('LOG_IN', token, response.data)
+          resolve()
+        })
+        .catch(error => {
+          localStorage.removeItem('token')
+          reject(error)
+        })
+    })
   },
   signUp(context, user) {
     axios
