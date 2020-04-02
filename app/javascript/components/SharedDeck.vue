@@ -35,7 +35,7 @@
       </div>
 
       <div class="flex">
-        <router-link to="#" class="flex items-center text-sm text-gray-600 hover:text-indigo-600 flex-shrink-0 mr-2">
+        <router-link :to="`/decks/${sharedDeck.id}`" class="flex items-center text-sm text-gray-600 hover:text-indigo-600 flex-shrink-0 mr-2">
           <inline-svg
             :src="require('@images/icon-albums.svg')"
             class="w-4 h-4 mr-1 fill-current"
@@ -69,12 +69,10 @@ export default {
   data() {
     return {
       sharedDeckData: {
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         tags: ['Geography', 'Easy'],
         avatarUrl: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
         userName: 'Bill M.',
-        usersCount: 440,
-        sharedCardsCount: 270
+        usersCount: 440
       }
     }
   }
