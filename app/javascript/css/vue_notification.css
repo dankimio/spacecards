@@ -1,9 +1,9 @@
 .vue-notification-group {
-  @apply .px-6;
+  @apply .px-4 .pb-5;
 
   & .vue-notification {
     @apply .border-0 .bg-gray-800 .rounded-md .text-base;
-    @apply .mx-auto .mb-5 .py-3 .px-4;
+    @apply .mx-auto .mt-2 .py-3 .px-4;
 
     & .notification-title {
       @apply .font-normal;
@@ -14,7 +14,7 @@
 @screen md {
   .vue-notification-group {
     & .vue-notification {
-      @apply .mb-8 .py-4 .px-5;
+      @apply .mt-4 .py-4 .px-5;
     }
   }
 }
