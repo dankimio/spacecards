@@ -117,6 +117,7 @@ export default {
       this.answerReview(payload)
         .then(() => {
           if (this.nextReview) {
+            this.answerShown = false
             this.currentReview = this.nextReview
           } else {
           // TODO: end session
