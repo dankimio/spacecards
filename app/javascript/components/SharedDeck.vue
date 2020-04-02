@@ -14,7 +14,7 @@
     </p>
 
     <div class="flex flex-wrap">
-      <Tag
+      <DeckTag
         v-for="tag in sharedDeck.tags"
         :key="tag"
         :name="tag"
@@ -56,10 +56,10 @@
 </template>
 
 <script>
-import Tag from '@/components/Tag'
+import DeckTag from '@/components/DeckTag'
 
 export default {
-  components: { Tag },
+  components: { DeckTag },
   props: {
     sharedDeck: {
       type: Object,

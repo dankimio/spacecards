@@ -6,7 +6,7 @@
           Tags
         </h2>
         <div class="flex flex-wrap mb-2">
-          <Tag
+          <DeckTag
             v-for="tag in tags"
             :key="tag"
             :name="tag"
@@ -77,10 +77,10 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import SharedDeck from '@/components/SharedDeck'
-import Tag from '@/components/Tag'
+import DeckTag from '@/components/DeckTag'
 
 export default {
-  components: { SharedDeck, Tag },
+  components: { SharedDeck, DeckTag },
   metaInfo: {
     title: 'Explore sharedDecks'
   },
