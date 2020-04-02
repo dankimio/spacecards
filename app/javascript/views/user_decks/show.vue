@@ -49,7 +49,7 @@
         Add cards
       </div>
 
-      <Card
+      <DeckCard
         v-if="addingNewCard"
         :user-deck-id="userDeck.id"
         :card="{ front: '', back: '' }"
@@ -59,7 +59,7 @@
         @cancel="addingNewCard = false"
       />
 
-      <Card
+      <DeckCard
         v-for="userCard in userCards"
         :key="userCard.id"
         :card="userCard"
@@ -72,10 +72,10 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 
-import Card from '@/components/Card'
+import DeckCard from '@/components/DeckCard'
 
 export default {
-  components: { Card },
+  components: { DeckCard },
   props: {
     id: {
       type: String,

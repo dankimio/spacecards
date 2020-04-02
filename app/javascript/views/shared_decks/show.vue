@@ -64,7 +64,7 @@
         Add sharedCards
       </router-link>
 
-      <Card v-for="card in sharedCards" :key="card.id" :card="card" />
+      <DeckCard v-for="card in sharedCards" :key="card.id" :card="card" />
     </div>
   </div>
 </template>
@@ -72,10 +72,10 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 
-import Card from '@/components/Card'
+import DeckCard from '@/components/DeckCard'
 
 export default {
-  components: { Card },
+  components: { DeckCard },
   props: {
     id: {
       type: Number,
