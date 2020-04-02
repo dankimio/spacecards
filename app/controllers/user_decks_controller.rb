@@ -20,6 +20,6 @@ class UserDecksController < ApplicationController
   private
 
   def user_deck_params
-    params.require(:user_deck).permit(:name, :description)
+    params.require(:user_deck).permit(:name, :description, :shared_deck_id)
   end
 end
