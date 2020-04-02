@@ -82,6 +82,9 @@ export default {
         .then(() => {
           this.$notify({ title: 'Logged in successfully' })
         })
+        .catch(() => {
+          this.$notify({ title: 'Email or password is incorrect' })
+        })
     },
     ...mapActions('users', ['logIn'])
   }
