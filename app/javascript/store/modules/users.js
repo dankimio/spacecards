@@ -30,14 +30,21 @@ const actions = {
     })
   },
   signUp(context, user) {
-    axios
-      .post('/users', user)
-      .then(response => {
-        const token = response.headers.authorization.split(' ').pop()
-        axios.defaults.headers.common.Authorization = token
-        localStorage.setItem('token', token)
-        context.commit('LOG_IN', { token, user: response.data })
-      })
+    return new Promise((resolve, reject) => {
+      axios
+        .post('/users', user)
+        .then(response => {
+          const token = response.headers.authorization.split(' ').pop()
+          axios.defaults.headers.common.Authorization = token
+          localStorage.setItem('token', token)
+          context.commit('LOG_IN', { token, user: response.data })
+          resolve()
+        })
+        .catch(error => {
+          localStorage.removeItem('token')
+          reject(error)
+        })
+    })
   },
   logOut(context) {
     return new Promise((resolve, reject) => {
