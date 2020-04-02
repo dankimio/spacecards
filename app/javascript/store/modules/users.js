@@ -34,13 +34,15 @@ const actions = {
       .post('/users', user)
       .then(response => {
         const token = response.headers.authorization.split(' ').pop()
-        delete axios.defaults.headers.common.Authorization
+        axios.defaults.headers.common.Authorization = token
         localStorage.setItem('token', token)
-        context.commit('LOG_IN', token, response.data)
+        context.commit('LOG_IN', { token, user: response.data })
       })
   },
   logOut(context) {
     return new Promise((resolve, reject) => {
+      localStorage.removeItem('token')
+      delete axios.defaults.headers.common.Authorization
       context.commit('LOG_OUT')
       resolve()
     })
@@ -48,7 +50,7 @@ const actions = {
 }
 
 const mutations = {
-  LOG_IN(state, token, user) {
+  LOG_IN(state, { token, user }) {
     state.token = token
     state.user = user
   },
