@@ -5,18 +5,18 @@
       position="bottom center"
       width="100%"
     />
-    <Header />
+    <SiteHeader />
     <router-view class="flex-1 mb-8" />
     <SiteFooter />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
+import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 
 export default {
-  components: { Header, SiteFooter },
+  components: { SiteHeader, SiteFooter },
   metaInfo: {
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} – Spacecards` : 'Spacecards'
