@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_154607) do
+ActiveRecord::Schema.define(version: 2020_04_02_211057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_154607) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.index ["shared_deck_id", "user_id"], name: "index_user_decks_on_shared_deck_id_and_user_id", unique: true
     t.index ["shared_deck_id"], name: "index_user_decks_on_shared_deck_id"
     t.index ["user_id"], name: "index_user_decks_on_user_id"
   end
