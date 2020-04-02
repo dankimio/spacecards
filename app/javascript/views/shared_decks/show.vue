@@ -23,8 +23,18 @@
         {{ sharedDeck.description }}
       </p>
 
+      <router-link
+        v-if="sharedDeck.userDeckId"
+        class="button button-lg button-disabled mb-8 w-full md:w-auto"
+        :to="`/user/decks/${sharedDeck.userDeckId}`"
+      >
+        ✓ Added to library
+      </router-link>
+
       <button
+        v-else
         class="button button-lg button-outlined button-outlined-primary mb-8 w-full md:w-auto"
+        @click.prevent="addToLibrary"
       >
         + Add to library
       </button>
@@ -96,8 +106,16 @@ export default {
     this.getSharedDeck(this.id)
   },
   methods: {
+    addToLibrary() {
+      this.createUserDeck({ shared_deck_id: this.id })
+        .then(response => {
+          this.$router.push(`/user/decks/${response.data.id}`)
+          this.$notify({ title: `'${response.data.name}' has been added to your library` })
+        })
+    },
     ...mapActions('sharedCards', ['getSharedDeckCards']),
-    ...mapActions('sharedDecks', ['getSharedDeck'])
+    ...mapActions('sharedDecks', ['getSharedDeck']),
+    ...mapActions('userDecks', ['createUserDeck'])
   }
 }
 </script>
