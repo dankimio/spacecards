@@ -78,7 +78,7 @@ export default {
   components: { DeckCard },
   props: {
     id: {
-      type: Number,
+      type: String,
       required: true
     }
   },
