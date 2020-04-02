@@ -4,9 +4,9 @@
       {{ card.front }}
     </span>
 
-    <hr class="w-full border-b-2 border-gray-200 my-4">
+    <hr v-show="answerShown" class="w-full border-b-2 border-gray-200 my-4">
 
-    <span class="font-semibold text-3xl">
+    <span v-show="answerShown" class="font-semibold text-3xl">
       {{ card.back }}
     </span>
   </div>
@@ -18,6 +18,10 @@ export default {
     card: {
       type: Object,
       required: true
+    },
+    answerShown: {
+      type: Boolean,
+      default: false
     }
   }
 }

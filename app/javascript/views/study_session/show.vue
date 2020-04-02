@@ -27,6 +27,7 @@
       v-if="currentReview && currentReview.userCard"
       class="mb-4"
       :card="currentReview.userCard"
+      :answer-shown="answerShown"
     />
 
     <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
