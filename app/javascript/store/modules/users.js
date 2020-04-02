@@ -20,7 +20,7 @@ const actions = {
           const token = response.headers.authorization.split(' ').pop()
           axios.defaults.headers.common.Authorization = `Bearer ${token}`
           localStorage.setItem('token', token)
-          context.commit('LOG_IN', token, response.data)
+          context.commit('LOG_IN', { token, user: response.data })
           resolve()
         })
         .catch(error => {
