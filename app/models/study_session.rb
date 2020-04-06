@@ -21,6 +21,8 @@ class StudySession < ApplicationRecord
   after_create_commit :create_due_card_reviews
   after_create_commit :create_new_card_reviews
 
+  after_touch :set_completed, if: -> { reviews.unanswered.empty? }
+
   scope :incomplete, -> { where(completed: false) }
   scope :recent, -> { where('created_at > ?', 24.hours.ago) }
 
@@ -47,5 +49,9 @@ class StudySession < ApplicationRecord
       .pluck(:id)
       .map { |user_card_id| { user_card_id: user_card_id } }
     reviews.create!(new_cards)
+  end
+
+  def set_completed
+    update_attribute(:completed, true)
   end
 end

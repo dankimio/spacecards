@@ -10,7 +10,7 @@
 #  updated_at       :datetime         not null
 #
 class Review < ApplicationRecord
-  belongs_to :study_session
+  belongs_to :study_session, touch: true
   belongs_to :user_card
 
   validates :user_card, uniqueness: { scope: :study_session }
