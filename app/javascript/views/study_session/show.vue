@@ -91,15 +91,12 @@ export default {
     id: {
       type: String,
       required: true
-    },
-    answerShown: {
-      type: Boolean,
-      default: false
     }
   },
   data() {
     return {
-      currentReview: {}
+      currentReview: {},
+      answerShown: false
     }
   },
   computed: {
