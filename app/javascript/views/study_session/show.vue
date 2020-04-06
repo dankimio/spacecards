@@ -8,7 +8,10 @@
       <span class="font-light">Study</span>
     </h1>
 
-    <SessionSummary :reviewed-cards-count="answeredReviews.length" />
+    <SessionSummary
+      v-if="!currentReview.userCard"
+      :reviewed-cards-count="answeredReviews.length"
+    />
 
     <div
       v-if="currentReview.userCard"
