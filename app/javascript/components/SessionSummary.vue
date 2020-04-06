@@ -17,16 +17,19 @@
         bg-gray-200 rounded-lg"
       >
         <span>Cards studied</span>
-        <span class="text-xl font-semibold text-gray-800">14</span>
+        <span class="text-xl font-semibold text-gray-800">
+          {{ reviewedCardsCount }}
+        </span>
       </div>
-      <div class="md:w-6 my-2 md:my-0" />
+      <div v-if="false" class="md:w-6 my-2 md:my-0" />
       <div
+        v-if="false"
         class="flex-1 px-5 py-4
         flex justify-between items-center
         bg-gray-200 rounded-lg"
       >
-        <span>Deck progress</span>
-        <span class="text-xl font-semibold text-gray-800">55%</span>
+        <span>New cards</span>
+        <span class="text-xl font-semibold text-gray-800">55</span>
       </div>
     </div>
 
@@ -38,5 +41,11 @@
 
 <script>
 export default {
+  props: {
+    reviewedCardsCount: {
+      type: Number,
+      required: true
+    }
+  }
 }
 </script>

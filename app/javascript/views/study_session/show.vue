@@ -8,7 +8,7 @@
       <span class="font-light">Study</span>
     </h1>
 
-    <SessionSummary />
+    <SessionSummary :reviewed-cards-count="answeredReviews.length" />
 
     <div
       v-if="currentReview.userCard"
@@ -101,7 +101,10 @@ export default {
   },
   computed: {
     ...mapGetters('studySessions', ['reviewsLeft', 'nextReview']),
-    ...mapState('studySessions', ['reviews', 'userDeck', 'studySession'])
+    ...mapState(
+      'studySessions',
+      ['reviews', 'userDeck', 'studySession', 'answeredReviews']
+    )
   },
   created() {
     this.getStudySession(this.id)
