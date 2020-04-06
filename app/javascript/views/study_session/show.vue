@@ -1,6 +1,6 @@
 <template>
   <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
-    <h1 class="text-3xl mb-4">
+    <h1 class="text-3xl mb-4 leading-tight">
       <span class="font-bold">
         {{ userDeck.name }}
       </span>
@@ -8,7 +8,15 @@
       <span class="font-light">Study</span>
     </h1>
 
-    <div class="flex flex-row justify-between mb-4">
+    <SessionSummary
+      v-if="reviewCompleted"
+      :reviewed-cards-count="answeredReviews.length"
+    />
+
+    <div
+      v-if="!reviewCompleted"
+      class="flex flex-row justify-between mb-4"
+    >
       <div class="flex flex-row">
         <span class="text-gray-600 font-medium">World</span>
       </div>
@@ -24,13 +32,16 @@
     </div>
 
     <StudyCard
-      v-if="currentReview && currentReview.userCard"
+      v-if="!reviewCompleted"
       class="mb-4"
       :card="currentReview.userCard"
       :answer-shown="answerShown"
     />
 
-    <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
+    <div
+      v-if="!reviewCompleted"
+      class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
+    >
       <button
         v-if="!answerShown"
         class="button button-lg button-primary
@@ -72,27 +83,34 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 
 import StudyCard from '@/components/StudyCard'
 import AnswerButton from '@/components/AnswerButton'
+import SessionSummary from '@/components/SessionSummary'
 
 export default {
-  components: { StudyCard, AnswerButton },
+  components: { StudyCard, AnswerButton, SessionSummary },
   props: {
     id: {
       type: String,
       required: true
-    },
-    answerShown: {
-      type: Boolean,
-      default: false
     }
   },
   data() {
     return {
-      currentReview: {}
+      currentReview: {},
+      answerShown: false
     }
   },
   computed: {
+    reviewCompleted() {
+      if (this.currentReview && this.currentReview.userCard) {
+        return false
+      }
+      return true
+    },
     ...mapGetters('studySessions', ['reviewsLeft', 'nextReview']),
-    ...mapState('studySessions', ['reviews', 'userDeck', 'studySession'])
+    ...mapState(
+      'studySessions',
+      ['reviews', 'userDeck', 'studySession', 'answeredReviews']
+    )
   },
   created() {
     this.getStudySession(this.id)
@@ -116,11 +134,10 @@ export default {
       }
       this.answerReview(payload)
         .then(() => {
-          if (this.nextReview) {
+          this.currentReview = this.nextReview
+
+          if (this.currentReview) {
             this.answerShown = false
-            this.currentReview = this.nextReview
-          } else {
-          // TODO: end session
           }
         })
     }
