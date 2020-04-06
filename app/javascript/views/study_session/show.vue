@@ -1,12 +1,14 @@
 <template>
   <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
-    <h1 class="text-3xl mb-4">
+    <h1 class="text-3xl mb-4 leading-tight">
       <span class="font-bold">
         {{ userDeck.name }}
       </span>
       <span class="mx-3 font-light">→</span>
       <span class="font-light">Study</span>
     </h1>
+
+    <SessionSummary />
 
     <div
       v-if="currentReview.userCard"
@@ -78,9 +80,10 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 
 import StudyCard from '@/components/StudyCard'
 import AnswerButton from '@/components/AnswerButton'
+import SessionSummary from '@/components/SessionSummary'
 
 export default {
-  components: { StudyCard, AnswerButton },
+  components: { StudyCard, AnswerButton, SessionSummary },
   props: {
     id: {
       type: String,
