@@ -8,7 +8,10 @@
       <span class="font-light">Study</span>
     </h1>
 
-    <div class="flex flex-row justify-between mb-4">
+    <div
+      v-if="currentReview.userCard"
+      class="flex flex-row justify-between mb-4"
+    >
       <div class="flex flex-row">
         <span class="text-gray-600 font-medium">World</span>
       </div>
@@ -24,13 +27,16 @@
     </div>
 
     <StudyCard
-      v-if="currentReview && currentReview.userCard"
+      v-if="currentReview.userCard"
       class="mb-4"
       :card="currentReview.userCard"
       :answer-shown="answerShown"
     />
 
-    <div class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4">
+    <div
+      v-if="currentReview.userCard"
+      class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
+    >
       <button
         v-if="!answerShown"
         class="button button-lg button-primary
