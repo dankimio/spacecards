@@ -9,12 +9,12 @@
     </h1>
 
     <SessionSummary
-      v-if="!currentReview.userCard"
+      v-if="reviewCompleted"
       :reviewed-cards-count="answeredReviews.length"
     />
 
     <div
-      v-if="currentReview.userCard"
+      v-if="!reviewCompleted"
       class="flex flex-row justify-between mb-4"
     >
       <div class="flex flex-row">
@@ -32,14 +32,14 @@
     </div>
 
     <StudyCard
-      v-if="currentReview.userCard"
+      v-if="!reviewCompleted"
       class="mb-4"
       :card="currentReview.userCard"
       :answer-shown="answerShown"
     />
 
     <div
-      v-if="currentReview.userCard"
+      v-if="!reviewCompleted"
       class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
     >
       <button
@@ -100,6 +100,12 @@ export default {
     }
   },
   computed: {
+    reviewCompleted() {
+      if (this.currentReview && this.currentReview.userCard) {
+        return false
+      }
+      return true
+    },
     ...mapGetters('studySessions', ['reviewsLeft', 'nextReview']),
     ...mapState(
       'studySessions',
@@ -128,11 +134,10 @@ export default {
       }
       this.answerReview(payload)
         .then(() => {
-          if (this.nextReview) {
+          this.currentReview = this.nextReview
+
+          if (this.currentReview) {
             this.answerShown = false
-            this.currentReview = this.nextReview
-          } else {
-          // TODO: end session
           }
         })
     }
