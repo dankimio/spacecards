@@ -40,7 +40,7 @@
           Spaced repetition is a learning technique that has been studied and
           researched.
           <a href="https://en.wikipedia.org/wiki/Spaced_repetition">
-            Further reading </a>.
+            Further reading</a>.
         </p>
       </div>
       <div class="faq-item">
