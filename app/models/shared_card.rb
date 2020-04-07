@@ -12,5 +12,7 @@
 class SharedCard < ApplicationRecord
   belongs_to :shared_deck, counter_cache: true
 
+  has_many :user_cards, dependent: :nullify
+
   validates :front, :back, length: { minimum: 1, maximum: 255 }, presence: true
 end
