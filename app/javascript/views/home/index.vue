@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import SectionHero from './SectionHero'
-import SectionSpacedRepetition from './SectionSpacedRepetition'
-import SectionHowTo from './SectionHowTo'
-import SectionFeatures from './SectionFeatures'
-import SectionArticles from './SectionArticles'
-import SectionFaq from './SectionFaq'
+import SectionHero from '@/components/home/SectionHero'
+import SectionSpacedRepetition from '@/components/home/SectionSpacedRepetition'
+import SectionHowTo from '@/components/home/SectionHowTo'
+import SectionFeatures from '@/components/home/SectionFeatures'
+import SectionArticles from '@/components/home/SectionArticles'
+import SectionFaq from '@/components/home/SectionFaq'
 
 export default {
   metaInfo: {
