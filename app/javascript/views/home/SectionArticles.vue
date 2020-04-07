@@ -13,7 +13,9 @@
         <a
           href="https://qz.com/1211561/how-to-learn-a-language-use-spaced-repetition/"
           target="_blank"
-          class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
+          class="article md:flex-1 flex flex-col
+          md:mx-4 mb-8 md:mb-0
+          border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg"
         >
           <div class="flex-grow flex flex-col p-5 bg-white">
             <p class="mb-2 text-sm">
@@ -29,7 +31,9 @@
         <a
           href="https://www.theguardian.com/education/2016/jan/23/spaced-repetition-a-hack-to-make-your-brain-store-information"
           target="_blank"
-          class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
+          class="article md:flex-1 flex flex-col
+          md:mx-4 mb-8 md:mb-0
+          border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg"
         >
           <div class="flex-grow flex flex-col p-5 bg-white">
             <p class="mb-2 text-sm">
@@ -45,7 +49,9 @@
         <a
           href="https://fs.blog/2018/12/spacing-effect/"
           target="_blank"
-          class="article md:flex-1 flex flex-col rounded-lg overflow-hidden md:mx-4 mb-8 md:mb-0 hover:shadow-lg"
+          class="article md:flex-1 flex flex-col
+          md:mx-4 mb-8 md:mb-0
+          border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg"
         >
           <div class="flex-grow flex flex-col p-5 bg-white">
             <p class="mb-2 text-sm">
