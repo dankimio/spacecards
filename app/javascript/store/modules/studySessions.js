@@ -1,9 +1,10 @@
 import axios from 'axios'
 
 const state = {
-  unansweredReviews: [],
   answeredReviews: [],
+  isLoading: true,
   studySession: {},
+  unansweredReviews: [],
   userDeck: {}
 }
 
@@ -21,6 +22,7 @@ const getters = {
 
 const actions = {
   getStudySession(context, userDeckId) {
+    context.commit('SET_LOADING')
     return axios.get(`/user_decks/${userDeckId}/study_session`)
       .then(response => {
         const {
@@ -28,6 +30,7 @@ const actions = {
           userDeck,
           ...studySession
         } = response.data
+        context.commit('SET_LOADING', false)
         context.commit('SET_REVIEWS', reviews)
         context.commit('SET_STUDY_SESSION', studySession)
         context.commit('SET_USER_DECK', userDeck)
@@ -56,6 +59,9 @@ const actions = {
 }
 
 const mutations = {
+  SET_LOADING(state, loading = true) {
+    state.isLoading = loading
+  },
   SET_REVIEWS(state, reviews) {
     state.unansweredReviews = reviews.filter(review => review.answer === null)
     state.answeredReviews = reviews.filter(review => review.answer !== null)

@@ -9,12 +9,12 @@
     </h1>
 
     <SessionSummary
-      v-if="reviewCompleted"
+      v-if="reviewCompleted && !isLoading"
       :reviewed-cards-count="answeredReviews.length"
     />
 
     <div
-      v-if="!reviewCompleted"
+      v-if="!reviewCompleted && !isLoading"
       class="flex flex-row justify-between mb-4"
     >
       <div class="flex flex-row">
@@ -32,14 +32,14 @@
     </div>
 
     <StudyCard
-      v-if="!reviewCompleted"
+      v-if="!reviewCompleted && !isLoading"
       class="mb-4"
       :card="currentReview.userCard"
       :answer-shown="answerShown"
     />
 
     <div
-      v-if="!reviewCompleted"
+      v-if="!reviewCompleted && !isLoading"
       class="flex flex-col sm:flex-col md:flex-row justify-between items-center mb-4"
     >
       <button
@@ -109,7 +109,7 @@ export default {
     ...mapGetters('studySessions', ['reviewsLeft', 'nextReview']),
     ...mapState(
       'studySessions',
-      ['reviews', 'userDeck', 'studySession', 'answeredReviews']
+      ['reviews', 'userDeck', 'studySession', 'answeredReviews', 'isLoading']
     )
   },
   created() {
@@ -118,8 +118,11 @@ export default {
         if (this.nextReview) {
           this.currentReview = this.nextReview
         } else {
-          // TODO: end session
+          this.handleEmptyStudySession()
         }
+      })
+      .catch(() => {
+        this.handleEmptyStudySession()
       })
   },
   methods: {
@@ -140,6 +143,10 @@ export default {
             this.answerShown = false
           }
         })
+    },
+    handleEmptyStudySession() {
+      this.$notify({ title: 'No cards to review in this deck. Come back tomorrow.' })
+      this.$router.push('/user/decks')
     }
   },
   metaInfo: {
