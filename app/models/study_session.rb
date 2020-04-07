@@ -16,7 +16,7 @@ class StudySession < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :user_cards, through: :reviews
 
-  validate :validate_not_empty
+  validate :validate_not_empty, on: :create
 
   before_validation :set_attributes, on: :create
 

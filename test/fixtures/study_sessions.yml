@@ -10,8 +10,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+
 study_session:
-  user: user
   user_deck: user_deck
   new_cards_limit: 20
   due_cards_limit: 20
