@@ -1,5 +1,5 @@
 class UserDecksController < ApplicationController
-  before_action :set_user_deck, only: %i[update]
+  before_action :set_user_deck, only: %i[update destroy]
 
   def index
     @user_decks = current_user.user_decks.order(name: :asc)
@@ -25,6 +25,11 @@ class UserDecksController < ApplicationController
     else
       render json: @user_deck.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @user_deck.destroy
+    head :no_content
   end
 
   private

@@ -37,6 +37,15 @@ const actions = {
         context.commit('SET_USER_DECK', response.data)
         return response
       })
+  },
+  deleteUserDeck(context, userDeckId) {
+    return axios.delete(
+      `/user_decks/${userDeckId}`
+    )
+      .then(response => {
+        context.commit('SET_USER_DECK', {})
+        return response
+      })
   }
 }
 

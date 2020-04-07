@@ -61,7 +61,11 @@
       Danger zone
     </h2>
 
-    <button class="button button-danger">
+    <p class="text-gray-800 mb-4">
+      You will lose all your content and progress. This action is irreversible.
+    </p>
+
+    <button class="button button-danger" @click.prevent="destroy">
       <inline-svg
         :src="require('@images/icon-trash.svg')"
         class="inline-block w-4 h-4 mr-1 fill-current"
@@ -88,12 +92,24 @@ export default {
     this.getUserDeck(this.id)
   },
   methods: {
-    ...mapActions('userDecks', ['getUserDeck', 'updateUserDeck']),
+    ...mapActions(
+      'userDecks',
+      ['getUserDeck', 'updateUserDeck', 'deleteUserDeck']
+    ),
     submit() {
       this.updateUserDeck(this.userDeck)
         .then(() => {
-          this.$notify({ title: 'Deck was updateed successfully' })
+          this.$notify({ title: 'Deck was updated successfully' })
         })
+    },
+    destroy() {
+      if (confirm('Are you sure?')) {
+        this.deleteUserDeck(this.userDeck.id)
+          .then(() => {
+            this.$notify({ title: 'Deck was deleted successfully' })
+            this.$router.push('/user/decks')
+          })
+      }
     }
   }
 }

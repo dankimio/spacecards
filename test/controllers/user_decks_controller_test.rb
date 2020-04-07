@@ -29,9 +29,7 @@ class UserDecksControllerTest < ActionDispatch::IntegrationTest
     assert_response :ok
   end
 
-  # TODO: implement
   test 'should destroy user_deck' do
-    skip
     delete user_deck_url(@user_deck), headers: jwt_headers
     assert_response :no_content
   end
