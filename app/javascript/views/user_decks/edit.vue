@@ -18,6 +18,7 @@
           required
           placeholder="Name"
           class="form-control"
+          :value="userDeck.name"
         >
       </div>
 
@@ -32,6 +33,7 @@
           min="0"
           placeholder="Reviews per day"
           class="form-control"
+          :value="userDeck.reviewsPerDay"
         >
       </div>
 
