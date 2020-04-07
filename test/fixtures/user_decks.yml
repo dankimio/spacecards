@@ -13,8 +13,9 @@
 #  updated_at        :datetime         not null
 #  description       :text
 #
+
 user_deck:
-  user: foo
+  user: user
   shared_deck: shared_deck
   name: User deck
   user_cards_count: 0

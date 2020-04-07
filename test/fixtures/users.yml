@@ -11,6 +11,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
+
 user:
   email: 'foo@bar.com'
   encrypted_password: qwerty123

@@ -34,7 +34,7 @@ class UserDeck < ApplicationRecord
 
   def add_cards_from_shared_deck
     shared_card_columns = %i[id front back]
-    values = shared_deck.shared_cards.pluck(shared_card_columns)
+    values = shared_deck.shared_cards.pluck(*shared_card_columns)
 
     import_columns = %i[user_deck_id shared_card_id front back]
     UserCard.import(
