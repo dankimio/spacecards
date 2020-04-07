@@ -13,10 +13,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def jwt_headers(user = users(:user))
-    headers = {
-      'Accept' => 'application/json',
-      'Content-Type' => 'application/json'
-    }
-    Devise::JWT::TestHelpers.auth_headers(headers, user)
+    Devise::JWT::TestHelpers.auth_headers({}, user)
   end
 end
