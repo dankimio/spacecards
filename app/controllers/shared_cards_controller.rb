@@ -23,10 +23,10 @@ class SharedCardsController < ApplicationController
   private
 
   def set_shared_card
-    @shared_card = shared_Card.find(params[:id])
+    @shared_card = SharedCard.find(params[:id])
   end
 
-  def card_params
+  def shared_card_params
     params.require(:shared_card).permit(:front, :back)
   end
 end

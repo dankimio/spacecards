@@ -13,8 +13,7 @@ class SharedCardsControllerTest < ActionDispatch::IntegrationTest
 
   # TODO: implement authentication
   test 'should update shared_card' do
-    skip
-    patch shared_card_url(@shared_card)
+    patch shared_card_url(@shared_card), headers: jwt_headers
     assert_response :ok
   end
 end
