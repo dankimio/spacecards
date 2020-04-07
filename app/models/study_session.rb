@@ -26,7 +26,7 @@ class StudySession < ApplicationRecord
   after_touch :set_completed, if: -> { reviews.unanswered.empty? }
 
   scope :incomplete, -> { where(completed: false) }
-  scope :recent, -> { where('created_at > ?', 24.hours.ago) }
+  scope :recent, -> { where('created_at > ?', 12.hours.ago) }
 
   private
 
