@@ -4,13 +4,19 @@ class StudySessionsController < ApplicationController
   def show
     @study_session = @user_deck.study_sessions
       .includes(reviews: :user_card)
-      .recent.incomplete
+      .recent
       .first
     return if @study_session
 
     @study_session = @user_deck.study_sessions
       .includes(reviews: :user_card)
-      .create!
+      .build
+
+    if @study_session.save
+      render :show, status: :created
+    else
+      render json: @study_session.errors, status: :unprocessable_entity
+    end
   end
 
   private

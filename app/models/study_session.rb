@@ -16,6 +16,8 @@ class StudySession < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :user_cards, through: :reviews
 
+  validate :validate_not_empty
+
   before_validation :set_attributes, on: :create
 
   after_create_commit :create_due_card_reviews
@@ -53,5 +55,12 @@ class StudySession < ApplicationRecord
 
   def set_completed
     update_attribute(:completed, true)
+  end
+
+  def validate_not_empty
+    return if user_deck.user_cards.due.count.positive?
+    return if user_deck.user_cards.new_cards.count.positive?
+
+    errors.add(:base, 'no cards to review')
   end
 end
