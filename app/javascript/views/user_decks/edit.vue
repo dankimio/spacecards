@@ -6,7 +6,7 @@
       <span class="font-light">Settings</span>
     </h1>
 
-    <form action="#">
+    <form action="#" @submit.prevent="submit">
       <h2 class="text-xl mb-2">
         Deck
       </h2>
@@ -14,11 +14,11 @@
       <div class="field">
         <label for="name">Name</label>
         <input
+          v-model="userDeck.name"
           type="text"
           required
           placeholder="Name"
           class="form-control"
-          :value="userDeck.name"
         >
       </div>
 
@@ -29,16 +29,31 @@
       <div class="field">
         <label for="reviews_per_day">Reviews per pday</label>
         <input
+          v-model="userDeck.reviewsPerDay"
           type="text"
           min="0"
           placeholder="Reviews per day"
           class="form-control"
-          :value="userDeck.reviewsPerDay"
+        >
+      </div>
+
+      <div class="field">
+        <label for="reviews_per_day">New cards per pday</label>
+        <input
+          v-model="userDeck.newCardsPerDay"
+          type="text"
+          min="0"
+          placeholder="New cards per day"
+          class="form-control"
         >
       </div>
 
       <div class="my-8">
-        <input type="submit" value="Save" class="button button-primary button-lg w-full">
+        <input
+          type="submit"
+          value="Save"
+          class="button button-primary button-lg w-full"
+        >
       </div>
     </form>
 
@@ -73,7 +88,13 @@ export default {
     this.getUserDeck(this.id)
   },
   methods: {
-    ...mapActions('userDecks', ['getUserDeck'])
+    ...mapActions('userDecks', ['getUserDeck', 'updateUserDeck']),
+    submit() {
+      this.updateUserDeck(this.userDeck)
+        .then(() => {
+          this.$notify({ title: 'Deck was updateed successfully' })
+        })
+    }
   }
 }
 </script>

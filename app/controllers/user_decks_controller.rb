@@ -1,4 +1,6 @@
 class UserDecksController < ApplicationController
+  before_action :set_user_deck, only: %i[update]
+
   def index
     @user_decks = current_user.user_decks.order(name: :asc)
   end
@@ -11,7 +13,15 @@ class UserDecksController < ApplicationController
     @user_deck = current_user.user_decks.build(user_deck_params)
 
     if @user_deck.save
-      render json: @user_deck, status: :created
+      render :show, status: :created
+    else
+      render json: @user_deck.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @user_deck.update(update_user_deck_params)
+      render :show, status: :ok
     else
       render json: @user_deck.errors, status: :unprocessable_entity
     end
@@ -19,7 +29,16 @@ class UserDecksController < ApplicationController
 
   private
 
+  def set_user_deck
+    @user_deck = current_user.user_decks.find(params[:id])
+  end
+
   def user_deck_params
     params.require(:user_deck).permit(:name, :description, :shared_deck_id)
+  end
+
+  def update_user_deck_params
+    params.require(:user_deck)
+      .permit(:name, :description, :reviews_per_day, :new_cards_per_day)
   end
 end

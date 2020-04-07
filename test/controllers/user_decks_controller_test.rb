@@ -22,9 +22,7 @@ class UserDecksControllerTest < ActionDispatch::IntegrationTest
     assert_response :created
   end
 
-  # TODO: implement
   test 'should update user_deck' do
-    skip
     patch user_deck_url(@user_deck),
           headers: jwt_headers,
           params: { user_deck: @user_deck.attributes }
