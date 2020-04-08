@@ -18,7 +18,7 @@ class UserCardsController < ApplicationController
 
   def update
     if @user_card.update(user_card_params)
-      head :ok
+      render :show, status: :ok
     else
       render json: @user_card.errors, status: :unprocessable_entity
     end
