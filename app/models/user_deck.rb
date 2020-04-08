@@ -22,9 +22,9 @@ class UserDeck < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, allow_nil: true
-  validates :shared_deck, uniqueness: { scope: :user }
+  validates :shared_deck, uniqueness: { scope: :user }, if: :shared_deck_id?
 
-  before_create :set_name_from_shared_deck, if: :shared_deck_id?
+  before_validation :set_name_from_shared_deck, if: :shared_deck_id?, on: :create
 
   after_create_commit :add_cards_from_shared_deck, if: :shared_deck_id?
 
