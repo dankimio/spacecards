@@ -26,16 +26,6 @@
           />
         </div>
 
-        <div class="field text-lg text-gray-800 mb-8">
-          <input
-            id="public"
-            type="checkbox"
-            name="public"
-            class="mr-1"
-          >
-          <label for="public">Public</label>
-        </div>
-
         <input
           type="submit"
           value="Create"
