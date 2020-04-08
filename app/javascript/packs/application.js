@@ -26,13 +26,6 @@ Vue.use(VueMeta)
 import VueNotification from 'vue-notification'
 Vue.use(VueNotification, { componentName: 'VueNotification' })
 
-import axios from 'axios'
-Vue.prototype.$http = axios
-const token = localStorage.getItem('token')
-if (token) {
-  Vue.prototype.$http.defaults.headers.common.Authorization = `Bearer ${token}`
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     router,
