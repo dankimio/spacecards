@@ -77,6 +77,7 @@ export default {
       this.signUp({ user: this.user })
         .then(() => this.$router.push('/'))
         .then(() => this.$notify({ title: 'Signed up successfully' }))
+        .catch(error => console.log(error.json))
     },
     ...mapActions('users', ['signUp'])
   }
