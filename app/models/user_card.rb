@@ -23,6 +23,7 @@ class UserCard < ApplicationRecord
 
   validates :front, :back, length: { minimum: 1, maximum: 1000 }, presence: true
   validates :shared_card, uniqueness: { scope: :user_deck }
+  validates :easiness_factor, :interval, numericality: { greater_than_or_equal_to: 0 }
 
   scope :due, -> { where('due_at > ?', Time.zone.now) }
   scope :new_cards, -> { where(due_at: nil, recalled_at: nil, repetitions: 0) }
