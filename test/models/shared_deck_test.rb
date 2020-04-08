@@ -8,4 +8,9 @@ class SharedDeckTest < ActiveSupport::TestCase
   test 'valid' do
     assert @shared_deck.valid?
   end
+
+  test 'invalid with blank description' do
+    @shared_deck.description = ''
+    assert @shared_deck.invalid?
+  end
 end
