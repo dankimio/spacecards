@@ -140,10 +140,8 @@ export default {
       }
     },
     destroy() {
-      this.destroyUserCard(this.currentCard)
-        .then(() => {
-          this.$notify({ title: 'Card was deleted successfully' })
-        })
+      this.deleteUserCard(this.currentCard)
+        .then(() => this.$notify({ title: 'Card was deleted successfully' }))
     },
     submit() {
       if (this.isNew) {
@@ -159,7 +157,7 @@ export default {
     },
     ...mapActions(
       'userCards',
-      ['createUserCard', 'updateUserCard', 'destroyUserCard']
+      ['createUserCard', 'updateUserCard', 'deleteUserCard']
     )
   }
 }
