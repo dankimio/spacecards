@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/api'
 import snakeCaseKeys from 'snakecase-keys'
 
 const state = {
@@ -10,42 +10,35 @@ const getters = {}
 
 const actions = {
   getUserDecks(context) {
-    axios.get('/user_decks')
-      .then(response => {
-        context.commit('SET_USER_DECKS', response.data)
+    return api.url('/user_decks')
+      .get()
+      .json(json => {
+        context.commit('SET_USER_DECKS', json)
       })
   },
   getUserDeck(context, userDeckId) {
-    axios.get(`/user_decks/${userDeckId}`)
-      .then(response => {
-        context.commit('SET_USER_DECK', response.data)
-      })
+    return api
+      .url(`/user_decks/${userDeckId}`)
+      .get()
+      .json(json => { context.commit('SET_USER_DECK', json) })
   },
   createUserDeck(context, userDeck) {
-    return axios.post('/user_decks', { user_deck: userDeck })
-      .then(response => {
-        context.commit('SET_USER_DECK', response.data)
-        return response
+    return api.url('/user_decks')
+      .post({ user_deck: userDeck })
+      .json(json => {
+        context.commit('SET_USER_DECK', json)
+        return json
       })
   },
   updateUserDeck(context, userDeck) {
-    return axios.patch(
-      `/user_decks/${userDeck.id}`,
-      { user_deck: snakeCaseKeys(userDeck) }
-    )
-      .then(response => {
-        context.commit('SET_USER_DECK', response.data)
-        return response
-      })
+    return api.url(`/user_decks/${userDeck.id}`)
+      .patch({ user_deck: snakeCaseKeys(userDeck) })
+      .json(json => { context.commit('SET_USER_DECK', json) })
   },
   deleteUserDeck(context, userDeckId) {
-    return axios.delete(
-      `/user_decks/${userDeckId}`
-    )
-      .then(response => {
-        context.commit('SET_USER_DECK', {})
-        return response
-      })
+    return api.url(`/user_decks/${userDeckId}`)
+      .delete()
+      .res(() => { context.commit('SET_USER_DECK', {}) })
   }
 }
 

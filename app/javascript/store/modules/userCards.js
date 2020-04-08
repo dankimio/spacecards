@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/api'
 
 const state = {
   userCards: [],
@@ -9,28 +9,24 @@ const getters = {}
 
 const actions = {
   getUserDeckUserCards(context, userDeckId) {
-    axios.get(`/user_decks/${userDeckId}/user_cards`)
-      .then(response => {
-        context.commit('SET_USER_CARDS', response.data)
-      })
+    return api.url(`/user_decks/${userDeckId}/user_cards`)
+      .get()
+      .json(json => { context.commit('SET_USER_CARDS', json) })
   },
   createUserCard(context, { userDeckId, userCard }) {
-    axios.post(`/user_decks/${userDeckId}/user_cards`, { user_card: userCard })
-      .then(response => {
-        context.commit('CREATE_USER_CARD', response.data)
-      })
+    return api.url(`/user_decks/${userDeckId}/user_cards`)
+      .post({ user_card: userCard })
+      .json(json => { context.commit('CREATE_USER_CARD', json) })
   },
   updateUserCard(context, userCard) {
-    return axios.patch(`/user_cards/${userCard.id}`, { user_card: userCard })
-      .then(response => {
-        context.commit('SET_USER_CARD', response.data)
-      })
+    return api.url(`/user_cards/${userCard.id}`)
+      .patch({ user_card: userCard })
+      .json(json => { context.commit('SET_USER_CARD', json) })
   },
-  destroyUserCard(context, userCard) {
-    return axios.delete(`/user_cards/${userCard.id}`)
-      .then(response => {
-        context.commit('DESTROY_USER_CARD', userCard)
-      })
+  deleteUserCard(context, userCard) {
+    return api.url(`/user_cards/${userCard.id}`)
+      .delete()
+      .res(() => { context.commit('DESTROY_USER_CARD', userCard) })
   }
 }
 

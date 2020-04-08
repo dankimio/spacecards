@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/api'
 
 const state = {
   token: localStorage.getItem('token') || '',
@@ -13,43 +13,44 @@ const getters = {
 
 const actions = {
   logIn(context, user) {
-    return new Promise((resolve, reject) => {
-      axios
-        .post('/users/sign_in', user)
-        .then(response => {
-          const token = response.headers.authorization.split(' ').pop()
-          axios.defaults.headers.common.Authorization = `Bearer ${token}`
-          localStorage.setItem('token', token)
-          context.commit('LOG_IN', { token, user: response.data })
-          resolve()
-        })
-        .catch(error => {
-          localStorage.removeItem('token')
-          reject(error)
-        })
-    })
+    return api.url('/users/sign_in')
+      .post(user)
+      .res(response => {
+        const token = response.headers.get('Authorization').split(' ').pop()
+        localStorage.setItem('token', token)
+        context.commit('SET_TOKEN', token)
+        return response.json()
+      })
+      .then(json => {
+        context.commit('SET_USER', json)
+        return json
+      })
+      .catch(error => {
+        localStorage.removeItem('token')
+        throw error
+      })
   },
   signUp(context, user) {
-    return new Promise((resolve, reject) => {
-      axios
-        .post('/users', user)
-        .then(response => {
-          const token = response.headers.authorization.split(' ').pop()
-          axios.defaults.headers.common.Authorization = token
-          localStorage.setItem('token', token)
-          context.commit('LOG_IN', { token, user: response.data })
-          resolve()
-        })
-        .catch(error => {
-          localStorage.removeItem('token')
-          reject(error)
-        })
-    })
+    return api.url('/users')
+      .post(user)
+      .res(response => {
+        const token = response.headers.get('Authorization').split(' ').pop()
+        localStorage.setItem('token', token)
+        context.commit('SET_TOKEN', token)
+        return response.json()
+      })
+      .then(json => {
+        context.commit('SET_USER', json)
+        return json
+      })
+      .catch(error => {
+        localStorage.removeItem('token')
+        throw error
+      })
   },
   logOut(context) {
     return new Promise((resolve, reject) => {
       localStorage.removeItem('token')
-      delete axios.defaults.headers.common.Authorization
       context.commit('LOG_OUT')
       resolve()
     })
@@ -57,8 +58,10 @@ const actions = {
 }
 
 const mutations = {
-  LOG_IN(state, { token, user }) {
+  SET_TOKEN(state, token) {
     state.token = token
+  },
+  SET_USER(state, user) {
     state.user = user
   },
   LOG_OUT(state) {

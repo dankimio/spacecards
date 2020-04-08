@@ -108,9 +108,9 @@ export default {
   methods: {
     addToLibrary() {
       this.createUserDeck({ shared_deck_id: this.id })
-        .then(response => {
-          this.$router.push(`/user/decks/${response.data.id}`)
-          this.$notify({ title: `'${response.data.name}' has been added to your library` })
+        .then(json => {
+          this.$router.push(`/user/decks/${json.id}`)
+          this.$notify({ title: `'${json.name}' has been added to your library` })
         })
     },
     ...mapActions('sharedCards', ['getSharedDeckCards']),

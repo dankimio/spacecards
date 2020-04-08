@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/api'
 
 const state = {
   answeredReviews: [],
@@ -23,13 +23,12 @@ const getters = {
 const actions = {
   getStudySession(context, userDeckId) {
     context.commit('SET_LOADING')
-    return axios.get(`/user_decks/${userDeckId}/study_session`)
-      .then(response => {
-        const {
-          reviews,
-          userDeck,
-          ...studySession
-        } = response.data
+
+    return api.url(`/user_decks/${userDeckId}/study_session`)
+      .get()
+      .json(json => {
+        const { reviews, userDeck, ...studySession } = json
+
         context.commit('SET_LOADING', false)
         context.commit('SET_REVIEWS', reviews)
         context.commit('SET_STUDY_SESSION', studySession)
@@ -39,21 +38,17 @@ const actions = {
   answerReview(context, { reviewId, answer }) {
     if (answer === 0) {
       context.commit('FAIL_REVIEW', reviewId)
-      return new Promise((resolve, reject) => {
-        resolve()
-      })
+      return new Promise((resolve, reject) => { resolve() })
     }
 
     // TODO: remove study_sessions from URL and authorize on the server
     const studySessionId = context.state.studySession.id
     const data = { review: { answer: answer } }
 
-    return axios.patch(`/study_sessions/${studySessionId}/reviews/${reviewId}`, data)
-      .then(response => {
-        context.commit(
-          'ANSWER_REVIEW',
-          { reviewId, answer: response.data.answer }
-        )
+    return api.url(`/study_sessions/${studySessionId}/reviews/${reviewId}`)
+      .patch(data)
+      .json(json => {
+        context.commit('ANSWER_REVIEW', { reviewId, answer: json.answer })
       })
   }
 }
