@@ -49,6 +49,7 @@ export default {
     logOut() {
       this.$store.dispatch('users/logOut').then(() => {
         this.$notify({ title: 'Logged out successfully' })
+        this.$router.push('/')
       })
     }
   }
