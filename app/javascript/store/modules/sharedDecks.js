@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/api'
 
 const state = {
   sharedDecks: [],
@@ -9,17 +9,14 @@ const getters = {}
 
 const actions = {
   getSharedDeck(context, id) {
-    axios.get(`/shared_decks/${id}`)
-      .then(response => {
-        context.commit('SET_SHARED_DECK', response.data)
-      })
+    return api.url(`/shared_decks/${id}`)
+      .get()
+      .json(json => { context.commit('SET_SHARED_DECK', json) })
   },
   getSharedDecks(context) {
-    axios
-      .get('/shared_decks')
-      .then(response => {
-        context.commit('SET_SHARED_DECKS', response.data)
-      })
+    return api.url('/shared_decks')
+      .get()
+      .json(json => { context.commit('SET_SHARED_DECKS', json) })
   }
 }
 
