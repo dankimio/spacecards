@@ -32,7 +32,7 @@
       </router-link>
 
       <button
-        v-else
+        v-if="isLoggedIn && !sharedDeck.userDeckId"
         class="button button-lg button-outlined button-outlined-primary mb-8 w-full md:w-auto"
         @click.prevent="addToLibrary"
       >
@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 
 import DeckCard from '@/components/DeckCard'
 
@@ -99,7 +99,8 @@ export default {
   },
   computed: {
     ...mapState('sharedCards', ['sharedCards']),
-    ...mapState('sharedDecks', ['sharedDeck'])
+    ...mapState('sharedDecks', ['sharedDeck']),
+    ...mapGetters('users', ['isLoggedIn'])
   },
   created() {
     this.getSharedDeckCards(this.id)
@@ -110,7 +111,7 @@ export default {
       this.createUserDeck({ shared_deck_id: this.id })
         .then(json => {
           this.$router.push(`/user/decks/${json.id}`)
-          this.$notify({ title: `'${json.name}' has been added to your library` })
+          this.$notify({ title: `${json.name} has been added to your library` })
         })
     },
     ...mapActions('sharedCards', ['getSharedDeckCards']),
