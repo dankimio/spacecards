@@ -76,9 +76,7 @@ export default {
     submit() {
       this.signUp({ user: this.user })
         .then(() => this.$router.push('/'))
-        .then(() => {
-          this.$notify({ title: 'Signed up successfully' })
-        })
+        .then(() => this.$notify({ title: 'Signed up successfully' }))
     },
     ...mapActions('users', ['signUp'])
   }

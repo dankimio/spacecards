@@ -78,13 +78,11 @@ export default {
   methods: {
     submit() {
       this.logIn({ user: this.user })
-        .then(() => this.$router.push('/'))
         .then(() => {
+          this.$router.push('/')
           this.$notify({ title: 'Logged in successfully' })
         })
-        .catch(() => {
-          this.$notify({ title: 'Email or password is incorrect' })
-        })
+        .catch(() => this.$notify({ title: 'Email or password is incorrect' }))
     },
     ...mapActions('users', ['logIn'])
   }
