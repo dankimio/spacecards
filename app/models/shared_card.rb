@@ -14,5 +14,5 @@ class SharedCard < ApplicationRecord
 
   has_many :user_cards, dependent: :nullify
 
-  validates :front, :back, length: { minimum: 1, maximum: 255 }, presence: true
+  validates :front, :back, length: { minimum: 1, maximum: 1000 }, presence: true
 end

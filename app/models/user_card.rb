@@ -21,7 +21,7 @@ class UserCard < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
 
-  validates :front, :back, presence: true
+  validates :front, :back, length: { minimum: 1, maximum: 1000 }, presence: true
   validates :shared_card, uniqueness: { scope: :user_deck }
 
   scope :due, -> { where('due_at > ?', Time.zone.now) }
