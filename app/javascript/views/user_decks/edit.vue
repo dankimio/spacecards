@@ -1,5 +1,5 @@
 <template>
-  <div class="container md:max-w-sm md:mx-auto">
+  <div class="container md:max-w-lg md:mx-auto">
     <h1 class="text-3xl mb-4">
       <span class="font-bold">{{ userDeck.name }}</span>
       <span class="mx-3 font-light">→</span>
