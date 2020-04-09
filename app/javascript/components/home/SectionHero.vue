@@ -9,7 +9,7 @@
     >
 
     <div class="flex flex-col items-center text-center mb-6">
-      <h1 class="mb-8 md:text-4xl lg:text-5xl max-w-lg leading-tight">
+      <h1 class="mb-6 md:mb-8 text-3xl md:text-4xl lg:text-5xl max-w-lg leading-tight">
         Memorize everything with flashcards
       </h1>
 
