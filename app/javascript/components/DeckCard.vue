@@ -140,8 +140,10 @@ export default {
       }
     },
     destroy() {
-      this.deleteUserCard(this.currentCard)
-        .then(() => this.$notify({ title: 'Card was deleted successfully' }))
+      if (confirm('Are you sure?')) {
+        this.deleteUserCard(this.currentCard)
+          .then(() => this.$notify({ title: 'Card was deleted successfully' }))
+      }
     },
     submit() {
       if (this.isNew) {
