@@ -4,11 +4,14 @@
   >
     <div class="py-4 px-5">
       <div class="text-lg md:mb-2">
-        <router-link :to="`/user/decks/${userDeck.id}`">
+        <router-link :to="{ name: 'userDeck', params: { id: userDeck.id } }">
           {{ userDeck.name }}
         </router-link>
       </div>
-      <router-link :to="`/user/decks/${userDeck.id}`" class="flex items-center text-sm text-gray-500 hover:text-indigo-600 flex-shrink-0 mr-2">
+      <router-link
+        :to="{ name: 'userDeck', params: { id: userDeck.id } }"
+        class="flex items-center text-sm text-gray-500 hover:text-indigo-600 flex-shrink-0 mr-2"
+      >
         <inline-svg
           :src="require('@images/icon-albums.svg')"
           class="w-4 h-4 mr-1 fill-current"
@@ -20,7 +23,10 @@
     <hr>
 
     <div class="flex text-sm bg-gray-100 py-2 px-5">
-      <router-link :to="`/user/decks/${userDeck.id}/study`" class="flex items-center mr-5 text-gray-500 hover:text-indigo-600">
+      <router-link
+        :to="{ name: 'studySession', params: { id: userDeck.id } }"
+        class="flex items-center mr-5 text-gray-500 hover:text-indigo-600"
+      >
         <inline-svg
           :src="require('@images/icon-play.svg')"
           class="inline-block w-4 h-4 mr-1 fill-current"
@@ -29,7 +35,7 @@
       </router-link>
 
       <router-link
-        :to="`/user/decks/${userDeck.id}`"
+        :to="{ name: 'userDeck', params: { id: userDeck.id } }"
         class="flex items-center mr-5 text-gray-500 hover:text-indigo-600"
       >
         <inline-svg
@@ -40,7 +46,7 @@
       </router-link>
 
       <router-link
-        :to="`/user/decks/${userDeck.id}/edit`"
+        :to="{ name: 'editUserDeck', params: { id: userDeck.id } }"
         class="flex items-center text-gray-500 hover:text-indigo-600"
       >
         <inline-svg

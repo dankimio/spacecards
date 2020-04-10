@@ -25,8 +25,8 @@
 
       <router-link
         v-if="sharedDeck.userDeckId"
+        :to="{ name: 'userDeck', params: { id: sharedDeck.userDeckId } }"
         class="button button-lg button-disabled mb-8 w-full md:w-auto"
-        :to="`/user/decks/${sharedDeck.userDeckId}`"
       >
         ✓ Added to library
       </router-link>
@@ -69,10 +69,6 @@
       </div>
 
       <hr class="mb-8 border-b-2 border-gray-200">
-
-      <router-link v-if="false" to="#" class="button button-primary mb-6">
-        Add sharedCards
-      </router-link>
 
       <DeckCard v-for="card in sharedCards" :key="card.id" :card="card" />
     </div>

@@ -5,7 +5,12 @@
         {{ userDeck.name }}
 
         <small>
-          <router-link :to="`/user/decks/${userDeck.id}/edit`" class="text-base ml-1">Settings</router-link>
+          <router-link
+            :to="{ name: 'editUserDeck', params: { id: userDeck.id } }"
+            class="text-base ml-1"
+          >
+            Settings
+          </router-link>
         </small>
       </h1>
 
@@ -33,7 +38,7 @@
       </div>
 
       <router-link
-        :to="`/user/decks/${userDeck.id}/study`"
+        :to="{ name: 'studySession', params: { id: userDeck.id } }"
         class="button button-lg button-primary w-full uppercase tracking-wide mb-6"
       >
         Study

@@ -13,7 +13,10 @@
             class="mb-2"
           />
         </div>
-        <router-link to="#" class="text-sm text-indigo-500 hover:text-indigo-800">
+        <router-link
+          to="#"
+          class="text-sm text-indigo-500 hover:text-indigo-800"
+        >
           See all tags
         </router-link>
       </div>

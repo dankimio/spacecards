@@ -16,15 +16,60 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
   routes: [
-    { path: '/', component: Home },
-    { path: '/sign-up', component: SignUp },
-    { path: '/log-in', component: LogIn },
-    { path: '/decks/:id', component: SharedDecksShow, props: true },
-    { path: '/explore', component: Explore },
-    { path: '/user/decks', component: UserDecksIndex },
-    { path: '/user/decks/new', component: UserDecksNew, props: true },
-    { path: '/user/decks/:id', component: UserDecksShow, props: true },
-    { path: '/user/decks/:id/edit', component: UserDecksEdit, props: true },
-    { path: '/user/decks/:id/study', component: StudySessionShow, props: true }
+    {
+      path: '/',
+      name: 'root',
+      component: Home
+    },
+    {
+      path: '/sign-up',
+      name: 'signup',
+      component: SignUp
+    },
+    {
+      path: '/log-in',
+      name: 'login',
+      component: LogIn
+    },
+    {
+      path: '/decks/:id',
+      name: 'sharedDeck',
+      component: SharedDecksShow,
+      props: true
+    },
+    {
+      path: '/explore',
+      name: 'explore',
+      component: Explore
+    },
+    {
+      path: '/user/decks',
+      name: 'userDecks',
+      component: UserDecksIndex
+    },
+    {
+      path: '/user/decks/new',
+      name: 'newUserDeck',
+      component: UserDecksNew,
+      props: true
+    },
+    {
+      path: '/user/decks/:id',
+      name: 'userDeck',
+      component: UserDecksShow,
+      props: true
+    },
+    {
+      path: '/user/decks/:id/edit',
+      name: 'editUserDeck',
+      component: UserDecksEdit,
+      props: true
+    },
+    {
+      path: '/user/decks/:id/study',
+      name: 'studySession',
+      component: StudySessionShow,
+      props: true
+    }
   ]
 })

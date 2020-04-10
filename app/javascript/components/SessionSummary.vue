@@ -33,7 +33,10 @@
       </div>
     </div>
 
-    <router-link to="/user/decks" class="button button-lg button-primary w-full uppercase tracking-wide">
+    <router-link
+      :to="{ name: 'userDecks'}"
+      class="button button-lg button-primary w-full uppercase tracking-wide"
+    >
       Return to decks
     </router-link>
   </div>

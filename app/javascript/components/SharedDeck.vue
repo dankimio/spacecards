@@ -3,8 +3,9 @@
     class="border px-4 py-3 rounded hover:shadow-lg transition transition-shadow duration-100"
   >
     <router-link
-      class="text-indigo-500 hover:text-indigo-800 font-medium tracking-wide block mb-1"
-      :to="`/decks/${sharedDeck.id}`"
+      class="block mb-1
+      font-medium tracking-wide text-indigo-500 hover:text-indigo-800"
+      :to="{ name: 'sharedDeck', params: { id: sharedDeck.id }}"
     >
       {{ sharedDeck.name }}
     </router-link>
@@ -35,7 +36,10 @@
       </div>
 
       <div class="flex">
-        <router-link :to="`/decks/${sharedDeck.id}`" class="flex items-center text-sm text-gray-600 hover:text-indigo-600 flex-shrink-0 mr-2">
+        <router-link
+          :to="{ name: 'sharedDeck', params: { id: sharedDeck.id }}"
+          class="flex items-center text-sm text-gray-600 hover:text-indigo-600 flex-shrink-0 mr-2"
+        >
           <inline-svg
             :src="require('@images/icon-albums.svg')"
             class="w-4 h-4 mr-1 fill-current"

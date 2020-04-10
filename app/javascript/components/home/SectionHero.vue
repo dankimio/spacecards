@@ -20,13 +20,16 @@
       <div class="mb-6 flex-col md:flex-row">
         <router-link
           v-if="!isLoggedIn"
-          to="/sign-up"
+          :to="{ name: 'signup' }"
           class="button button-primary button-lg w-full md:w-auto tracking-wide mb-4 md:mb-0 md:mr-2"
         >
           Start learning
         </router-link>
 
-        <router-link to="/explore" class="button button-outlined button-lg w-full md:w-auto tracking-wide">
+        <router-link
+          :to="{ name: 'explore' }"
+          class="button button-outlined button-lg w-full md:w-auto tracking-wide"
+        >
           Explore decks
         </router-link>
       </div>
@@ -34,7 +37,10 @@
       <p v-if="false" class="text-sm text-gray-800 flex items-center">
         <span class="mx-2">Sign in with</span>
 
-        <router-link to="/" class="mx-3">
+        <router-link
+          to="#"
+          class="mx-3"
+        >
           <img src="@images/icon-google.svg" alt="Sign in with Google">
         </router-link>
       </p>

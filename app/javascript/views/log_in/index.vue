@@ -36,7 +36,11 @@
         >
 
         <p class="mt-4 text-right">
-          <router-link to="/" class="text-gray-700">
+          <!-- TODO: -->
+          <router-link
+            to="#"
+            class="text-gray-700"
+          >
             Forgot your password?
           </router-link>
         </p>
@@ -53,7 +57,7 @@
 
     <p class="md:text-center text-gray-700">
       Don't have an account?
-      <router-link to="/sign-up">
+      <router-link :to="{ name: 'signup' }">
         Sign up
       </router-link>
     </p>
