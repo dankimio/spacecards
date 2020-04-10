@@ -4,12 +4,12 @@
   >
     <div class="py-4 px-5">
       <div class="text-lg md:mb-2">
-        <router-link :to="{ name: 'userDeck', params: { id: userDeck.id } }">
+        <router-link :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }">
           {{ userDeck.name }}
         </router-link>
       </div>
       <router-link
-        :to="{ name: 'userDeck', params: { id: userDeck.id } }"
+        :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }"
         class="flex items-center text-sm text-gray-500 hover:text-indigo-600 flex-shrink-0 mr-2"
       >
         <inline-svg
@@ -24,7 +24,7 @@
 
     <div class="flex text-sm bg-gray-100 py-2 px-5">
       <router-link
-        :to="{ name: 'studySession', params: { id: userDeck.id } }"
+        :to="{ name: 'studySession', params: { id: userDeck.id.toString() } }"
         class="flex items-center mr-5 text-gray-500 hover:text-indigo-600"
       >
         <inline-svg
@@ -35,7 +35,7 @@
       </router-link>
 
       <router-link
-        :to="{ name: 'userDeck', params: { id: userDeck.id } }"
+        :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }"
         class="flex items-center mr-5 text-gray-500 hover:text-indigo-600"
       >
         <inline-svg
@@ -46,7 +46,7 @@
       </router-link>
 
       <router-link
-        :to="{ name: 'editUserDeck', params: { id: userDeck.id } }"
+        :to="{ name: 'editUserDeck', params: { id: userDeck.id.toString() } }"
         class="flex items-center text-gray-500 hover:text-indigo-600"
       >
         <inline-svg

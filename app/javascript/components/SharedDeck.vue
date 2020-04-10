@@ -5,7 +5,7 @@
     <router-link
       class="block mb-1
       font-medium tracking-wide text-indigo-500 hover:text-indigo-800"
-      :to="{ name: 'sharedDeck', params: { id: sharedDeck.id }}"
+      :to="{ name: 'sharedDeck', params: { id: sharedDeck.id.toString() }}"
     >
       {{ sharedDeck.name }}
     </router-link>
@@ -37,7 +37,7 @@
 
       <div class="flex">
         <router-link
-          :to="{ name: 'sharedDeck', params: { id: sharedDeck.id }}"
+          :to="{ name: 'sharedDeck', params: { id: sharedDeck.id.toString() }}"
           class="flex items-center text-sm text-gray-600 hover:text-indigo-600 flex-shrink-0 mr-2"
         >
           <inline-svg

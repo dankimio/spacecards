@@ -6,7 +6,8 @@
 
         <small>
           <router-link
-            :to="{ name: 'editUserDeck', params: { id: userDeck.id } }"
+            v-if="userDeck.id"
+            :to="{ name: 'editUserDeck', params: { id: userDeck.id.toString() } }"
             class="text-base ml-1"
           >
             Settings
@@ -38,7 +39,8 @@
       </div>
 
       <router-link
-        :to="{ name: 'studySession', params: { id: userDeck.id } }"
+        v-if="userDeck.id"
+        :to="{ name: 'studySession', params: { id: userDeck.id.toString() } }"
         class="button button-lg button-primary w-full uppercase tracking-wide mb-6"
       >
         Study
