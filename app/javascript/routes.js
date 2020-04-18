@@ -15,6 +15,7 @@ import UserDecksShow from '@/views/user_decks/show'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/',

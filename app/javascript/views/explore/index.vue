@@ -85,7 +85,7 @@ import DeckTag from '@/components/DeckTag'
 export default {
   components: { SharedDeck, DeckTag },
   metaInfo: {
-    title: 'Explore sharedDecks'
+    title: 'Explore decks'
   },
   data() {
     return {

@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    application:
+      title: "Spacecards – memorize everything with flashcards and spaced repetition"
+      meta_description: "Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit."
+  shared_decks:
+    index:
+      title: "Explore decks"
+      meta_description: "Explore decks shared by the community"
