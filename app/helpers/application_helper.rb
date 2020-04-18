@@ -1,4 +1,15 @@
 module ApplicationHelper
+  def title(custom_title = nil)
+    page_title = custom_title || t("#{current_translation_path}.title", default: '')
+    base_title = Rails.application.config.hostname || 'Spacecards'
+
+    if page_title.present?
+      page_title + ' — ' + base_title
+    else
+      base_title
+    end
+  end
+
   def meta_description(custom_description = nil, limit: 200)
     page_description = custom_description ||
                        t("#{current_translation_path}.meta_description", default: '')
