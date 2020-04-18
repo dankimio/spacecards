@@ -52,4 +52,7 @@ Rails.application.configure do
 
   # ActionMailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Custom variables
+  config.hostname = 'localhost'
 end
