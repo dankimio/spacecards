@@ -16,4 +16,8 @@ Rails.application.routes.draw do
     resource :study_session, only: %i[show]
     resources :user_cards, only: %i[index create update destroy], shallow: true
   end
+
+  # Catchall route for history mode
+  # https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+  get '/*path', to: 'pages#index'
 end
