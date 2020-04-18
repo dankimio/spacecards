@@ -9,7 +9,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta
+      name="description"
+      content="Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.">
+
     <%= content_for :meta %>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spacecards.app/">
+    <meta property="og:title" content="Spacecards — memorize everything with flashcards and spaced repetition.">
+    <meta property="og:description" content="Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.">
+    <meta property="og:image" content="/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://spacecards.app/">
+    <meta property="twitter:title" content="Spacecards — memorize everything with flashcards and spaced repetition.">
+    <meta property="twitter:description" content="Spacecards uses spaced repetition to help you memorize all kinds of information: words, exam questions, formulas, quotes, etc. Bring your own content—there’s no limit.">
+    <meta property="twitter:image" content="/images/og-image.jpg">
 
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
