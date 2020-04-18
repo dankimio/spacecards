@@ -1,10 +1,11 @@
 module ApplicationHelper
   def title(custom_title = nil)
     page_title = custom_title || t("#{current_translation_path}.title", default: '')
-    base_title = Rails.application.config.hostname || 'Spacecards'
+    base_title = t('layouts.application.title')
+    hostname = Rails.application.config.hostname
 
     if page_title.present?
-      page_title + ' — ' + base_title
+      page_title + ' – ' + hostname
     else
       base_title
     end
