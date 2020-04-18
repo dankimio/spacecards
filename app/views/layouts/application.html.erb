@@ -15,14 +15,14 @@
 
     <%# Open Graph / Facebook %>
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://spacecards.app/">
+    <meta property="og:url" content="<%= request.original_url %>">
     <meta property="og:title" content="<%= title content_for(:title) %>">
     <meta property="og:description" content="<%= meta_description content_for(:meta_description) %>">
     <meta property="og:image" content="/images/og-image.jpg">
 
     <%# Twitter %>
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://spacecards.app/">
+    <meta property="twitter:url" content="<%= request.original_url %>">
     <meta property="twitter:title" content="<%= title content_for(:title) %>">
     <meta property="twitter:description" content="<%= meta_description content_for(:meta_description) %>">
     <meta property="twitter:image" content="/images/og-image.jpg">
