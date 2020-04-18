@@ -9,11 +9,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <%= content_for :meta %>
+
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="app">
+      <%= yield %>
+    </div>
   </body>
 </html>
