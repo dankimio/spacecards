@@ -23,16 +23,18 @@ const actions = {
       .json(json => { context.commit('SET_USER_DECK', json) })
   },
   createUserDeck(context, userDeck) {
+    const data = snakeCaseKeys({ userDeck })
     return api.url('/user_decks')
-      .post({ user_deck: userDeck })
+      .post(data)
       .json(json => {
         context.commit('SET_USER_DECK', json)
         return json
       })
   },
   updateUserDeck(context, userDeck) {
+    const data = snakeCaseKeys({ userDeck })
     return api.url(`/user_decks/${userDeck.id}`)
-      .patch({ user_deck: snakeCaseKeys(userDeck) })
+      .patch(data)
       .json(json => { context.commit('SET_USER_DECK', json) })
   },
   deleteUserDeck(context, userDeckId) {

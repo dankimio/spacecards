@@ -1,4 +1,5 @@
 import api from '@/api'
+import snakeCaseKeys from 'snakecase-keys'
 
 const state = {
   userCards: [],
@@ -14,13 +15,15 @@ const actions = {
       .json(json => { context.commit('SET_USER_CARDS', json) })
   },
   createUserCard(context, { userDeckId, userCard }) {
+    const data = snakeCaseKeys({ userCard })
     return api.url(`/user_decks/${userDeckId}/user_cards`)
-      .post({ user_card: userCard })
+      .post(data)
       .json(json => { context.commit('CREATE_USER_CARD', json) })
   },
   updateUserCard(context, userCard) {
+    const data = snakeCaseKeys({ userCard })
     return api.url(`/user_cards/${userCard.id}`)
-      .patch({ user_card: userCard })
+      .patch(data)
       .json(json => { context.commit('SET_USER_CARD', json) })
   },
   deleteUserCard(context, userCard) {
