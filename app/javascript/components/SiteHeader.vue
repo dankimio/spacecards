@@ -1,9 +1,12 @@
 <template>
   <div class="border-b border-gray-200">
-    <div class="container flex flex-col sm:flex-row sm:justify-between sm:items-center py-6">
-      <div class="text-4xl mb-4 sm:mb-0">
-        <router-link :to="{ name: 'root' }">
-          <img src="@images/logo.png" alt="Logo" class="h-8">
+    <div class="container flex flex-col sm:flex-row sm:justify-between sm:items-center py-5">
+      <div class="mb-4 sm:mb-0">
+        <router-link :to="{ name: 'root' }" class="flex items-center">
+          <img src="@images/logo-compact.svg" alt="Logo" class="h-8">
+          <span class="hidden md:block ml-4 text-gray-900 font-semibold text-2xl tracking-tight">
+            spacecards
+          </span>
         </router-link>
       </div>
       <div class="">
