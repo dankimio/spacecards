@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col justify-between mb-5 border rounded duration-100 transform hover:shadow-lg"
+    class="flex flex-col justify-between mb-5 border border-gray-200 rounded duration-100 transform hover:shadow-lg"
   >
     <div class="py-4 px-5">
       <div class="text-lg md:mb-2">
