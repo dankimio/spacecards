@@ -1,5 +1,5 @@
 body {
-  @apply .font-sans .flex .flex-col .min-h-screen;
+  @apply .font-sans .flex .flex-col .min-h-screen .antialiased;
 }
 
 a {
