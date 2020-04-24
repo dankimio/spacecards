@@ -7,7 +7,7 @@
           :to="{ name: 'newUserDeck' }"
           class="text-base ml-1"
         >
-          New deck
+          + New deck
         </router-link>
       </small>
     </h1>
