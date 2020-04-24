@@ -13,9 +13,11 @@ import UserDecksIndex from '@/views/user_decks/index'
 import UserDecksNew from '@/views/user_decks/new'
 import UserDecksShow from '@/views/user_decks/show'
 
+import store from '@/store'
+
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -47,34 +49,57 @@ export default new VueRouter({
     {
       path: '/user/decks',
       name: 'userDecks',
-      component: UserDecksIndex
+      component: UserDecksIndex,
+      meta: { requiresAuth: true }
     },
     {
       path: '/user/decks/new',
       name: 'newUserDeck',
       component: UserDecksNew,
-      props: true
+      props: true,
+      meta: { requiresAuth: true }
     },
     {
       path: '/user/decks/:id',
       name: 'userDeck',
       component: UserDecksShow,
-      props: true
+      props: true,
+      meta: { requiresAuth: true }
     },
     {
       path: '/user/decks/:id/edit',
       name: 'editUserDeck',
       component: UserDecksEdit,
-      props: true
+      props: true,
+      meta: { requiresAuth: true }
     },
     {
       path: '/user/decks/:id/study',
       name: 'studySession',
       component: StudySessionShow,
-      props: true
+      props: true,
+      meta: { requiresAuth: true }
     },
     {
       path: '*', component: NotFound
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters['users/isLoggedIn']) {
+      next()
+    } else {
+      next({
+        path: '/log-in',
+        query: { redirect: to.fullPath }
+      })
+    }
+    return
+  }
+
+  next()
+})
+
+export default router
