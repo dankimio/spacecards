@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Explore from '@/views/explore/index'
 import Home from '@/views/home/index'
 import LogIn from '@/views/log_in/index'
+import NotFound from '@/views/errors/not_found'
 import SharedDecksShow from '@/views/shared_decks/show'
 import SignUp from '@/views/sign_up/index'
 import StudySessionShow from '@/views/study_session/show'
@@ -71,6 +72,9 @@ export default new VueRouter({
       name: 'studySession',
       component: StudySessionShow,
       props: true
+    },
+    {
+      path: '*', component: NotFound
     }
   ]
 })
