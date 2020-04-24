@@ -1,6 +1,8 @@
 <template>
   <div
-    class="border px-4 py-3 rounded hover:shadow-lg transition transition-shadow duration-100"
+    class="px-4 py-3
+    border border-gray-200 rounded hover:shadow-lg
+    transition transition-shadow duration-100"
   >
     <router-link
       class="block mb-1
