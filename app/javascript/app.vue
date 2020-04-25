@@ -5,7 +5,7 @@
       position="bottom center"
       width="100%"
     />
-    <SiteHeader class="mb-8 md:mb-10" />
+    <SiteHeader class="mb-6 md:mb-8" />
     <router-view class="flex-1 mb-8" />
     <SiteFooter />
   </div>

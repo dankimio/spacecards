@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container md:pt-4">
     <img
       src="@images/home/home.png"
       alt="Hero"
