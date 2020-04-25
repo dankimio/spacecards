@@ -29,12 +29,13 @@
     <div class="flex justify-between items-center">
       <div class="flex items-center">
         <img
+          v-if="false"
           :src="sharedDeckData.avatarUrl"
           alt="Avatar"
           class="w-5 h-5 mr-2 rounded-full"
         >
 
-        <span class="text-sm text-gray-800">{{ sharedDeckData.userName }}</span>
+        <span class="text-sm text-gray-800">Created by {{ sharedDeckData.userName }}</span>
       </div>
 
       <div class="flex">

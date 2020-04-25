@@ -42,12 +42,13 @@
       <div class="flex justify-between text-lg flex mb-4">
         <div class="flex items-center mr-6">
           <img
+            v-if="false"
             :src="'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'"
             alt="Avatar"
             class="w-6 h-6 mr-3 rounded-full"
           >
 
-          <span class="text-gray-800">{{ 'Bill M.' }}</span>
+          <span class="text-gray-800">Created by {{ 'Bill M.' }}</span>
         </div>
 
         <div class="flex">
