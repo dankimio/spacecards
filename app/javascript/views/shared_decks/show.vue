@@ -40,7 +40,10 @@
       </button>
 
       <div class="flex justify-between text-lg flex mb-4">
-        <div class="flex items-center mr-6">
+        <div
+          v-if="false"
+          class="flex items-center mr-6"
+        >
           <img
             v-if="false"
             :src="'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'"
@@ -52,14 +55,17 @@
         </div>
 
         <div class="flex">
-          <span class="flex items-center text-gray-600 flex-shrink-0 mr-6">
+          <span class="flex items-center text-gray-600 flex-shrink-0">
             <inline-svg
               :src="require('@images/icon-albums.svg')"
               class="w-5 h-5 mr-1 fill-current"
             />
             12
           </span>
-          <span class="flex items-center text-gray-600 flex-shrink-0">
+          <span
+            v-if="false"
+            class="flex items-center text-gray-600 flex-shrink-0 ml-6"
+          >
             <inline-svg
               :src="require('@images/icon-bookmark.svg')"
               class="w-5 h-5 mr-1 fill-current"
