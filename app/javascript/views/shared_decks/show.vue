@@ -1,83 +1,72 @@
 <template>
-  <div class="container flex">
-    <div v-if="false" class="hidden md:block w-auto md:w-1/3 md:pr-4 lg:pr-8">
-      <h2 class="text-2xl">
-        Search
-      </h2>
+  <div class="container">
+    <h1 class="heading-2 mb-4 md:mb-8">
+      {{ sharedDeck.name }}
+    </h1>
 
-      <div class="field">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search…"
+    <div class="lg:grid grid-cols-3 gap-8">
+      <div class="col-start-3 row-start-1">
+        <router-link
+          v-if="sharedDeck.userDeckId"
+          :to="{ name: 'userDeck', params: { id: sharedDeck.userDeckId } }"
+          class="button button-lg button-disabled mb-6 w-full uppercase"
         >
-      </div>
-    </div>
+          ✓ Added to library
+        </router-link>
 
-    <div class="w-full md:w-2/3 mx-auto">
-      <h1 class="text-3xl mb-2 md:mb-4">
-        {{ sharedDeck.name }}
-      </h1>
-
-      <p class="text-lg text-gray-700 mb-5 max-w-xl">
-        {{ sharedDeck.description }}
-      </p>
-
-      <router-link
-        v-if="sharedDeck.userDeckId"
-        :to="{ name: 'userDeck', params: { id: sharedDeck.userDeckId } }"
-        class="button button-lg button-disabled mb-8 w-full md:w-auto"
-      >
-        ✓ Added to library
-      </router-link>
-
-      <button
-        v-if="isLoggedIn && !sharedDeck.userDeckId"
-        class="button button-lg button-outlined button-outlined-primary mb-8 w-full md:w-auto"
-        @click.prevent="addToLibrary"
-      >
-        + Add to library
-      </button>
-
-      <div class="flex justify-between text-lg flex mb-4">
-        <div
-          v-if="false"
-          class="flex items-center mr-6"
+        <button
+          v-if="isLoggedIn && !sharedDeck.userDeckId"
+          class="button button-lg button-outlined button-outlined-primary mb-6 w-full uppercase"
+          @click.prevent="addToLibrary"
         >
-          <img
-            v-if="false"
-            :src="'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'"
-            alt="Avatar"
-            class="w-6 h-6 mr-3 rounded-full"
-          >
+          + Add to library
+        </button>
 
-          <span class="text-gray-800">Created by {{ 'Bill M.' }}</span>
-        </div>
+        <p class="text-lg text-gray-700 mb-5 max-w-xl">
+          {{ sharedDeck.description }}
+        </p>
 
-        <div class="flex">
-          <span class="flex items-center text-gray-600 flex-shrink-0">
-            <inline-svg
-              :src="require('@images/icon-albums.svg')"
-              class="w-5 h-5 mr-1 fill-current"
-            />
-            12
-          </span>
-          <span
+        <div class="flex justify-between text-lg flex mb-4">
+          <div
             v-if="false"
-            class="flex items-center text-gray-600 flex-shrink-0 ml-6"
+            class="flex items-center mr-6"
           >
-            <inline-svg
-              :src="require('@images/icon-bookmark.svg')"
-              class="w-5 h-5 mr-1 fill-current"
-            />
-            {{ '42' }}
-          </span>
+            <img
+              v-if="false"
+              :src="'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'"
+              alt="Avatar"
+              class="w-6 h-6 mr-3 rounded-full"
+            >
+
+            <span class="text-gray-800">Created by {{ 'Bill M.' }}</span>
+          </div>
+
+          <div class="flex mb-2">
+            <span class="flex items-center text-gray-600 flex-shrink-0">
+              <inline-svg
+                :src="require('@images/icon-albums.svg')"
+                class="w-5 h-5 mr-1 fill-current"
+              />
+              12
+            </span>
+            <span
+              v-if="false"
+              class="flex items-center text-gray-600 flex-shrink-0 ml-6"
+            >
+              <inline-svg
+                :src="require('@images/icon-bookmark.svg')"
+                class="w-5 h-5 mr-1 fill-current"
+              />
+              {{ '42' }}
+            </span>
+          </div>
         </div>
+        <hr class="lg:hidden mb-8 border-b-2 border-gray-200">
       </div>
 
-      <hr class="mb-8 border-b-2 border-gray-200">
-
-      <DeckCard v-for="card in sharedCards" :key="card.id" :card="card" />
+      <div class="col-span-2 col-start-1 row-start-1">
+        <DeckCard v-for="card in sharedCards" :key="card.id" :card="card" />
+      </div>
     </div>
   </div>
 </template>

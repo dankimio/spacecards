@@ -13,6 +13,7 @@
         </router-link>
       </small>
     </h1>
+
     <div class="lg:grid grid-cols-3 gap-8">
       <div class="col-start-3 row-start-1">
         <router-link
