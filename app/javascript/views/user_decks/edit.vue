@@ -107,7 +107,7 @@ export default {
         this.deleteUserDeck(this.userDeck.id)
           .then(() => {
             this.$notify({ title: 'Deck was deleted successfully' })
-            this.$router.push('/user/decks')
+            this.$router.push({ name: 'userDecks' })
           })
       }
     }

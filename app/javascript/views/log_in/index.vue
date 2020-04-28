@@ -83,7 +83,7 @@ export default {
     submit() {
       this.logIn({ user: this.user })
         .then(() => {
-          this.$router.push('/')
+          this.$router.push({ name: 'root' })
           this.$notify({ title: 'Logged in successfully' })
         })
         .catch(() => this.$notify({ title: 'Email or password is incorrect' }))

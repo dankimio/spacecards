@@ -146,7 +146,7 @@ export default {
     },
     handleEmptyStudySession() {
       this.$notify({ title: 'No cards to review in this deck. Come back tomorrow.' })
-      this.$router.push('/user/decks')
+      this.$router.push({ name: 'userDecks' })
     }
   },
   metaInfo: {

@@ -13,7 +13,7 @@
         </small>
       </h1>
 
-      <UserDeck v-for="userDeck in userDecks" :key="userDeck.name" :user-deck="userDeck" />
+      <UserDeck v-for="userDeck in userDecks" :key="userDeck.id" :user-deck="userDeck" />
     </div>
   </div>
 </template>

@@ -107,7 +107,7 @@ export default {
     addToLibrary() {
       this.createUserDeck({ shared_deck_id: this.id })
         .then(json => {
-          this.$router.push(`/user/decks/${json.id}`)
+          this.$router.push({ name: 'userDeck', params: { id: json.id.toString() } })
           this.$notify({ title: `${json.name} has been added to your library` })
         })
     },

@@ -75,7 +75,7 @@ export default {
   methods: {
     submit() {
       this.signUp({ user: this.user })
-        .then(() => this.$router.push('/'))
+        .then(() => this.$router.push({ name: 'root' }))
         .then(() => this.$notify({ title: 'Signed up successfully' }))
         .catch(error => console.log(error.json))
     },

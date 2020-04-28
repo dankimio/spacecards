@@ -50,7 +50,9 @@ export default {
   methods: {
     submit() {
       this.createUserDeck(this.userDeck)
-        .json(json => this.$router.push(`/user/decks/${json.id}`))
+        .then(json => {
+          this.$router.push({ name: 'userDeck', params: { id: json.id.toString() } })
+        })
     },
     ...mapActions('userDecks', ['createUserDeck'])
   }
