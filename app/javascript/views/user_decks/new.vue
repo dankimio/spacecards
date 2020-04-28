@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container py-5">
-      <h1 class="text-4xl text-gray-800 font-medium">
+      <h1 class="heading-2">
         New deck
       </h1>
 
