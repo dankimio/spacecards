@@ -1,11 +1,18 @@
 <template>
   <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
-    <h1 class="text-3xl mb-4 leading-tight">
+    <ContentLoader
+      v-if="isLoading"
+      class="mb-6"
+      :height="18"
+    >
+      <!-- eslint-disable-next-line vue/max-attributes-per-line -->
+      <rect x="0" y="0" rx="3" ry="3" width="128" height="18" />
+    </ContentLoader>
+
+    <h1 v-else class="text-3xl mb-4 leading-tight">
       <span class="font-bold">
         {{ userDeck.name }}
       </span>
-      <span class="mx-3 font-light">→</span>
-      <span class="font-light">Study</span>
     </h1>
 
     <SessionSummary
@@ -13,13 +20,26 @@
       :reviewed-cards-count="answeredReviews.length"
     />
 
-    <div
-      v-if="!reviewCompleted && !isLoading"
-      class="flex flex-row justify-between mb-4"
-    >
-      <div class="flex flex-row">
-        <span class="text-gray-600 font-medium">World</span>
+    <div v-if="isLoading" class="flex justify-between mb-4">
+      <div style="width: 64px; height: 16px;">
+        <ContentLoader :width="64" :height="16">
+          <!-- eslint-disable-next-line vue/max-attributes-per-line -->
+          <rect x="0" y="0" rx="3" ry="3" width="64" height="16" />
+        </ContentLoader>
       </div>
+
+      <div style="width: 96px; height: 24px;">
+        <ContentLoader :width="96" :height="24">
+          <!-- eslint-disable-next-line vue/max-attributes-per-line -->
+          <rect x="0" y="0" rx="3" ry="3" width="96" height="24" />
+        </ContentLoader>
+      </div>
+    </div>
+    <div
+      v-else-if="!reviewCompleted"
+      class="flex justify-between mb-4"
+    >
+      <span class="text-gray-600 font-medium">World</span>
 
       <div class="flex flex-row">
         <span class="text-3xl mr-2 leading-none">
@@ -80,13 +100,14 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
+import { ContentLoader } from 'vue-content-loader'
 
 import StudyCard from '@/components/StudyCard'
 import AnswerButton from '@/components/AnswerButton'
 import SessionSummary from '@/components/SessionSummary'
 
 export default {
-  components: { StudyCard, AnswerButton, SessionSummary },
+  components: { StudyCard, AnswerButton, SessionSummary, ContentLoader },
   props: {
     id: {
       type: String,

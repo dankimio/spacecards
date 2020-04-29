@@ -29,10 +29,10 @@ const actions = {
       .json(json => {
         const { reviews, userDeck, ...studySession } = json
 
-        context.commit('SET_LOADING', false)
         context.commit('SET_REVIEWS', reviews)
         context.commit('SET_STUDY_SESSION', studySession)
         context.commit('SET_USER_DECK', userDeck)
+        context.commit('SET_LOADING', false)
       })
   },
   answerReview(context, { reviewId, answer }) {
