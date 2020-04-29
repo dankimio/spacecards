@@ -64,6 +64,9 @@ const mutations = {
   SET_STUDY_SESSION(state, studySession) {
     state.studySession = studySession
   },
+  RESET_STUDY_SESSION(state) {
+    state.studySession = {}
+  },
   SET_USER_DECK(state, userDeck) {
     state.userDeck = userDeck
   },

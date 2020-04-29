@@ -141,6 +141,7 @@ export default {
     )
   },
   created() {
+    this.$store.commit('studySessions/RESET_STUDY_SESSION')
     this.getStudySession(this.id)
       .then(() => {
         if (this.nextReview) {
