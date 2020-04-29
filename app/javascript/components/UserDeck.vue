@@ -1,13 +1,14 @@
 <template>
   <div
-    class="flex flex-col justify-between mb-5 border border-gray-200 rounded duration-100 transform hover:shadow-lg"
+    class="flex flex-col border border-gray-200 rounded duration-100 transform hover:shadow-lg"
   >
     <div class="py-4 px-5">
-      <div class="text-lg md:text-xl">
-        <router-link :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }">
-          {{ userDeck.name }}
-        </router-link>
-      </div>
+      <router-link
+        :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }"
+        class="text-lg md:text-xl"
+      >
+        {{ userDeck.name }}
+      </router-link>
     </div>
 
     <hr class="border-gray-200">

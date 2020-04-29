@@ -67,11 +67,16 @@
         Explore decks
       </h1>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <SharedDeck
-          v-for="sharedDeck in sharedDecks"
-          :key="sharedDeck.id"
-          :shared-deck="sharedDeck"
-        />
+        <template v-if="isLoading">
+          <SharedDeckLoader v-for="index in 4" :key="index" />
+        </template>
+        <template v-else>
+          <SharedDeck
+            v-for="sharedDeck in sharedDecks"
+            :key="sharedDeck.id"
+            :shared-deck="sharedDeck"
+          />
+        </template>
       </div>
     </div>
   </div>
@@ -80,10 +85,11 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import SharedDeck from '@/components/SharedDeck'
+import SharedDeckLoader from '@/components/SharedDeckLoader'
 import DeckTag from '@/components/DeckTag'
 
 export default {
-  components: { SharedDeck, DeckTag },
+  components: { SharedDeck, SharedDeckLoader, DeckTag },
   metaInfo: {
     title: 'Explore decks'
   },
@@ -93,9 +99,10 @@ export default {
     }
   },
   computed: {
-    ...mapState('sharedDecks', ['sharedDecks'])
+    ...mapState('sharedDecks', ['isLoading', 'sharedDecks'])
   },
   created() {
+    this.$store.commit('sharedDecks/RESET_SHARED_DECKS')
     this.getSharedDecks()
   },
   methods: {

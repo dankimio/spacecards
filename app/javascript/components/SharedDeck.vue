@@ -16,7 +16,7 @@
       {{ sharedDeck.description.slice(0, 100) }}
     </p>
 
-    <div class="flex flex-wrap">
+    <div v-if="false" class="flex flex-wrap">
       <DeckTag
         v-for="tag in sharedDeck.tags"
         :key="tag"
