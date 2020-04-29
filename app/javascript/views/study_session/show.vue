@@ -1,13 +1,14 @@
 <template>
   <div class="container flex flex-col lg:max-w-3xl mb-4 lg:mb-8">
-    <ContentLoader
-      v-if="isLoading"
-      class="mb-6"
-      :height="18"
-    >
-      <!-- eslint-disable-next-line vue/max-attributes-per-line -->
-      <rect x="0" y="0" rx="3" ry="3" width="128" height="18" />
-    </ContentLoader>
+    <div v-if="isLoading" class="mb-6" style="width: 128px; height: 32px;">
+      <ContentLoader
+        :width="128"
+        :height="32"
+      >
+        <!-- eslint-disable-next-line vue/max-attributes-per-line -->
+        <rect x="0" y="0" rx="3" ry="3" width="128" height="32" />
+      </ContentLoader>
+    </div>
 
     <h1 v-else class="text-3xl mb-4 leading-tight">
       <span class="font-bold">
@@ -51,8 +52,14 @@
       </div>
     </div>
 
+    <ContentLoader
+      v-if="isLoading"
+      class="w-full rounded"
+      :width="512"
+      :height="128"
+    />
     <StudyCard
-      v-if="!reviewCompleted && !isLoading"
+      v-else-if="!reviewCompleted"
       class="mb-4"
       :card="currentReview.userCard"
       :answer-shown="answerShown"
