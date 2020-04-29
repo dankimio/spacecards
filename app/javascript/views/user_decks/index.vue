@@ -13,7 +13,17 @@
         </small>
       </h1>
 
-      <UserDeck v-for="userDeck in userDecks" :key="userDeck.id" :user-deck="userDeck" />
+      <template v-if="isLoading">
+        <UserDeckLoader v-for="index in 4" :key="index" class="mb-5" />
+      </template>
+      <template v-else>
+        <UserDeck
+          v-for="userDeck in userDecks"
+          :key="userDeck.id"
+          :user-deck="userDeck"
+          class="mb-5"
+        />
+      </template>
     </div>
   </div>
 </template>
@@ -22,13 +32,15 @@
 import { mapState, mapActions } from 'vuex'
 
 import UserDeck from '@/components/UserDeck'
+import UserDeckLoader from '@/components/UserDeckLoader'
 
 export default {
-  components: { UserDeck },
+  components: { UserDeck, UserDeckLoader },
   computed: {
-    ...mapState('userDecks', ['userDecks'])
+    ...mapState('userDecks', ['userDecks', 'isLoading'])
   },
   created() {
+    this.$store.commit('userDecks/RESET_USER_DECKS')
     this.getUserDecks()
   },
   methods: {
