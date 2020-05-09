@@ -12,7 +12,11 @@ export default wretch()
   })
   .accept('application/json')
   .errorType('json')
-  .catcher(401, () => {
+  .catcher(401, (error, request) => {
+    if (request._url === '/users/sign_in') {
+      throw error
+    }
+
     app.$store.dispatch('users/logOut')
     app.$router.push({ name: 'login' })
   })
