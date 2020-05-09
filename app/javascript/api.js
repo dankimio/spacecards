@@ -12,4 +12,7 @@ export default wretch()
   })
   .accept('application/json')
   .errorType('json')
-  .catcher(401, () => app.$store.dispatch('users/logOut'))
+  .catcher(401, () => {
+    app.$store.dispatch('users/logOut')
+    app.$router.push({ name: 'login' })
+  })
