@@ -1,30 +1,15 @@
 <template>
-  <div
-    class="px-4 py-3
-    border border-gray-200 rounded-md hover:shadow-lg
-    transition transition-shadow duration-100"
-  >
+  <div>
     <router-link
-      class="block mb-1
-      font-medium tracking-wide text-indigo-500 hover:text-indigo-800"
+      class="block mb-2
+      text-lg font-medium tracking-wide
+      text-indigo-600 hover:text-indigo-800"
       :to="{ name: 'sharedDeck', params: { id: sharedDeck.id.toString() }}"
     >
       {{ sharedDeck.name }}
     </router-link>
 
-    <p class="text-gray-700 text-sm block mb-3">
-      {{ sharedDeck.description.slice(0, 100) }}
-    </p>
-
-    <div v-if="false" class="flex flex-wrap">
-      <DeckTag
-        v-for="tag in sharedDeck.tags"
-        :key="tag"
-        :name="tag"
-      />
-    </div>
-
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center mb-2">
       <div v-if="false" class="flex items-center">
         <img
           :src="sharedDeckData.avatarUrl"
@@ -57,6 +42,18 @@
           {{ sharedDeckData.usersCount }}
         </button>
       </div>
+    </div>
+
+    <p class="text-gray-700 text block mb-2">
+      {{ sharedDeck.description.slice(0, 100) }}
+    </p>
+
+    <div v-if="false" class="flex flex-wrap">
+      <DeckTag
+        v-for="tag in sharedDeck.tags"
+        :key="tag"
+        :name="tag"
+      />
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/max-attributes-per-line -->
 <template>
-  <div class="border border-gray-200 rounded p-4">
+  <div>
     <ContentLoader :height="90">
       <rect x="0" y="0" rx="3" ry="3" width="192" height="18" />
       <rect x="0" y="34" rx="3" ry="3" width="384" height="12" />
