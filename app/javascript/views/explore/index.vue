@@ -66,16 +66,15 @@
       <h1 class="heading-2">
         Explore decks
       </h1>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <template v-if="isLoading">
-          <SharedDeckLoader v-for="index in 4" :key="index" class="mb-4 md:mb-4" />
+          <SharedDeckLoader v-for="index in 4" :key="index" />
         </template>
         <template v-else>
           <SharedDeck
             v-for="sharedDeck in sharedDecks"
             :key="sharedDeck.id"
             :shared-deck="sharedDeck"
-            class="mb-4 md:mb-4"
           />
         </template>
       </div>
