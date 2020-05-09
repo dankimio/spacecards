@@ -3,16 +3,36 @@ user = User.create!(
   password: 'qwerty123'
 )
 
-5.times do |i|
-  shared_deck = SharedDeck.create!(
-    name: "Shared deck #{i + 1}",
-    user: user,
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fugit harum quaerat obcaecati, tempora non? Veritatis placeat quidem dolorem unde sint, excepturi esse consectetur maiores ea tempora quibusdam possimus rem.'
-  )
+DECK_NAMES = [
+  '3000 Most Common French Words',
+  '200 Essential German Words',
+  'English Phrasal Verbs',
+  '1000 Most Common Russian Words',
+  'Irregular Verbs in English',
+  'Roman Emperors',
+  'World Capitals',
+  'EU Countries',
+  'World War II'
+]
 
+5.times do
+  SharedDeck.create!(
+    name: DECK_NAMES.sample,
+    user: user,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Numquam fugit harum quaerat obcaecati, tempora non? Veritatis
+    placeat quidem dolorem unde sint excepturi esse consectetur
+    maiores ea tempora quibusdam possimus rem.'.truncate(
+      (16..128).to_a.sample,
+      omission: '', separator: /\s/
+    )
+  )
+end
+
+SharedDeck.find_each do |shared_deck|
   user_deck = user.user_decks.create!(
     shared_deck: shared_deck,
-    name: "User deck #{i + 1}"
+    name: shared_deck.name
   )
 
   20.times do |j|
