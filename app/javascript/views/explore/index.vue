@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="w-full">
-      <h1 class="heading-2 mb-4 md:mb-8">
+      <h1 class="heading-2">
         Explore decks
       </h1>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

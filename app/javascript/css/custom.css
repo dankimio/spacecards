@@ -19,10 +19,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3 {
-  @apply .mb-4 .font-semibold;
+  @apply .font-semibold;
 
   & small {
-    @apply .font-normal;
+    @apply .font-medium;
   }
 }
 
@@ -33,13 +33,25 @@ h4, h5, h6 {
 /* Typography */
 
 .heading-1 {
-  @apply .font-semibold .text-5xl;
+  @apply .font-bold .text-5xl .mb-4;
 }
 
 .heading-2 {
-  @apply .font-semibold .text-4xl;
+  @apply .font-bold .text-4xl .mb-4;
 }
 
 .heading-3 {
-  @apply .font-semibold .text-3xl;
+  @apply .font-bold .text-3xl .mb-4;
+}
+
+@screen md {
+  .heading-1 {
+    @apply .mb-6;
+  }
+  .heading-2 {
+    @apply .mb-6;
+  }
+  .heading-3 {
+    @apply .mb-6;
+  }
 }

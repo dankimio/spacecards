@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="heading-2 mb-4 md:mb-8">
+    <h1 class="heading-2">
       {{ sharedDeck.name }}
     </h1>
 
