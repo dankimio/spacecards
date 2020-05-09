@@ -1,26 +1,22 @@
 <template>
   <div
-    class="flex flex-col border border-gray-200 rounded duration-100 transform hover:shadow-lg"
+    class="flex flex-col py-4 md:py-6 border-b-2 border-gray-100"
   >
-    <div class="py-4 px-5">
-      <router-link
-        :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }"
-        class="text-lg md:text-xl"
-      >
-        {{ userDeck.name }}
-      </router-link>
-    </div>
+    <router-link
+      :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }"
+      class="text-lg md:text-xl mb-2"
+    >
+      {{ userDeck.name }}
+    </router-link>
 
-    <hr class="border-gray-200">
-
-    <div class="bg-gray-100 flex text-sm py-2 px-5">
+    <div class="flex text-sm mb-1">
       <router-link
         :to="{ name: 'studySession', params: { id: userDeck.id.toString() } }"
         class="flex items-center mr-5 text-gray-500 hover:text-indigo-600"
       >
         <inline-svg
           :src="require('@images/icon-play.svg')"
-          class="inline-block w-4 h-4 mr-1 fill-current"
+          class="inline-block w-4 h-4 mr-2 fill-current"
         />
         Study
       </router-link>
@@ -31,7 +27,7 @@
       >
         <inline-svg
           :src="require('@images/icon-albums.svg')"
-          class="inline-block w-4 h-4 mr-1 fill-current"
+          class="inline-block w-4 h-4 mr-2 fill-current"
         />
         Cards
       </router-link>
@@ -42,7 +38,7 @@
       >
         <inline-svg
           :src="require('@images/icon-settings.svg')"
-          class="inline-block w-4 h-4 mr-1 fill-current"
+          class="inline-block w-4 h-4 mr-2 fill-current"
         />
         Settings
       </router-link>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="max-w-xl">
-      <h1 class="heading-2 flex items-center">
+      <h1 class="heading-2 mb-0 flex items-center">
         My decks
 
         <router-link
@@ -14,14 +14,13 @@
       </h1>
 
       <template v-if="isLoading">
-        <UserDeckLoader v-for="index in 4" :key="index" class="mb-5" />
+        <UserDeckLoader v-for="index in 4" :key="index" />
       </template>
       <template v-else>
         <UserDeck
           v-for="userDeck in userDecks"
           :key="userDeck.id"
           :user-deck="userDeck"
-          class="mb-5"
         />
       </template>
     </div>
