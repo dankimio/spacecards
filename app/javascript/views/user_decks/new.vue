@@ -1,23 +1,25 @@
 <template>
-  <div>
-    <div class="container py-5">
+  <div class="container">
+    <div class="md:max-w-xl">
       <h1 class="heading-2">
         New deck
       </h1>
 
       <form @submit.prevent="submit">
         <div class="field">
+          <label for="email">Name</label>
           <input
             v-model="userDeck.name"
             type="text"
             class="form-control p-4 text-lg"
-            placeholder="Deck name, e.g. 'World capitals' or 'Months in French'"
+            placeholder="Name of your deck, e.g. World capitals"
             required
             autofocus
           >
         </div>
 
         <div class="field">
+          <label for="email">Description</label>
           <textarea
             v-model="userDeck.description"
             class="form-control p-4 text-lg"
