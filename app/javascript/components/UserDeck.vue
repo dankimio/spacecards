@@ -4,7 +4,7 @@
   >
     <router-link
       :to="{ name: 'userDeck', params: { id: userDeck.id.toString() } }"
-      class="text-lg md:text-xl mb-2"
+      class="text-lg md:text-xl mb-2 font-medium"
     >
       {{ userDeck.name }}
     </router-link>
