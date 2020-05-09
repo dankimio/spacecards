@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col justify-center items-center bg-gray-100 rounded p-4">
-    <span class="font-semibold text-3xl">
+    <span class="md:py-4 font-semibold text-3xl">
       {{ card.front }}
     </span>
 
     <hr v-show="answerShown" class="w-full border-b-2 border-gray-200 my-4">
 
-    <span v-show="answerShown" class="font-semibold text-3xl">
+    <span v-show="answerShown" class="md:py-4 md:py-6 font-semibold text-3xl">
       {{ card.back }}
     </span>
   </div>
