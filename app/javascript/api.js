@@ -1,8 +1,15 @@
 import wretch from 'wretch'
-
-const token = () => localStorage.getItem('token')
+import { app } from 'packs/application'
 
 export default wretch()
-  .auth(token() && `Bearer ${token()}`)
+  .defer((w, url, options) => {
+    if (url === '/users/sign_in' || url === '/users') {
+      return w
+    }
+
+    const token = localStorage.getItem('token')
+    return w.auth(`Bearer ${token}`)
+  })
   .accept('application/json')
   .errorType('json')
+  .catcher(401, () => app.$store.dispatch('users/logOut'))

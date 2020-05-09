@@ -26,10 +26,12 @@ Vue.use(VueMeta)
 import VueNotification from 'vue-notification'
 Vue.use(VueNotification, { componentName: 'VueNotification' })
 
+export const app = new Vue({
+  router,
+  store,
+  render: h => h(App)
+})
+
 document.addEventListener('DOMContentLoaded', () => {
-  new Vue({
-    router,
-    store,
-    render: h => h(App)
-  }).$mount('#app')
+  app.$mount('#app')
 })
