@@ -1,30 +1,31 @@
 <template>
   <div class="container">
     <div class="md:max-w-xl">
-      <h1 class="heading-2 mb-4 md:mb-8">
+      <h1 class="heading-2 flex items-center">
         My decks
-        <small>
-          <router-link
-            :to="{ name: 'newUserDeck' }"
-            class="text-base ml-1"
-          >
-            + New deck
-          </router-link>
-        </small>
-      </h1>
 
-      <template v-if="isLoading">
-        <UserDeckLoader v-for="index in 4" :key="index" class="mb-5" />
-      </template>
-      <template v-else>
-        <UserDeck
-          v-for="userDeck in userDecks"
-          :key="userDeck.id"
-          :user-deck="userDeck"
-          class="mb-5"
-        />
-      </template>
+        <router-link
+          :to="{ name: 'newUserDeck' }"
+          class="button button-sm button-outlined button-outlined-primary ml-6 font-normal text-sm"
+        >
+          <span class="mr-1">+</span>
+          New deck
+        </router-link>
+      </h1>
     </div>
+
+    <template v-if="isLoading">
+      <UserDeckLoader v-for="index in 4" :key="index" class="mb-5" />
+    </template>
+    <template v-else>
+      <UserDeck
+        v-for="userDeck in userDecks"
+        :key="userDeck.id"
+        :user-deck="userDeck"
+        class="mb-5"
+      />
+    </template>
+  </div>
   </div>
 </template>
 

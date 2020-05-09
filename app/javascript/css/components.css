@@ -73,6 +73,10 @@ form label {
   }
 }
 
+.button-sm {
+  @apply .py-1 .px-3 .text-sm .tracking-tight;
+}
+
 .button-lg {
   @apply .py-3 .px-8 .font-medium .tracking-normal .text-center;
 }
