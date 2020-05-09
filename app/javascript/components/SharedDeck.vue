@@ -2,8 +2,8 @@
   <div>
     <router-link
       class="block mb-2
-      text-lg font-medium tracking-wide
-      text-indigo-600 hover:text-indigo-800"
+      text-xl font-medium
+      text-indigo-600 hover:text-indigo-800 truncate"
       :to="{ name: 'sharedDeck', params: { id: sharedDeck.id.toString() }}"
     >
       {{ sharedDeck.name }}
