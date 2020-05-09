@@ -1,6 +1,6 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <SiteHeader class="mb-6 md:mb-8" />
+    <SiteHeader class="mb-4 md:mb-6" />
     <router-view class="flex-1 mb-8" />
     <SiteFooter />
     <VueNotification
