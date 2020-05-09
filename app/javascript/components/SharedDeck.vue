@@ -1,7 +1,7 @@
 <template>
   <div
     class="px-4 py-3
-    border border-gray-200 rounded hover:shadow-lg
+    border border-gray-200 rounded-md hover:shadow-lg
     transition transition-shadow duration-100"
   >
     <router-link
@@ -23,8 +23,6 @@
         :name="tag"
       />
     </div>
-
-    <div class="border-b border-gray-100 my-2" />
 
     <div class="flex justify-between items-center">
       <div v-if="false" class="flex items-center">
