@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="md:max-w-xl">
+    <div class="max-w-xl">
       <h1 class="heading-2 flex items-center">
         My decks
 
@@ -12,20 +12,19 @@
           New deck
         </router-link>
       </h1>
-    </div>
 
-    <template v-if="isLoading">
-      <UserDeckLoader v-for="index in 4" :key="index" class="mb-5" />
-    </template>
-    <template v-else>
-      <UserDeck
-        v-for="userDeck in userDecks"
-        :key="userDeck.id"
-        :user-deck="userDeck"
-        class="mb-5"
-      />
-    </template>
-  </div>
+      <template v-if="isLoading">
+        <UserDeckLoader v-for="index in 4" :key="index" class="mb-5" />
+      </template>
+      <template v-else>
+        <UserDeck
+          v-for="userDeck in userDecks"
+          :key="userDeck.id"
+          :user-deck="userDeck"
+          class="mb-5"
+        />
+      </template>
+    </div>
   </div>
 </template>
 
