@@ -2,48 +2,6 @@
   --transition-base: all .15s ease-in-out;
 }
 
-/* Alerts */
-
-.alert {
-  @apply .mb-6 .border .px-4 .py-3 .rounded .relative;
-
-  @media(min-width: 768px) {
-    @apply .mb-8;
-  }
-}
-
-.alert-notice {
-  @apply .bg-indigo-100 .border-indigo-300 .text-indigo-700;
-}
-
-.alert-alert {
-  @apply .bg-red-100 .border-red-300 .text-red-700;
-}
-
-/* Tables */
-
-.table {
-  @apply .w-full .text-left;
-
-  & thead th {
-    @apply .border-b .border-b-2 .border-t;
-  }
-
-  & td, & th {
-    @apply .p-3;
-  }
-
-  & td {
-    @apply .border-b;
-  }
-
-  & tr:last-child {
-    & td {
-      @apply .border-b-0;
-    }
-  }
-}
-
 /* Pill */
 
 .pill {
