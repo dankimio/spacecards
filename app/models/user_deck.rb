@@ -21,7 +21,7 @@ class UserDeck < ApplicationRecord
   has_many :study_sessions, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
-  validates :description, presence: true, allow_nil: true
+  validates :description, presence: true, allow_blank: true
   validates :shared_deck, uniqueness: { scope: :user }, if: :shared_deck_id?
 
   before_validation :set_name_from_shared_deck, if: :shared_deck_id?, on: :create
