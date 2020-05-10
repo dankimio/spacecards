@@ -18,9 +18,7 @@ form label {
   @apply block appearance-none border rounded w-full p-3 text-gray-900 leading-tight;
 
   &:focus {
-    transition: var(--transition-base);
-
-    @apply outline-none;
+    @apply outline-none shadow-outline transition-shadow duration-150;
   }
 
   &:-moz-ui-invalid {
