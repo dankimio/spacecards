@@ -24,7 +24,11 @@
           autofocus
           required
           class="form-control"
+          :class="{ 'form-control--error': errors.hasOwnProperty('email') }"
         >
+        <small v-if="errors.hasOwnProperty('email')" class="field-help field-help--error">
+          Email {{ errors.email[0] }}
+        </small>
       </div>
 
       <div class="field">
@@ -37,7 +41,11 @@
           placeholder="Password"
           required
           class="form-control"
+          :class="{ 'form-control--error': errors.hasOwnProperty('password') }"
         >
+        <small v-if="errors.hasOwnProperty('password')" class="field-help field-help--error">
+          Password {{ errors.password[0] }}
+        </small>
       </div>
 
       <div class="actions my-8">
@@ -69,7 +77,8 @@ export default {
       user: {
         email: '',
         password: ''
-      }
+      },
+      errors: {}
     }
   },
   methods: {
@@ -77,7 +86,7 @@ export default {
       this.signUp({ user: this.user })
         .then(() => this.$router.push({ name: 'root' }))
         .then(() => this.$notify({ title: 'Signed up successfully' }))
-        .catch(error => console.log(error.json))
+        .catch(error => { this.errors = error.json.errors })
     },
     ...mapActions('users', ['signUp'])
   }
