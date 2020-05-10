@@ -7,6 +7,7 @@
 /* Components */
 @import 'buttons';
 @import 'components';
+@import 'forms';
 @import 'typography';
 
 /* Plugins */
