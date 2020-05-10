@@ -9,14 +9,14 @@
         <router-link
           v-if="sharedDeck.userDeckId"
           :to="{ name: 'userDeck', params: { id: sharedDeck.userDeckId } }"
-          class="button button-lg button-disabled mb-6 w-full uppercase"
+          class="button button-lg button-disabled mb-6 w-full"
         >
           ✓ Added to library
         </router-link>
 
         <button
           v-if="isSignedIn && !sharedDeck.userDeckId"
-          class="button button-lg button-outlined button-outlined-primary mb-6 w-full uppercase"
+          class="button button-lg button-outlined button-outlined-primary mb-6 w-full"
           @click.prevent="addToLibrary"
         >
           + Add to library

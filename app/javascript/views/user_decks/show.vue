@@ -19,7 +19,7 @@
         <router-link
           v-if="userDeck.id"
           :to="{ name: 'studySession', params: { id: userDeck.id.toString() } }"
-          class="button button-lg button-primary w-full uppercase tracking-wide mb-6"
+          class="button button-lg button-primary w-full tracking-wide mb-6"
         >
           Study
         </router-link>
@@ -51,7 +51,7 @@
       <div class="col-span-2 col-start-1 row-start-1">
         <div
           class="button button-outlined button-lg
-          w-full mb-6 uppercase tracking-wide text-gray-600 border-gray-400"
+          w-full mb-6 tracking-wide text-gray-600 border-gray-400"
           @click="addingNewCard = !addingNewCard"
         >
           Add cards

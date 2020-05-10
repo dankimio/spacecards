@@ -22,7 +22,7 @@
 }
 
 .button-lg {
-  @apply py-3 px-8 font-medium tracking-normal text-center;
+  @apply py-3 px-8 font-medium tracking-normal text-center uppercase;
 }
 
 .button-primary {

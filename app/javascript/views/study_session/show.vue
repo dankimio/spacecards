@@ -72,7 +72,7 @@
       <button
         v-if="!answerShown"
         class="button button-lg button-primary
-          w-full uppercase tracking-wider font-normal"
+          w-full tracking-wider font-normal"
         @click="answerShown = true"
       >
         Show answer

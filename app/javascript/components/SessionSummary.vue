@@ -35,7 +35,7 @@
 
     <router-link
       :to="{ name: 'userDecks'}"
-      class="button button-lg button-primary w-full uppercase tracking-wide"
+      class="button button-lg button-primary w-full tracking-wide"
     >
       Return to decks
     </router-link>
