@@ -15,7 +15,7 @@
         </router-link>
 
         <button
-          v-if="isLoggedIn && !sharedDeck.userDeckId"
+          v-if="isSignedIn && !sharedDeck.userDeckId"
           class="button button-lg button-outlined button-outlined-primary mb-6 w-full uppercase"
           @click.prevent="addToLibrary"
         >
@@ -92,7 +92,7 @@ export default {
   computed: {
     ...mapState('sharedCards', ['sharedCards']),
     ...mapState('sharedDecks', ['sharedDeck']),
-    ...mapGetters('users', ['isLoggedIn'])
+    ...mapGetters('users', ['isSignedIn'])
   },
   created() {
     this.getSharedDeckCards(this.id)

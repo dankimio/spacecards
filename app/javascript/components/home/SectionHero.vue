@@ -19,7 +19,7 @@
 
       <div class="mb-6 flex-col md:flex-row">
         <router-link
-          v-if="!isLoggedIn"
+          v-if="!isSignedIn"
           :to="{ name: 'signup' }"
           class="button button-primary button-lg w-full md:w-auto tracking-wide mb-4 md:mb-0 md:mr-2"
         >
@@ -58,6 +58,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: { ...mapGetters('users', ['isLoggedIn']) }
+  computed: { ...mapGetters('users', ['isSignedIn']) }
 }
 </script>

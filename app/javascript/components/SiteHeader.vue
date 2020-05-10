@@ -11,7 +11,7 @@
       </div>
       <div class="font-medium">
         <router-link
-          v-if="!isLoggedIn"
+          v-if="!isSignedIn"
           :to="{ name: 'signin' }"
           class="ml-5 md:ml-8"
         >
@@ -24,14 +24,14 @@
           Explore
         </router-link>
         <router-link
-          v-if="isLoggedIn"
+          v-if="isSignedIn"
           :to="{ name: 'userDecks' }"
           class="ml-5 md:ml-8"
         >
           My decks
         </router-link>
         <a
-          v-if="isLoggedIn"
+          v-if="isSignedIn"
           class="ml-5 md:ml-8"
           href=""
           @click.prevent="logOut"
@@ -48,7 +48,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('users', ['isLoggedIn'])
+    ...mapGetters('users', ['isSignedIn'])
   },
   methods: {
     logOut() {

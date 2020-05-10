@@ -6,7 +6,7 @@ const state = {
 }
 
 const getters = {
-  isLoggedIn(state) {
+  isSignedIn(state) {
     return !!state.token
   }
 }
