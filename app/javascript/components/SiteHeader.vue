@@ -12,10 +12,10 @@
       <div class="font-medium">
         <router-link
           v-if="!isLoggedIn"
-          :to="{ name: 'login' }"
+          :to="{ name: 'signin' }"
           class="ml-5 md:ml-8"
         >
-          Log in
+          Sign in
         </router-link>
         <router-link
           :to="{ name: 'explore' }"

@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Explore from '@/views/explore/index'
 import Home from '@/views/home/index'
-import LogIn from '@/views/log_in/index'
+import SignIn from '@/views/sign_in/index'
 import NotFound from '@/views/errors/not_found'
 import SharedDecksShow from '@/views/shared_decks/show'
 import SignUp from '@/views/sign_up/index'
@@ -26,14 +26,14 @@ const router = new VueRouter({
       component: Home
     },
     {
+      path: '/sign-in',
+      name: 'signin',
+      component: SignIn
+    },
+    {
       path: '/sign-up',
       name: 'signup',
       component: SignUp
-    },
-    {
-      path: '/log-in',
-      name: 'login',
-      component: LogIn
     },
     {
       path: '/decks/:id',
@@ -92,7 +92,7 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       next({
-        path: '/log-in',
+        name: 'signin',
         query: { redirect: to.fullPath }
       })
     }

@@ -18,5 +18,5 @@ export default wretch()
     }
 
     app.$store.dispatch('users/logOut')
-    app.$router.push({ name: 'login' })
+    app.$router.push({ name: 'signin' })
   })

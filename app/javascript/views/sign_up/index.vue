@@ -50,8 +50,8 @@
     </form>
     <p class="md:text-center text-gray-700">
       Already have an account?
-      <router-link :to="{ name: 'login' }">
-        Log in
+      <router-link :to="{ name: 'signin' }">
+        Sign in
       </router-link>
     </p>
   </div>

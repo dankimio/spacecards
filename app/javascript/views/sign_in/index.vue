@@ -1,7 +1,7 @@
 <template>
   <div class="container mb-8 md:my-8 md:max-w-sm mx-auto">
     <h1 class="heading-1 mb-3 md:mb-6 md:text-center leading-tight">
-      Log in
+      Sign in
     </h1>
 
     <form
@@ -69,7 +69,7 @@ import { mapActions } from 'vuex'
 
 export default {
   metaInfo: {
-    title: 'Log in'
+    title: 'Sign in'
   },
   data() {
     return {
