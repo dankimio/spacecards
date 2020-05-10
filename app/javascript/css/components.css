@@ -1,5 +1,0 @@
-/* Pill */
-
-.pill {
-  @apply .inline-block .py-2 .px-4 .rounded-full .bg-indigo-400 .text-white .text-lg .font-medium;
-}
