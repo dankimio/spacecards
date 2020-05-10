@@ -1,33 +1,33 @@
 body {
-  @apply .font-sans .flex .flex-col .min-h-screen .antialiased;
+  @apply font-sans flex flex-col min-h-screen antialiased;
 }
 
 a {
-  @apply .text-indigo-600;
+  @apply text-indigo-600;
 
   text-decoration: none;
 
   &:hover {
-    @apply .text-indigo-800;
+    @apply text-indigo-800;
 
     transition: var(--transition-base);
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply .text-gray-800;
+  @apply text-gray-800;
 }
 
 h1, h2, h3 {
-  @apply .font-semibold;
+  @apply font-semibold;
 
   & small {
-    @apply .font-medium;
+    @apply font-medium;
   }
 }
 
 h4, h5, h6 {
-  @apply .mb-2;
+  @apply mb-2;
 }
 
 /* Transitions */
