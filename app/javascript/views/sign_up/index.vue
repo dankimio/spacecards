@@ -57,7 +57,7 @@
       <div class="actions my-8">
         <input
           type="submit"
-          value="Start learning"
+          value="Sign up"
           class="button button-primary button-lg w-full"
         >
       </div>

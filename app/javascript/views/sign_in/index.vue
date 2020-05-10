@@ -49,7 +49,7 @@
       <div class="actions my-8">
         <input
           type="submit"
-          value="Start learning"
+          value="Sign in"
           class="button button-primary button-lg w-full"
         >
       </div>
