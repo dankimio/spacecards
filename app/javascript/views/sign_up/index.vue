@@ -30,7 +30,7 @@
           v-if="errors.has('email')"
           class="field-help field-help--error"
         >
-          {{ errors.get('email') }}
+          Email {{ errors.get('email') }}
         </small>
       </div>
 
