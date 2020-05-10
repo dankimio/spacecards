@@ -26,8 +26,11 @@
           class="form-control"
           :class="{ 'form-control--error': errors.has('email') }"
         >
-        <small v-if="errors.has('email')" class="field-help field-help--error">
-          Email {{ errors.get('email') }}
+        <small
+          v-if="errors.has('email')"
+          class="field-help field-help--error"
+        >
+          {{ errors.get('email') }}
         </small>
       </div>
 
@@ -43,7 +46,10 @@
           class="form-control"
           :class="{ 'form-control--error': errors.has('password') }"
         >
-        <small v-if="errors.has('password')" class="field-help field-help--error">
+        <small
+          v-if="errors.has('password')"
+          class="field-help field-help--error"
+        >
           Password {{ errors.get('password') }}
         </small>
       </div>
