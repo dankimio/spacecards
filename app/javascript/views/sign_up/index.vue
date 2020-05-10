@@ -24,10 +24,10 @@
           autofocus
           required
           class="form-control"
-          :class="{ 'form-control--error': errors.hasOwnProperty('email') }"
+          :class="{ 'form-control--error': errors.has('email') }"
         >
-        <small v-if="errors.hasOwnProperty('email')" class="field-help field-help--error">
-          Email {{ errors.email[0] }}
+        <small v-if="errors.has('email')" class="field-help field-help--error">
+          Email {{ errors.get('email') }}
         </small>
       </div>
 
@@ -41,10 +41,10 @@
           placeholder="Password"
           required
           class="form-control"
-          :class="{ 'form-control--error': errors.hasOwnProperty('password') }"
+          :class="{ 'form-control--error': errors.has('password') }"
         >
-        <small v-if="errors.hasOwnProperty('password')" class="field-help field-help--error">
-          Password {{ errors.password[0] }}
+        <small v-if="errors.has('password')" class="field-help field-help--error">
+          Password {{ errors.get('password') }}
         </small>
       </div>
 
@@ -67,6 +67,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import Errors from '@/lib/errors'
 
 export default {
   metaInfo: {
@@ -78,7 +79,7 @@ export default {
         email: '',
         password: ''
       },
-      errors: {}
+      errors: new Errors()
     }
   },
   methods: {
@@ -86,7 +87,7 @@ export default {
       this.signUp({ user: this.user })
         .then(() => this.$router.push({ name: 'root' }))
         .then(() => this.$notify({ title: 'Signed up successfully' }))
-        .catch(error => { this.errors = error.json.errors })
+        .catch(error => this.errors.record(error.json.errors))
     },
     ...mapActions('users', ['signUp'])
   }
