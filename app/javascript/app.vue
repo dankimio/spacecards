@@ -1,8 +1,8 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <SiteHeader class="mb-4 md:mb-6" />
+    <TheHeader class="mb-4 md:mb-6" />
     <router-view class="flex-1 mb-8" />
-    <SiteFooter />
+    <TheFooter />
     <VueNotification
       classes="vue-notification container"
       position="bottom center"
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import SiteHeader from '@/components/SiteHeader'
-import SiteFooter from '@/components/SiteFooter'
+import TheHeader from '@/components/TheHeader'
+import TheFooter from '@/components/TheFooter'
 
 export default {
-  components: { SiteHeader, SiteFooter },
+  components: { TheHeader, TheFooter },
   metaInfo: {
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} – Spacecards` : 'Spacecards'
