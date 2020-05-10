@@ -19,5 +19,5 @@ class SharedDeck < ApplicationRecord
   has_many :user_decks, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
-  validates :description, presence: true, allow_nil: true
+  validates :description, presence: true
 end
