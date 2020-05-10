@@ -29,29 +29,3 @@ h1, h2, h3 {
 h4, h5, h6 {
   @apply .mb-2;
 }
-
-/* Typography */
-
-.heading-1 {
-  @apply .font-bold .text-5xl .mb-4;
-}
-
-.heading-2 {
-  @apply .font-bold .text-4xl .mb-4;
-}
-
-.heading-3 {
-  @apply .font-bold .text-3xl .mb-4;
-}
-
-@screen md {
-  .heading-1 {
-    @apply .mb-6;
-  }
-  .heading-2 {
-    @apply .mb-6;
-  }
-  .heading-3 {
-    @apply .mb-6;
-  }
-}
