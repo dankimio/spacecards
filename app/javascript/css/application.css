@@ -1,9 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 
+/* Overrides */
 @import 'custom';
+
+/* Components */
+@import 'buttons';
 @import 'components';
 @import 'typography';
+
+/* Plugins */
 @import 'vue_notification';
 
 @import 'tailwindcss/utilities';

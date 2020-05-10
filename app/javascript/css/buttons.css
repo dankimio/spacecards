@@ -1,0 +1,62 @@
+/* Buttons */
+
+.button {
+  @apply .inline-flex .justify-center .items-center .py-2 .px-5 .rounded .no-underline .border .shadow .align-middle;
+
+  transition: var(--transition-base);
+
+  &:hover {
+    cursor: pointer;
+    transition: var(--transition-base);
+    transform: translateY(-.15rem);
+
+    @apply .shadow-md;
+  }
+  &:focus {
+    @apply .outline-none .shadow-outline;
+  }
+}
+
+.button-sm {
+  @apply .py-1 .px-3 .text-sm .tracking-tight;
+}
+
+.button-lg {
+  @apply .py-3 .px-8 .font-medium .tracking-normal .text-center;
+}
+
+.button-primary {
+  @apply .bg-indigo-600 .border-indigo-600 .text-white;
+
+  &:hover {
+    @apply .bg-indigo-700 .border-indigo-700 .text-gray-200;
+  }
+}
+
+.button-danger {
+  @apply .bg-red-500 .border-red-500 .text-white;
+
+  &:hover {
+    @apply .bg-red-600 .border-red-600 .text-red-200;
+  }
+}
+
+.button-disabled {
+  @apply .bg-gray-500 .border-gray-500 .text-white .cursor-not-allowed;
+
+  &:hover {
+    @apply .bg-gray-600 .border-gray-600 .text-gray-200;
+  }
+}
+
+.button-outlined {
+  @apply .border;
+}
+
+.button-outlined-primary {
+  @apply .border-indigo-400 .text-indigo-600;
+
+  &:hover {
+    @apply .bg-indigo-600 .border-indigo-600 .text-white;
+  }
+}
