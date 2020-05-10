@@ -68,7 +68,7 @@
       </h1>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <template v-if="isLoading">
-          <SharedDeckLoader v-for="index in 4" :key="index" />
+          <SharedDeckLoader v-for="index in 12" :key="index" />
         </template>
         <template v-else>
           <SharedDeck
