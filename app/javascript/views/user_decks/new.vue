@@ -15,7 +15,14 @@
             placeholder="Name of your deck, e.g. World capitals"
             required
             autofocus
+            :class="{ 'form-control--error': errors.has('name') }"
           >
+          <small
+            v-if="errors.has('name')"
+            class="field-help field-help--error"
+          >
+            {{ errors.get('name') }}
+          </small>
         </div>
 
         <div class="field">
@@ -24,7 +31,14 @@
             v-model="userDeck.description"
             class="form-control p-4 text-lg"
             placeholder="Description (optional)"
+            :class="{ 'form-control--error': errors.has('description') }"
           />
+          <small
+            v-if="errors.has('description')"
+            class="field-help field-help--error"
+          >
+            {{ errors.get('description') }}
+          </small>
         </div>
 
         <input
@@ -39,6 +53,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import Errors from '@/lib/errors'
 
 export default {
   data() {
@@ -46,7 +61,8 @@ export default {
       userDeck: {
         name: '',
         description: ''
-      }
+      },
+      errors: new Errors()
     }
   },
   methods: {
@@ -55,6 +71,7 @@ export default {
         .then(json => {
           this.$router.push({ name: 'userDeck', params: { id: json.id.toString() } })
         })
+        .catch(error => this.errors.record(error.json))
     },
     ...mapActions('userDecks', ['createUserDeck'])
   }

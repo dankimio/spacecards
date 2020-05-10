@@ -24,7 +24,14 @@
           autofocus
           required
           class="form-control"
+          :class="{ 'form-control--error': errors.has('email') }"
         >
+        <small
+          v-if="errors.has('email')"
+          class="field-help field-help--error"
+        >
+          {{ errors.get('email') }}
+        </small>
       </div>
 
       <div class="field">
@@ -37,7 +44,14 @@
           placeholder="Password"
           required
           class="form-control"
+          :class="{ 'form-control--error': errors.has('password') }"
         >
+        <small
+          v-if="errors.has('password')"
+          class="field-help field-help--error"
+        >
+          Password {{ errors.get('password') }}
+        </small>
       </div>
 
       <div class="actions my-8">
@@ -59,6 +73,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import Errors from '@/lib/errors'
 
 export default {
   metaInfo: {
@@ -69,7 +84,8 @@ export default {
       user: {
         email: '',
         password: ''
-      }
+      },
+      errors: new Errors()
     }
   },
   methods: {
@@ -77,7 +93,7 @@ export default {
       this.signUp({ user: this.user })
         .then(() => this.$router.push({ name: 'root' }))
         .then(() => this.$notify({ title: 'Signed up successfully' }))
-        .catch(error => console.log(error.json))
+        .catch(error => this.errors.record(error.json.errors))
     },
     ...mapActions('users', ['signUp'])
   }
