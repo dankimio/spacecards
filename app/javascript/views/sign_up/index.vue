@@ -1,6 +1,6 @@
 <template>
   <div class="container mb-8 md:my-8 md:max-w-sm mx-auto">
-    <h1 class="heading-1 mb-3 md:mb-6 md:text-center leading-tight">
+    <h1 class="heading-1 md:text-center">
       Sign up
     </h1>
 

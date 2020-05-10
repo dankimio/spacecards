@@ -1,24 +1,26 @@
 /* Typography */
 
+.heading-1,
+.heading-2,
+.heading-3 {
+  @apply font-bold leading-tight mb-4
+}
+
 .heading-1 {
-  @apply font-bold text-5xl mb-4;
+  @apply text-5xl;
 }
 
 .heading-2 {
-  @apply font-bold text-4xl mb-4;
+  @apply text-4xl;
 }
 
 .heading-3 {
-  @apply font-bold text-3xl mb-4;
+  @apply text-3xl;
 }
 
 @screen md {
-  .heading-1 {
-    @apply mb-6;
-  }
-  .heading-2 {
-    @apply mb-6;
-  }
+  .heading-1,
+  .heading-2,
   .heading-3 {
     @apply mb-6;
   }

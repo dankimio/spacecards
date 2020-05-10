@@ -10,7 +10,7 @@
       </ContentLoader>
     </div>
 
-    <h1 v-else class="text-3xl mb-4 leading-tight">
+    <h1 v-else class="heading-2">
       <span class="font-bold">
         {{ userDeck.name }}
       </span>
