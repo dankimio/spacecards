@@ -16,7 +16,6 @@
           type="email"
           name="email"
           autocomplete="email"
-          placeholder="johndoe@example.com"
           autofocus
           required
           class="form-control"
@@ -30,12 +29,11 @@
           type="password"
           name="password"
           autocomplete="current-password"
-          placeholder="Password"
           required
           class="form-control"
         >
 
-        <p class="mt-4 text-right">
+        <p v-if="false" class="mt-4 text-right">
           <!-- TODO: -->
           <router-link
             to="#"
