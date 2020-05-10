@@ -4,7 +4,7 @@
       Sign up
     </h1>
 
-    <p class="md:text-center text-xl font-light mb-6 md:mb-12 text-gray-800">
+    <p class="md:text-center text-lg font-light mb-6 md:mb-10 text-gray-800 leading-tight">
       Create an account to add cards and track your progress.
     </p>
 
@@ -41,7 +41,7 @@
           type="password"
           name="password"
           autocomplete="new-password"
-          placeholder="Password"
+          placeholder="At least 6 characters"
           required
           class="form-control"
           :class="{ 'form-control--error': errors.has('password') }"
