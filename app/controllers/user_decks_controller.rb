@@ -15,7 +15,7 @@ class UserDecksController < ApplicationController
     if @user_deck.save
       render :show, status: :created
     else
-      render json: @user_deck.errors, status: :unprocessable_entity
+      render json: @user_deck.errors.as_json(full_messages: true), status: :unprocessable_entity
     end
   end
 
