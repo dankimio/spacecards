@@ -12,7 +12,7 @@ const getters = {
 }
 
 const actions = {
-  logIn(context, user) {
+  signIn(context, user) {
     return api.url('/users/sign_in')
       .post(user)
       .res(response => {
