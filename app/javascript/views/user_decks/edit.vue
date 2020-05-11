@@ -1,7 +1,7 @@
 <template>
   <div class="container md:max-w-lg md:mx-auto">
     <h1 class="text-3xl mb-4">
-      <span class="font-bold">{{ userDeck.name }}</span>
+      <span class="font-bold">{{ currentDeckName }}</span>
       <span class="mx-3 font-light">→</span>
       <span class="font-light">Settings</span>
     </h1>
@@ -85,11 +85,19 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      currentDeckName: ''
+    }
+  },
   computed: {
     ...mapState('userDecks', ['userDeck'])
   },
   created() {
     this.getUserDeck(this.id)
+      .then(() => {
+        this.currentDeckName = this.userDeck.name
+      })
   },
   methods: {
     ...mapActions(
@@ -100,6 +108,7 @@ export default {
       this.updateUserDeck(this.userDeck)
         .then(() => {
           this.$notify({ title: 'Deck was updated successfully' })
+          this.currentDeckName = this.userDeck.name
         })
     },
     destroy() {
@@ -110,6 +119,11 @@ export default {
             this.$router.push({ name: 'userDecks' })
           })
       }
+    }
+  },
+  metaInfo() {
+    return {
+      title: `Edit ${this.currentDeckName}`
     }
   }
 }

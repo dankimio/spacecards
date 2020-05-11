@@ -74,6 +74,9 @@ export default {
         .catch(error => this.errors.record(error.json))
     },
     ...mapActions('userDecks', ['createUserDeck'])
+  },
+  metaInfo: {
+    title: 'New deck'
   }
 }
 </script>
