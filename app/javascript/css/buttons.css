@@ -1,16 +1,13 @@
 /* Buttons */
 
 .button {
-  @apply inline-flex justify-center items-center py-2 px-5 rounded no-underline border shadow align-middle;
-
-  transition: var(--transition-base);
+  @apply inline-flex justify-center items-center
+    py-2 px-5 rounded no-underline border shadow align-middle
+    transition-shadow transition-colors duration-150;
 
   &:hover {
-    cursor: pointer;
-    transition: var(--transition-base);
-    transform: translateY(-.15rem);
-
-    @apply shadow-md;
+    @apply cursor-pointer shadow-md
+    transition-shadow transition-colors duration-150;
   }
   &:focus {
     @apply outline-none shadow-outline;
