@@ -3,8 +3,7 @@
     class="flex md:flex-1 items-center justify-center
       mb-3 md:mb-0 w-full py-2 rounded-md
       border-2 border-gray-200
-      transition duration-200
-      transform hover:-translate-y-1"
+      transition-colors duration-150"
     :class="states[answerValue].class"
     @click.prevent="answer"
   >
