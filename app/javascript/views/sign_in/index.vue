@@ -4,11 +4,7 @@
       Sign in
     </h1>
 
-    <form
-      action=""
-      method="post"
-      @submit.prevent="submit"
-    >
+    <form @submit.prevent="submit">
       <div class="field">
         <label for="email">Email</label>
         <input

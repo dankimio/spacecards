@@ -8,11 +8,7 @@
       Create an account to add cards and track your progress.
     </p>
 
-    <form
-      action=""
-      method="post"
-      @submit.prevent="submit"
-    >
+    <form @submit.prevent="submit">
       <div class="field">
         <label for="email">Email</label>
         <input
@@ -91,8 +87,10 @@ export default {
   methods: {
     submit() {
       this.signUp({ user: this.user })
-        .then(() => this.$router.push({ name: 'root' }))
-        .then(() => this.$notify({ title: 'Signed up successfully' }))
+        .then(() => {
+          this.$router.push({ name: 'root' })
+          this.$notify({ title: 'Signed up successfully' })
+        })
         .catch(error => this.errors.record(error.json.errors))
     },
     ...mapActions('users', ['signUp'])
