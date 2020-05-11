@@ -1,13 +1,15 @@
 <template>
   <div class="flex min-h-screen flex-col">
     <TheHeader class="mb-4 md:mb-6" />
-    <router-view class="flex-1 mb-8" />
+    <div class="flex-1 mb-8">
+      <router-view />
+      <VueNotification
+        classes="vue-notification container"
+        position="bottom center"
+        width="100%"
+      />
+    </div>
     <TheFooter />
-    <VueNotification
-      classes="vue-notification container"
-      position="bottom center"
-      width="100%"
-    />
   </div>
 </template>
 
