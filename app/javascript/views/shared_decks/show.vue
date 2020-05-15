@@ -1,9 +1,6 @@
 <template>
   <div class="container">
-    <h1 v-if="!isLoading" class="heading-2">
-      {{ sharedDeck.name }}
-    </h1>
-    <div v-else class="mb-6" style="width: 256px; height: 48px;">
+    <div v-if="$store.state.sharedDecks.isLoading" class="mb-6" style="width: 256px; height: 48px;">
       <ContentLoader
         :width="256"
         :height="48"
@@ -12,6 +9,9 @@
         <rect x="0" y="0" rx="3" ry="3" width="256" height="48" />
       </ContentLoader>
     </div>
+    <h1 v-else class="heading-2">
+      {{ sharedDeck.name }}
+    </h1>
 
     <div class="lg:grid grid-cols-3 gap-8">
       <div class="col-start-3 row-start-1">
@@ -74,7 +74,12 @@
       </div>
 
       <div class="col-span-2 col-start-1 row-start-1">
-        <DeckCard v-for="card in sharedCards" :key="card.id" :card="card" />
+        <template v-if="$store.state.sharedCards.isLoading">
+          <DeckCardLoader v-for="index in 12" :key="index" />
+        </template>
+        <template v-else>
+          <DeckCard v-for="card in sharedCards" :key="card.id" :card="card" />
+        </template>
       </div>
     </div>
   </div>
@@ -85,9 +90,10 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 import { ContentLoader } from 'vue-content-loader'
 
 import DeckCard from '@/components/DeckCard'
+import DeckCardLoader from '@/components/DeckCardLoader'
 
 export default {
-  components: { ContentLoader, DeckCard },
+  components: { ContentLoader, DeckCard, DeckCardLoader },
   props: {
     id: {
       type: String,
@@ -101,7 +107,7 @@ export default {
   },
   computed: {
     ...mapState('sharedCards', ['sharedCards']),
-    ...mapState('sharedDecks', ['sharedDeck', 'isLoading']),
+    ...mapState('sharedDecks', ['sharedDeck']),
     ...mapGetters('users', ['isSignedIn'])
   },
   created() {
