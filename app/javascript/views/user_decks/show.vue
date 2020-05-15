@@ -76,12 +76,17 @@
           @cancel="addingNewCard = false"
         />
 
-        <DeckCard
-          v-for="userCard in userCards"
-          :key="userCard.id"
-          :card="userCard"
-          :allow-editing="true"
-        />
+        <template v-if="$store.state.userCards.isLoading">
+          <DeckCardLoader v-for="index in 12" :key="index" />
+        </template>
+        <template v-else>
+          <DeckCard
+            v-for="userCard in userCards"
+            :key="userCard.id"
+            :card="userCard"
+            :allow-editing="true"
+          />
+        </template>
       </div>
     </div>
   </div>
@@ -92,9 +97,10 @@ import { mapActions, mapState } from 'vuex'
 import { ContentLoader } from 'vue-content-loader'
 
 import DeckCard from '@/components/DeckCard'
+import DeckCardLoader from '@/components/DeckCardLoader'
 
 export default {
-  components: { ContentLoader, DeckCard },
+  components: { ContentLoader, DeckCard, DeckCardLoader },
   props: {
     id: {
       type: String,
