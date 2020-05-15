@@ -20,10 +20,14 @@ const actions = {
       })
   },
   getUserDeck(context, userDeckId) {
+    context.commit('SET_LOADING')
     return api
       .url(`/user_decks/${userDeckId}`)
       .get()
-      .json(json => { context.commit('SET_USER_DECK', json) })
+      .json(json => {
+        context.commit('SET_USER_DECK', json)
+        context.commit('SET_LOADING', false)
+      })
   },
   createUserDeck(context, userDeck) {
     const data = snakeCaseKeys({ userDeck })
