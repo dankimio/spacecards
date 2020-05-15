@@ -52,6 +52,9 @@ const mutations = {
     state.userCard = {}
     state.userCards = state.userCards.filter(value => value.id !== userCard.id)
   },
+  RESET_USER_CARDS(state) {
+    state.userCards = []
+  },
   SET_LOADING(state, loading = true) {
     state.isLoading = loading
   }

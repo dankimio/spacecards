@@ -25,6 +25,9 @@ const mutations = {
   },
   SET_LOADING(state, loading = true) {
     state.isLoading = loading
+  },
+  RESET_SHARED_CARDS(state) {
+    state.sharedCards = []
   }
 }
 

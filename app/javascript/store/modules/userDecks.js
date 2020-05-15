@@ -58,6 +58,9 @@ const mutations = {
   SET_USER_DECKS(state, userDecks) {
     state.userDecks = userDecks
   },
+  RESET_USER_DECK(state) {
+    state.userDeck = {}
+  },
   RESET_USER_DECKS(state) {
     state.userDecks = []
   },

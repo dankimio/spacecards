@@ -36,6 +36,9 @@ const mutations = {
   SET_SHARED_DECK(state, data) {
     state.sharedDeck = data
   },
+  RESET_SHARED_DECK(state) {
+    state.sharedDeck = {}
+  },
   RESET_SHARED_DECKS(state) {
     state.sharedDecks = []
   },

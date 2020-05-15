@@ -122,6 +122,9 @@ export default {
     ...mapState('userCards', ['userCards'])
   },
   created() {
+    this.$store.commit('userDecks/RESET_USER_DECK')
+    this.$store.commit('userCards/RESET_USER_CARDS')
+
     this.getUserDeck(this.id)
     this.getUserDeckUserCards(this.id)
   },

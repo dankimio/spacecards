@@ -111,6 +111,9 @@ export default {
     ...mapGetters('users', ['isSignedIn'])
   },
   created() {
+    this.$store.commit('sharedDecks/RESET_SHARED_DECK')
+    this.$store.commit('sharedCards/RESET_SHARED_CARDS')
+
     this.getSharedDeckCards(this.id)
     this.getSharedDeck(this.id)
   },
