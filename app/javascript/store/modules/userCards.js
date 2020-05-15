@@ -3,16 +3,21 @@ import snakeCaseKeys from 'snakecase-keys'
 
 const state = {
   userCards: [],
-  userCard: {}
+  userCard: {},
+  isLoading: false
 }
 
 const getters = {}
 
 const actions = {
   getUserDeckUserCards(context, userDeckId) {
+    context.commit('SET_LOADING')
     return api.url(`/user_decks/${userDeckId}/user_cards`)
       .get()
-      .json(json => { context.commit('SET_USER_CARDS', json) })
+      .json(json => {
+        context.commit('SET_USER_CARDS', json)
+        context.commit('SET_LOADING', false)
+      })
   },
   createUserCard(context, { userDeckId, userCard }) {
     const data = snakeCaseKeys({ userCard })
@@ -46,6 +51,9 @@ const mutations = {
   DESTROY_USER_CARD(state, userCard) {
     state.userCard = {}
     state.userCards = state.userCards.filter(value => value.id !== userCard.id)
+  },
+  SET_LOADING(state, loading = true) {
+    state.isLoading = loading
   }
 }
 
