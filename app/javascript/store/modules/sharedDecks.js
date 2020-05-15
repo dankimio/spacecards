@@ -10,9 +10,13 @@ const getters = {}
 
 const actions = {
   getSharedDeck(context, id) {
+    context.commit('SET_LOADING')
     return api.url(`/shared_decks/${id}`)
       .get()
-      .json(json => { context.commit('SET_SHARED_DECK', json) })
+      .json(json => {
+        context.commit('SET_SHARED_DECK', json)
+        context.commit('SET_LOADING', false)
+      })
   },
   getSharedDecks(context) {
     context.commit('SET_LOADING')

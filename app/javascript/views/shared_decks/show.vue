@@ -1,8 +1,17 @@
 <template>
   <div class="container">
-    <h1 class="heading-2">
+    <h1 v-if="!isLoading" class="heading-2">
       {{ sharedDeck.name }}
     </h1>
+    <div v-else class="mb-6" style="width: 256px; height: 48px;">
+      <ContentLoader
+        :width="256"
+        :height="48"
+      >
+        <!-- eslint-disable-next-line vue/max-attributes-per-line -->
+        <rect x="0" y="0" rx="3" ry="3" width="256" height="48" />
+      </ContentLoader>
+    </div>
 
     <div class="lg:grid grid-cols-3 gap-8">
       <div class="col-start-3 row-start-1">
@@ -73,11 +82,12 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
+import { ContentLoader } from 'vue-content-loader'
 
 import DeckCard from '@/components/DeckCard'
 
 export default {
-  components: { DeckCard },
+  components: { ContentLoader, DeckCard },
   props: {
     id: {
       type: String,
@@ -91,7 +101,7 @@ export default {
   },
   computed: {
     ...mapState('sharedCards', ['sharedCards']),
-    ...mapState('sharedDecks', ['sharedDeck']),
+    ...mapState('sharedDecks', ['sharedDeck', 'isLoading']),
     ...mapGetters('users', ['isSignedIn'])
   },
   created() {
