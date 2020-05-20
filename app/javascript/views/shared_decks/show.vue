@@ -124,6 +124,7 @@ export default {
           this.$router.push({ name: 'userDeck', params: { id: json.id.toString() } })
           this.$notify({ title: `${json.name} has been added to your library` })
         })
+        .catch(() => this.$notify({ title: 'Something went wrong' }))
     },
     ...mapActions('sharedCards', ['getSharedDeckCards']),
     ...mapActions('sharedDecks', ['getSharedDeck']),
