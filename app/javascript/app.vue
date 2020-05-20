@@ -6,9 +6,10 @@
 
 <script>
 import DefaultLayout from '@/views/layouts/DefaultLayout'
+import SessionLayout from '@/views/layouts/SessionLayout'
 
 export default {
-  components: { DefaultLayout },
+  components: { DefaultLayout, SessionLayout },
   computed: {
     layout() {
       return this.$route.meta.layout || 'DefaultLayout'

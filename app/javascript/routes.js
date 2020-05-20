@@ -28,12 +28,14 @@ const router = new VueRouter({
     {
       path: '/sign-in',
       name: 'signin',
-      component: SignIn
+      component: SignIn,
+      meta: { layout: 'SessionLayout' }
     },
     {
       path: '/sign-up',
       name: 'signup',
-      component: SignUp
+      component: SignUp,
+      meta: { layout: 'SessionLayout' }
     },
     {
       path: '/decks/:id',

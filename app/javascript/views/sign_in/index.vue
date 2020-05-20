@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-8 md:my-8 md:max-w-sm mx-auto">
+  <div>
     <h1 class="heading-1 md:text-center">
       Sign in
     </h1>

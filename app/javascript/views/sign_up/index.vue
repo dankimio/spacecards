@@ -1,10 +1,10 @@
 <template>
-  <div class="container mb-8 md:my-8 md:max-w-sm mx-auto">
+  <div>
     <h1 class="heading-1 md:text-center">
       Sign up
     </h1>
 
-    <p class="md:text-center text-lg font-light mb-6 md:mb-10 text-gray-800 leading-tight">
+    <p class="md:text-center text-lg mb-4 md:mb-6 text-gray-700 leading-tight">
       Create an account to add cards and track your progress.
     </p>
 
