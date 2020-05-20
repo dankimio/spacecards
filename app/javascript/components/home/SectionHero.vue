@@ -28,7 +28,7 @@
 
         <router-link
           :to="{ name: 'explore' }"
-          class="button button-outlined button-lg w-full md:w-auto tracking-wide"
+          class="button button-outlined button-outlined-primary button-lg w-full md:w-auto tracking-wide"
         >
           Explore decks
         </router-link>
