@@ -3,7 +3,7 @@
     <h1 class="heading-2">
       Explore decks
     </h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 col-gap-12 row-gap-8">
       <template v-if="isLoading">
         <SharedDeckLoader v-for="index in 12" :key="index" />
       </template>
