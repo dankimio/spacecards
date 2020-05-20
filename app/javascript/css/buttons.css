@@ -20,7 +20,7 @@
 }
 
 .button-lg {
-  @apply py-2 px-8 font-medium tracking-tight text-center text-lg;
+  @apply py-2 px-8 font-medium text-center text-lg;
 }
 
 .button-primary {
