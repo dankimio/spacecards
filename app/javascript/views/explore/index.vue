@@ -22,7 +22,6 @@
 import { mapState, mapActions } from 'vuex'
 import SharedDeck from '@/components/SharedDeck'
 import SharedDeckLoader from '@/components/SharedDeckLoader'
-import DeckTag from '@/components/DeckTag'
 
 export default {
   components: { SharedDeck, SharedDeckLoader },
