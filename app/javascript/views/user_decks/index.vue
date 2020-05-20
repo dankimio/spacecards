@@ -1,17 +1,19 @@
 <template>
   <div class="container">
     <div class="max-w-xl">
-      <h1 class="heading-2 mb-0 flex items-center">
-        My decks
+      <div class="mb-8 flex items-center">
+        <h1 class="heading-2 mb-0 flex items-center">
+          My decks
+        </h1>
 
         <router-link
           :to="{ name: 'newUserDeck' }"
-          class="button button-sm button-outlined button-outlined-primary ml-6 font-normal text-sm"
+          class="button button-outlined button-outlined-primary ml-6"
         >
           <span class="mr-1">+</span>
           New deck
         </router-link>
-      </h1>
+      </div>
 
       <template v-if="isLoading">
         <UserDeckLoader v-for="index in 4" :key="index" />
