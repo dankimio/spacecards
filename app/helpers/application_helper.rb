@@ -5,7 +5,7 @@ module ApplicationHelper
     hostname = Rails.application.config.hostname
 
     if page_title.present?
-      page_title + ' – ' + hostname
+      "#{page_title} – #{hostname}"
     else
       base_title
     end
