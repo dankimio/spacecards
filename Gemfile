@@ -19,7 +19,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Auth
 gem 'devise', '~> 4.7'
-gem 'devise-jwt', '~> 0.6'
+gem 'devise-jwt', '~> 0.7'
 gem 'pundit', '~> 2.1'
 
 # Core

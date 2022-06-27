@@ -12,7 +12,7 @@
 #  updated_at             :datetime         not null
 #
 class User < ApplicationRecord
-  include Devise::JWT::RevocationStrategies::Whitelist
+  include Devise::JWT::RevocationStrategies::Allowlist
 
   # TODO: configure `dependent`
   has_many :shared_decks
