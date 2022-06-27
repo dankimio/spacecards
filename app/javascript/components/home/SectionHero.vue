@@ -27,10 +27,11 @@
         </router-link>
 
         <router-link
-          :to="{ name: 'explore' }"
+          v-if="isSignedIn"
+          :to="{ name: 'userDecks' }"
           class="button button-outlined button-outlined-primary button-lg w-full md:w-auto tracking-wide"
         >
-          Explore decks
+          My decks
         </router-link>
       </div>
 

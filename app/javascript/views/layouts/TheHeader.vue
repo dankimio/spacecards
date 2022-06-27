@@ -16,12 +16,12 @@
       >
         Sign in
       </router-link>
-      <router-link
+      <!-- <router-link
         :to="{ name: 'explore' }"
         class="ml-5 md:ml-8"
       >
         Explore
-      </router-link>
+      </router-link> -->
       <router-link
         v-if="isSignedIn"
         :to="{ name: 'userDecks' }"
