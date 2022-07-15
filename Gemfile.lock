@@ -101,22 +101,17 @@ GEM
       dry-core (~> 0.6)
     dry-container (0.10.0)
       concurrent-ruby (~> 1.0)
-    dry-core (0.7.1)
+    dry-core (0.8.0)
       concurrent-ruby (~> 1.0)
     erubi (1.10.0)
-    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.4.1)
-    listen (3.1.5)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-      ruby_dep (~> 1.2)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -173,16 +168,12 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rake (13.0.6)
-    rb-fsevent (0.11.1)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
     regexp_parser (2.5.0)
     repetition (2.1.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-    ruby_dep (1.5.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.3.0)
       childprocess (>= 0.5, < 5.0)
@@ -241,7 +232,6 @@ DEPENDENCIES
   devise (~> 4.7)
   devise-jwt (~> 0.7)
   jbuilder (~> 2.7)
-  listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   pundit (~> 2.1)
@@ -253,7 +243,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 3.0.4p208
 
 BUNDLED WITH
-   2.1.4
+   2.2.33
